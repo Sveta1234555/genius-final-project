@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOGclub Svet</title>
-    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <header>
@@ -19,6 +19,7 @@
           <img src="./images/logo.svg" alt="Veterinary clinic logo DOGclub"
         /></a>
 
+        <!-- Это названия id section– для ссылок (SCSS называются по классам, а не по id) -->
         <!-- section-about-us   - section-less-talk  -->
         <!-- section-why-us  -> section-services-category -->
         <!-- section-our-procedures-> section-happy-customer -->
@@ -54,15 +55,42 @@
           Human–canine bonding is the relationship between dogs and humans
         </p>
         <button class="button-primary" type="button">Explore More</button>
+        <img src="./images/dog_yellow.jpg" alt="Photo of dog" />
+        <img
+          src="./images/pexels-pixabay-220938-PhotoRoom 1.jpg"
+          alt="Photo of dog"
+        />
+        <img src="./images/hero-section-background.jpg" alt="фон" />
+        <p>
+          <br />
+          <br />
+          --------------------
+        </p>
       </section>
       <section id="section-less-talk">
-        <!-- Кнопка круглая еще!!!  видео -->
-        <a class="footer-link" href="#">Learn more</a>
-        <button class="button-video" type="button">Video</button>
-        <!-- <h2>
-          Перевтілюйтесь в
-          <span class="beauty-zone-h2" lang="en">beauty zone!</span>
-        </h2> -->
+        <!-- ------video - плзже разобраться . пока так     -->
+        <article style="border: 1px solid rgb(143, 143, 196); width: 250px">
+          <!-- Кнопка круглая еще!!!  видео -->
+          <!-- Simple video example -->
+          <!-- style="padding-top: 1%; background: rgb(143, 143, 196)" -->
+          <p style="padding-top: 1%">video Разобраться</p>
+          <video
+            src="./images/853770-sd_640_360_25fps.mp4"
+            autoplay="none"
+            width="250"
+            controls
+            poster="/images/video.jpg"
+          >
+            <!-- Sorry, your browser doesn't support embedded videos, but don't worry,
+          you can
+          <a href="./images/853770-sd_640_360_25fps.mp4">download it</a>
+          and watch it with your favorite video player! -->
+          </video>
+          <img src="./images/video.jpg" alt="button for video" />
+
+          <a class="footer-link" href="#">Learn more</a>
+          <button class="button-video" type="button">Video</button>
+        </article>
 
         <img
           src="./images/shetland-sheepdog-lying.jpg"
@@ -159,7 +187,10 @@
         <h2>Our experts will take care of your friend</h2>
 
         <p>Fill out the form so we can contact you!</p>
-
+        <img
+          src="./images/sect5_187-1873965_pictures-of-dogs-walking-dog-walking-png 1.jpg"
+          alt="Photo of dog on leash"
+        />
         <div class="signup-free">
           <!-- <p>
             Запишіться <span class="form-signupfree-free">безкоштовно</span>
@@ -180,6 +211,10 @@
             <label for="agree">I agree to the privacy policy</label>
           </div>
         </div>
+        <img
+          src="./images/pngaaa.com-4675506-min 1.jpg"
+          alt="Photo of a red dog peeking out"
+        />
       </section>
     </main>
     <footer>
