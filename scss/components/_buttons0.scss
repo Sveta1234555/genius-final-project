@@ -1,0 +1,128 @@
+/* Main Button*/
+.button {
+  /* button1 hero  Замовити дзвінок         Roboto 600 18/21   219x53  mrg-bt снизу 14
+     button2 modal Записатись безкоштовно   Roboto 600 18/21   281x53  mrg-bt снизу 8 */
+  // button1 hero mob Замовити дзвінок Roboto 600 16/19 186x44 mrg-bt снизу 8 
+
+  // dog: 
+  // desktop : border-radius 8px  ,    mob border-radius 4px
+  // desktop:
+  /* button1 hero Contact us         Roboto 500 18/ 100%   151x53  padding 16 32   mrg-bt снизу нет, это меню
+  /* button2 hero-sect Explore More       Roboto 500 18/ 100%   171x53  padding 16 32   mrg-bt снизу нет.. до текста сверху от кнопки mrg-top 24
+  /* button3 less-talk-sect 2 Explore More       Roboto 500 18/ 100%   171x53  padding 16 32   mrg-bt снизу нет.. до текста сверху от кнопки mrg-top 24
+  /* button4 contacts-sect 5  Contact us         Roboto 500 18/ 100%   151x53  padding 16 32   mrg-bt снизу нет, до input сверху mrg-top 24
+
+
+  /* button5 footer  Contact us   border-radius 4px      Roboto 700 16/ 100%   126x35  padding 8 24   mrg-bt снизу 16, до input сверху mrg-top 16
+  (как мобильные кнопки (radius 4px Roboto 500 16/100% padding 8 24), только weight desktop 700  моб 500)
+   моб версия footer button5 Contact us  - одинак desktop и мобильн версия
+
+modal:
+  button2 modal Contact us   Roboto 500 18/100%   151x53  mrg-bt снизу 16,     до input сверху mrg-top 24 */
+
+  // mob:
+  // button1  mob border-radius 4px Roboto 500 16/100% padding 8 24 143x35 mrg-top 16 
+
+
+
+  font-family: inherit;
+  font-size: 16px;
+  /* 19/16=1.2 */
+  line-height: 100%; //1.2;
+  font-weight: 500;
+
+  /* до текста кнопки моб */
+  /* БЗ  padding: 16px 24px; сделать на 2 меньше из-за border 2px*/
+  // БЗ - padding: 14px 22px;
+  padding: 8px 24px; //dog - нет Border
+  color: var(--color-primary-white);
+
+  // background-color: var(--color-primary-blue);
+  background-color: var(--color-primary-orange);
+  border-radius: 4px; //24px;
+  /* анимация переход цвета button при hover - плавно меняется цвет текста и фон*/
+  transition: color 2s, background-color 0.2s;
+
+  @media screen and (min-width: $bp-desktop) {
+
+    // font-family: inherit;   //вверху на моб
+
+    /* font-family: "Roboto", sans-serif; button не наследует стиль font от body. что лучше по опыту- inherit или заново указывать font? */
+    font-size: 18px; //inherit должен .но не взяло из-за 16 мобверсии. завновоо указан 18
+    /*доминантные  18px и 1.2,но не унаследовались от body (это до адаптива тоже). ф12 дает 13px, а не 18*/
+    /* и не помещается 18 при указанных width height кнопкт???  помещается font 16 */
+    // font-weight: 500; // одинак с моб
+    /* 21/18=1.2 */
+    // line-height: 100%;   // одинак с моб  //1.2;
+    /* ТОже непонятно - line-height наследует или нет. скорее нет */
+
+    /* до текста кнопки */
+    /* БЗ - padding: 16px 32px; сделать на 2 меньше из-за border 2px*/
+    padding: 16px 32px; //dog - нет Border
+    /* width: 219px;   height: 53px; само вчислило так */
+    // color: var(--color-primary-white);
+
+    // background-color: var(--color-primary-blue);  вверх в моб
+    // /* border: 1px solid var(--color-black); */
+    border-radius: 8px; // 32px;
+    /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
+
+    /* gap: 10px; */
+    /* opacity: 0px; */
+
+    // /* анимация переход цвета button при hover - плавно меняется цвет текста и фон*/
+    // transition: color 0.2s, background-color 0.2s; вверх на моб
+  }
+
+  // .button:hover {
+  &:hover {
+    // background-color: transparent;
+    // color: var(--color-primary-bluedark);
+    background-color: var(--color-secondary-yellow);
+
+    cursor: pointer;
+
+    // border: 2px solid var(--color-primary-blue);  //БЗ
+
+    /* border-radius: 32px; наследует от самой кнопки */
+    /* padding: 16px 32px; наследует от самой кнопки */
+    /* width: 219px;
+  height: 53px; 
+   top: 102px;
+  left: 20px; 
+
+  gap: 10px;
+  opacity: 0px;
+*/
+  }
+
+  // &--footer {
+
+  //   font-weight: 500;
+
+  //   @media screen and (min-width: $bp-desktop) {
+  //     font-weight: 700;
+  //   }
+  // }
+
+}
+
+// //вверх
+// // .button:hover {
+// &:hover {
+//   background-color: transparent;
+//   color: var(--color-primary-bluedark);
+//   cursor: pointer;
+
+//   border: 2px solid var(--color-primary-blue);
+//   /* border-radius: 32px; наследует от самой кнопки */
+//   /* padding: 16px 32px; наследует от самой кнопки */
+//   /* width: 219px;
+//   height: 53px; 
+//    top: 102px;
+//   left: 20px; 
+
+//   gap: 10px;
+//   opacity: 0px;
+// */
+// }

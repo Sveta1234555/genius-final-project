@@ -1,0 +1,206 @@
+/* Star */
+
+.star4 {
+    // display: block;
+    // для моб - отдельноая звезда 
+    //т.к. звезда ездит при ресайз при центрировании блока текста 
+    //позиционирую относительно блока текста __content
+    //index - внутрь блока about-us-section__content
+    // для десктопа - 3 звездв в Index в родителе about-us-section__container
+    max-height: 40px;
+    max-width: 40px;
+    width: 100%;
+    height: 100%;
+    /* Это иконки, а они обесцвечены */
+    fill: var(--color-secondary-bluedark);
+    /* background: #011F4A; */
+    rotate: 30deg;
+
+    // .about-us-section  &__content  position: relative;
+    position: absolute;
+    // position: fixed;
+    // h347about-us +6 снизу от about-us до star1
+    top: 353px;
+    left: 283px;
+    // right: 23px;
+    // bottom: -6px;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: none;
+        //         max-height: 64px;
+        //         max-width: 64px;
+        //         //вверху
+        //         // width: 100%;
+        //         // height: 100%;
+        //         // /* Это иконки, а они обесцвечены */
+        //         // fill: var(--color-secondary-bluedark);
+        //         // /* background: #011F4A; */
+        //         // rotate: 30deg;
+        //         // position: absolute;
+
+
+        //         /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        //         /* top: 304px;
+        //   right: 206px; */
+        //         /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+        //   ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        //         top: 336px;
+        //         left: auto; //иначе после моб left 283 не перемещается в этот right
+        //         right: 295px;
+    }
+}
+
+
+.star1 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 64px;
+        max-width: 64px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-bluedark);
+        /* background: #011F4A; */
+        rotate: 30deg;
+        // .about-us-section  &__container  position: relative;
+        position: absolute;
+
+
+        /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        /* top: 304px;
+  right: 206px; */
+        /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+  ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        top: 336px;
+        // left: auto; //иначе после моб left 283 не перемещается в этот right
+        right: 295px;
+    }
+}
+
+//попытки одну звезду использовать в моб и десктопе - мешает, что ездит при ресайзе звезда в моб версия.
+// из-за родителя &__container  выше , чем надо для статичности моб звезды
+//position relative делала разные для одной звездв  ( &__container для десктопной, &__content для мобильной )
+// для статичности звездв - она должна быть относительно __content и ездить вместе с ним при ресайз
+//position relative в  __content не срабатывает в css, когдв в Index звезда в __container
+//в index - добавлена звезда для моб.версии внутрь  div __content
+// 
+// .star1 {
+//     max-height: 40px;
+//     max-width: 40px;
+//     width: 100%;
+//     height: 100%;
+//     /* Это иконки, а они обесцвечены */
+//     fill: var(--color-secondary-bluedark);
+//     /* background: #011F4A; */
+//     rotate: 30deg;
+
+//     // .about-us-section  &__container  position: relative;
+//     position: absolute;
+//     // position: fixed;
+//     // h347about-us +6 снизу от about-us до star1
+//     top: 353px;
+//     left: 283px;
+//     // right: 23px;
+//     // bottom: -6px;
+
+//     @media screen and (min-width: $bp-desktop) {
+//         max-height: 64px;
+//         max-width: 64px;
+//         //вверху
+//         // width: 100%;
+//         // height: 100%;
+//         // /* Это иконки, а они обесцвечены */
+//         // fill: var(--color-secondary-bluedark);
+//         // /* background: #011F4A; */
+//         // rotate: 30deg;
+//         // position: absolute;
+
+
+//         /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+//         /* top: 304px;
+//   right: 206px; */
+//         /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+//   ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+//         top: 336px;
+//         left: auto; //иначе после моб left 283 не перемещается в этот right
+//         right: 295px;
+//     }
+// }
+
+.star2 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 40px;
+        max-width: 40px;
+        /* так в ф12 расчет 48х48 отражает, без этого -40x44 */
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-primary-blue);
+        /* background: #ffd02b; */
+        rotate: -30deg;
+
+        position: absolute;
+        /* margin-bottom: 32px; */
+        /* или 12=32-20пол-звездочки  по соотношению на макете - похоже на 32 , а не на 12 по факту 
+  Но по right видно - надо вычитать пол-звезды */
+        top: 32px;
+        /* по right понятно , что до центра расчет */
+        right: -20px;
+    }
+}
+
+.star3 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 16px;
+        max-width: 16px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-greylight);
+        rotate: 23deg;
+
+        position: absolute;
+        /* Минус пол-звезды  16/2 =8,  Сверху 270 -8 =262,Справа 6 */
+        top: 270px;
+        right: 6px;
+    }
+}
+
+/* одновременно вращени и масштабирование звездочек */
+.star1,
+.star2,
+.star3,
+.star4 {
+    animation: ScaleRotate 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes ScaleRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* Остановка анимации при наведении */
+.star1:hover,
+.star2:hover,
+.star3:hover,
+.star4:hover {
+    animation-play-state: paused;
+}

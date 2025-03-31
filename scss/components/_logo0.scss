@@ -1,0 +1,77 @@
+// Logo.scss
+// неактуальный, before работали - надо допозиционировать . Работающий  - _logo.scss----------
+
+//для иконки-след слева ::before везде
+
+
+// //а как 2 картинки из css
+// .logo {
+//     background-image: url("./images/icon-sled-logo.svg"), url("./images/logo.svg");
+//     // background-image: url="./images/logo.svg";
+// }
+
+
+//допозиционировать тоже надо left...
+.logo-gpt {
+    display: flex;
+    align-items: center; // Выравнивание по вертикали
+    position: relative; // Для абсолютного позиционирования ::before
+
+    // img {
+    //     width: 50px; // Настройте размеры по необходимости
+    //     height: auto;
+    // }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -20px; // Настройте отступ слева
+        top: 50%;
+        transform: translateY(-50%); // Вертикальное центрирование
+        width: 50px; // Настройте размеры по необходимости
+        height: auto;
+        background-image: url("../images/icon-sled-logo.svg"); // Путь к левому SVG
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+//для иконки-след слева ::before везде
+//отключен пока 2-кой, класс в html на logo
+// .logo {
+.lofo {
+    position: relative;
+    //  Это важно, если псевдоэлемент нужно позиционировать относительно этого блока
+    // html: <a class="logo" href="#">. 
+    // псевдоэлеемнты before after работают только с парными тэгами. С Img не работают
+    // в десктоп работает - допозиционировать моб версию
+
+    // или flex сделать легче
+
+    &::before {
+        position: absolute;
+        bottom: -90px; //0;
+        background-repeat: no-repeat;
+        content: '';
+    }
+
+    &::before {
+        left: -43px; //0;
+        width: 100px;
+        height: 90px;
+        right: 0;
+        background-image: url('../images/icon-sled-logo.svg');
+
+
+
+        @media screen and (min-width: $bp-tablet) {
+            left: -43px; //0;
+            right: auto;
+            width: 180px;
+            height: 120px;
+            background-image: url('../images/icon-sled-logo.svg');
+        }
+
+        // в пекарне - png/ background-image: url('../images/decor-bread-small.png');
+    }
+}

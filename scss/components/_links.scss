@@ -1,0 +1,20 @@
+.link {
+    // к обеим ссылкам в footer и header
+    text-decoration: none;
+    /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
+    /* transition: color 0.2s; */
+    transition: color 0.2s, font-weight 0.2s;
+}
+
+// .header-link:hover,
+// .footer-link:hover 
+.link:hover {
+    color: var(--color-primary-orange);
+    /*нехорошо,  что при наведении на меню - двигаются-прыгают все элементы меню.
+   Из-за увеличенного размера шрифта hover Обсуждать с разработчиком макета. 
+   Лучше - убрать увеличение шрифта при наведении hover. Выделения цветом достаточно */
+
+    font-weight: 700; //dog
+
+    /* text-decoration: underline; */
+}

@@ -1,0 +1,554 @@
+/* Star */
+
+.food {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-width: 72px;
+        max-height: 48px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-grey); // background: #839AA9;
+        // fill: red; // background: #839AA9;
+        // rotate: 0deg;
+        // .about-us-section  &__container  position: relative;
+        position: absolute;
+
+
+        /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        /* top: 304px;
+      right: 206px; */
+        /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+      ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        top: 616px; //336px;
+        // left: auto; //иначе после моб left 283 не перемещается в этот right
+        right: 931px; //931 подбором ,724 надо; //295px;
+
+        // background-color: yellowgreen;
+    }
+}
+
+//копия sled - все только десктопно, модальные blur, 2-я вокруг собаки
+//вернуть, если собьется
+//добавляю мобильные sled в contacts-section
+//убрать потом.
+.sled0 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-width: 40px;
+        max-height: 40px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-grey); // background: #839AA9;
+
+        // .about-us-section  &__container  position: relative;
+        position: absolute;
+
+        /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        /* top: 304px;
+      right: 206px; */
+        /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+      ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        // top: 388px; //336px;
+        // left: auto; //иначе после моб left 283 не перемещается в этот right
+        // right: 1128px; //
+
+        // background-color: yellowgreen;
+    }
+
+    // sled--left
+    &--left {
+        @media screen and (min-width: $bp-desktop) {
+            rotate: -51deg;
+            top: 388px;
+            right: 1128px;
+        }
+    }
+
+    &--top {
+        @media screen and (min-width: $bp-desktop) {
+            rotate: 0deg;
+            top: 137px;
+            right: 1020px;
+        }
+    }
+
+
+    &--right {
+        @media screen and (min-width: $bp-desktop) {
+            rotate: 50deg;
+            top: 314px;
+            right: 787px;
+        }
+    }
+
+    // sled__modal--------------------------
+    &__modal {
+        max-width: 97px;
+        max-height: 97px;
+        //на модальнйо форме - следы - белые. плохо видно.
+        // fill: var(--color-primary-white); // белый;  вернуть
+        fill: var(--color-primary-yellow-font); // на разработку = пока так, не видно белым;
+        filter: blur(8px); // backdrop-filter: blur(8px);  из макета
+
+        // sled__modal--left-top
+        &--left-top {
+            rotate: -30deg; //-151.97 deg;
+            top: 188px; //202
+            left: 10px; //85px;
+        }
+
+        // sled__modal--left-end
+        &--left-end {
+            rotate: -125deg; //-45deg;
+            top: 810px; //849
+            left: -21px;
+        }
+
+        // sled__modal--right-top
+        &--right-top {
+            rotate: 44deg; //112.25 deg;
+            top: 23px; //107px;
+            left: 641px; //763px;
+        }
+
+        // sled__modal--right-end
+        &--right-end {
+            rotate: 44deg; //112.25 deg;
+            top: 756px; //833px;
+            left: 740px; //817px;
+        }
+
+    }
+}
+
+
+.sled {
+    display: block;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-width: 40px;
+        max-height: 40px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-grey); // background: #839AA9;
+
+        // .about-us-section  &__container  position: relative;
+        position: absolute;
+
+
+        /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+      ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        // top: 388px; //336px;
+        // left: auto; //иначе после моб left 283 не перемещается в этот right
+        // right: 1128px; //
+
+        // background-color: yellowgreen;
+    }
+
+
+    //about-us  - 3 ico, только в десктоп,------------------ 
+    //в моб svg - отключать---------------
+    // sled--left
+    &--left {
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: block;
+            rotate: -51deg;
+            top: 388px;
+            right: 1128px;
+        }
+    }
+
+    &--top {
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: block;
+            rotate: 0deg;
+            top: 137px;
+            right: 1020px;
+        }
+    }
+
+
+    &--right {
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: block;
+            rotate: 50deg;
+            top: 314px;
+            right: 787px;
+        }
+    }
+
+    // sled__modal--------------------------
+    //только в десктопной. вообще модальной нет в мобильной
+    &__modal {
+        max-width: 97px;
+        max-height: 97px;
+        //на модальнйо форме - следы - белые. плохо видно.
+        // fill: var(--color-primary-white); // белый;  вернуть
+        fill: var(--color-primary-yellow-font); // на разработку = пока так, не видно белым;
+        filter: blur(8px); // backdrop-filter: blur(8px);  из макета
+
+        // sled__modal--left-top
+        &--left-top {
+            rotate: -30deg; //-151.97 deg;
+            top: 188px; //202
+            left: 10px; //85px;
+        }
+
+        // sled__modal--left-end
+        &--left-end {
+            rotate: -125deg; //-45deg;
+            top: 810px; //849
+            left: -21px;
+        }
+
+        // sled__modal--right-top
+        &--right-top {
+            rotate: 44deg; //112.25 deg;
+            top: 23px; //107px;
+            left: 641px; //763px;
+        }
+
+        // sled__modal--right-end
+        &--right-end {
+            rotate: 44deg; //112.25 deg;
+            top: 756px; //833px;
+            left: 740px; //817px;
+        }
+
+    }
+
+
+    // sled-mob__contacts
+    //sled__contacts
+    &__contacts {
+        display: block;
+        max-width: 16px;
+        max-height: 16px;
+        width: 100%;
+        height: 100%;
+        fill: var(--color-primary-white);
+        fill: red;
+        // position: relative;  к этому absolute-  в container общем
+        position: absolute;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: none;
+        }
+
+        // sled-mob__contacts--collar
+        // sled__contacts--collar   ошейник
+        &--collar {
+            rotate: -17deg; //16.08 deg;
+            top: 5px; //1766px;
+            left: 10%; //38px;
+        }
+
+        // sled__contacts--paw   лапа2
+        &--paw {
+            rotate: 11deg;
+            top: -8px;
+            left: 40%;
+        }
+
+        // sled__contacts--bone косточка
+        &--bone {
+            rotate: 182deg; //22.81 deg;
+            top: -14px;
+            left: 65%;
+        }
+    }
+}
+
+
+// //начаинала здесь  - моб иконка , до этого вспе иконки - только десктоп .sled
+// //включила в .sled мобильные
+// //это убрать, перенесено в .sled
+// .sled-mob-nenado {
+//     display: block;
+//     // .about-us-section  &__container  position: relative;
+//     position: absolute;
+
+//     // sled-mob__contacts
+//     //sled__contacts
+//     &__contacts {
+
+//         // sled-mob__contacts--right 
+//         &--right {
+
+//             rotate: 44deg; //112.25 deg;
+//             top: 23px; //107px;
+//             left: 641px; //763px;
+
+//         }
+//     }
+// }
+
+
+.arrow {
+    // спиральная стрелка в секции2 .about-us-section в __content
+    // в моб версии
+    display: block;
+    rotate: 10deg;
+    top: 0px;
+    left: 160px; //надо 232px;
+    max-width: 48px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    // .about-us-section  &__content!!!  position: relative;
+    //в index arrow для моб д.б. внутри этого __content
+    // position: relative;
+    position: absolute;
+
+    fill: var(--color-primary-yellow-font);
+
+    @media screen and (min-width: $bp-desktop) {
+        display: none;
+    }
+
+}
+
+.arrow-services {
+    // спиральная стрелка в секции3 справа сверху .why-us-section в __content
+    // в моб версии -нет
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        rotate: 4deg;
+        top: -72px; //надо -83px;
+        right: -61px;
+        max-width: 192px;
+        max-height: 144px;
+        width: 100%;
+        height: 100%;
+        // .why-us-section  _container.scss общий!!!  position: relative;
+        //в index arrow  внутри <div class="why-us-section__content">
+        // а не выше, ближе к общему .container
+        //why-us - нет внутри вложенного div. Лишний не буду пока
+        // position relative - в _container.scss. 
+        position: absolute;
+
+        fill: var(--color-primary-yellow-font);
+    }
+
+}
+
+.star4 {
+    // display: block;
+    // для моб - отдельноая звезда 
+    //т.к. звезда ездит при ресайз при центрировании блока текста 
+    //позиционирую относительно блока текста __content
+    //index - внутрь блока about-us-section__content
+    // для десктопа - 3 звездв в Index в родителе about-us-section__container
+    max-height: 40px;
+    max-width: 40px;
+    width: 100%;
+    height: 100%;
+    /* Это иконки, а они обесцвечены */
+    fill: var(--color-secondary-bluedark);
+    /* background: #011F4A; */
+    rotate: 30deg;
+
+    // .about-us-section  &__content  position: relative;
+    position: absolute;
+    // position: fixed;
+    // h347about-us +6 снизу от about-us до star1
+    top: 353px;
+    left: 283px;
+    // right: 23px;
+    // bottom: -6px;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: none;
+        //         max-height: 64px;
+        //         max-width: 64px;
+        //         //вверху
+        //         // width: 100%;
+        //         // height: 100%;
+        //         // /* Это иконки, а они обесцвечены */
+        //         // fill: var(--color-secondary-bluedark);
+        //         // /* background: #011F4A; */
+        //         // rotate: 30deg;
+        //         // position: absolute;
+
+
+        //         /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        //         /* top: 304px;
+        //   right: 206px; */
+        //         /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+        //   ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        //         top: 336px;
+        //         left: auto; //иначе после моб left 283 не перемещается в этот right
+        //         right: 295px;
+    }
+}
+
+
+.star1 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 64px;
+        max-width: 64px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-bluedark);
+        /* background: #011F4A; */
+        rotate: 30deg;
+        // .about-us-section  &__container  position: relative;
+        position: absolute;
+
+
+        /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+        /* top: 304px;
+  right: 206px; */
+        /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+  ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+        top: 336px;
+        // left: auto; //иначе после моб left 283 не перемещается в этот right
+        right: 295px;
+    }
+}
+
+//попытки одну звезду использовать в моб и десктопе - мешает, что ездит при ресайзе звезда в моб версия.
+// из-за родителя &__container  выше , чем надо для статичности моб звезды
+//position relative делала разные для одной звездв  ( &__container для десктопной, &__content для мобильной )
+// для статичности звездв - она должна быть относительно __content и ездить вместе с ним при ресайз
+//position relative в  __content не срабатывает в css, когдв в Index звезда в __container
+//в index - добавлена звезда для моб.версии внутрь  div __content
+// 
+// .star1 {
+//     max-height: 40px;
+//     max-width: 40px;
+//     width: 100%;
+//     height: 100%;
+//     /* Это иконки, а они обесцвечены */
+//     fill: var(--color-secondary-bluedark);
+//     /* background: #011F4A; */
+//     rotate: 30deg;
+
+//     // .about-us-section  &__container  position: relative;
+//     position: absolute;
+//     // position: fixed;
+//     // h347about-us +6 снизу от about-us до star1
+//     top: 353px;
+//     left: 283px;
+//     // right: 23px;
+//     // bottom: -6px;
+
+//     @media screen and (min-width: $bp-desktop) {
+//         max-height: 64px;
+//         max-width: 64px;
+//         //вверху
+//         // width: 100%;
+//         // height: 100%;
+//         // /* Это иконки, а они обесцвечены */
+//         // fill: var(--color-secondary-bluedark);
+//         // /* background: #011F4A; */
+//         // rotate: 30deg;
+//         // position: absolute;
+
+
+//         /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
+//         /* top: 304px;
+//   right: 206px; */
+//         /* Минус пол-звезды  - выше, наезжает при Resize на картинку. делаю без вычитания 
+//   ВИзуально - без выичитания пол-звезды - как на макете. так остаить*/
+//         top: 336px;
+//         left: auto; //иначе после моб left 283 не перемещается в этот right
+//         right: 295px;
+//     }
+// }
+
+.star2 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 40px;
+        max-width: 40px;
+        /* так в ф12 расчет 48х48 отражает, без этого -40x44 */
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-primary-blue);
+        /* background: #ffd02b; */
+        rotate: -30deg;
+
+        position: absolute;
+        /* margin-bottom: 32px; */
+        /* или 12=32-20пол-звездочки  по соотношению на макете - похоже на 32 , а не на 12 по факту 
+  Но по right видно - надо вычитать пол-звезды */
+        top: 32px;
+        /* по right понятно , что до центра расчет */
+        right: -20px;
+    }
+}
+
+.star3 {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+        display: block;
+        max-height: 16px;
+        max-width: 16px;
+        width: 100%;
+        height: 100%;
+        /* Это иконки, а они обесцвечены */
+        fill: var(--color-secondary-greylight);
+        rotate: 23deg;
+
+        position: absolute;
+        /* Минус пол-звезды  16/2 =8,  Сверху 270 -8 =262,Справа 6 */
+        top: 270px;
+        right: 6px;
+    }
+}
+
+/* одновременно вращени и масштабирование звездочек */
+.star1,
+.star2,
+.star3,
+.star4 {
+    animation: ScaleRotate 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes ScaleRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* Остановка анимации при наведении */
+.star1:hover,
+.star2:hover,
+.star3:hover,
+.star4:hover {
+    animation-play-state: paused;
+}

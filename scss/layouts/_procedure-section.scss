@@ -1,0 +1,407 @@
+/* Section 4 - procedure */
+
+.procedure-section {
+  //просто родитель, без стилей на этом уровне, 
+  // кроме оступов между секц padding 
+  padding-top: 20px; //40/2
+  padding-bottom: 36px; //72/2
+
+
+  @media screen and (min-width: $bp-desktop) {
+    padding-top: 48px;
+    padding-bottom: 0px;
+  }
+
+  // .procedures-container {
+  // .procedure-section__container {
+  &__container {
+    display: flex;
+    /* центрировать кнопки - стрелки по вертикали в этом flex-родителе */
+    align-items: center;
+    /* между кнопками и div из 3-х карточек с обеих сторон*/
+    gap: 16px; //   32px; бз
+    /* Центрировать элементы в flex по осн гориз оси. 
+    Иначе справа остается место до края от кнопки, а слева - нет
+    Так - поровну слева и справа остается до края. 
+    Это из-за ширина общего div 1240, а ширина div procedures сложением всех элеемнтов и отступов меньше. 1216 */
+    /* justify-content: center; */
+    /* justify-content: space-between; ничего не меняет для ширины карточек*/
+    /* по макету так. И так выдерживает 344 шириана карты без ее указания */
+    max-width: 1200px; //1216px; бз
+    width: 100%;
+  }
+
+
+  // .procedure-list {
+  // .procedure-section__list {
+  &__list {
+    /* ul */
+    /* расположить список горизонтально */
+    display: flex;
+    // flex-wrap: wrap;
+    /* max-width: 1064px; сначала помогло тотлько это расширению карточек до кнопок в ширину */
+    /* Это помогло ширину карточек увеличить!!! без нее - снова сужается */
+    width: 100%;
+    /*на макете :*/
+    gap: 16px;
+
+    // margin-left: 20px; //это зачем?
+    justify-content: center; //для моб для отражения одной 
+
+    /* на всю ширину распределить (отцентрировалось) */
+    /* justify-content: space-between;  тоже ненадо для ширины 3х карточек */
+    /* +flex-basis: calc((100% - 112px) / 3); чтобы переносились на след. строку по 3 в ряд*/
+
+    // flex-direction: column;
+    // // height: 400px;
+
+    // @media screen and (min-width: $bp-desktop) {
+
+    //   flex-direction: row;
+    // }
+  }
+
+
+  // .procedure-section__button
+  &__button {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: flex;
+    }
+  }
+
+  // .procedure-item {
+  // .procedure-section__item {
+  &__item {
+    // из образца с swiper - нет h-------
+    // flex-shrink: 0;
+    // width: 100%;
+    // height: 100%;
+    // position: relative;
+    // transition-property: transform;
+    // display: block;
+    // из образца с swiper - нет e-------
+
+
+    //для моб - не нужен расчет -1 картинка
+    // flex-basis: content;
+    // flex-basis: calc((100%));
+
+
+    // @media screen and (min-width: $bp-tablet) and (max-width: $bp-desktop) {
+    //   /* задать размер элементу для переноса на след. строку браузером по wrap.
+    //               16 px это 1 gap по 16 px . Гибкое расстояние между блочками*/
+    //   // flex-basis: calc((100% - 16px) / 2);
+    //   // width: calc((100% - 16px) / 2);
+    //   max-width: 320px;
+    //   width: 100%;
+    // }
+
+    @media screen and (min-width: $bp-desktop) {
+
+      //     /* background-color: red; */
+      //     /* убрала все, кроме расчета /3
+      // помогло - -карточки расширились до кнопок!!! */
+      //     /* max-width: 344px; dog
+      // max-height: 456px; */
+      //     /* width: 100%; */
+
+      //     /* задать размер элементу для переноса на след. строку браузером по wrap.
+      //  32 px это 2 gap по 16 px . Гибкое расстояние между блочками*/
+      flex-basis: calc((100% - 32px) / 3);
+      //     /* text-align: center; */
+    }
+
+    &--show {
+      // width: calc((100% - 32px) / 3);
+      max-width: 344px;
+      // width: 320px;
+      width: 100%;
+
+      // height: 100%;
+
+      @media screen and (min-width: $bp-desktop) {
+        max-width: 344px;
+        // width: 100%;
+        // height: 100%;
+      }
+    }
+
+    // .procedure-section__item--hide
+    &--hide {
+      //2 и 3й спрятать и 0 ширину, иначе своб место остается и не цнтрирцется 1я оставшаяся
+      // display: none;
+      z-index: -2;
+      width: 0px;
+
+      @media screen and (min-width: $bp-desktop) {
+        z-index: auto;
+
+        // display: list-item;
+      }
+
+    }
+  }
+}
+
+
+// вынесено в файл /components/_procedure-card.scss
+// // .procedure-card {
+// // .procedure-section__card {
+// &__card {
+//   /* пока так градиент на 3х картинках процедур. позже слоями наверное */
+//   /* для спозиционирвать на карточке фон-изображение. вместе с .procedure-card-image      position: absolute; */
+//   position: relative;
+//   /* max-width: 344px;*/
+//   height: 456px;
+//   background-image: linear-gradient(180.05deg,
+//       rgba(1, 28, 68, 0) 48.53%,
+//       rgba(1, 28, 68, 0.725825) 84.61%,
+//       var(--color-primary-bluedark) 101.39%);
+//   border-radius: 4px 120px;
+
+//   /* для расположить текст на карточке к нижнему краю, был к верхнему */
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+// }
+
+// // .procedure-card-image {
+// // .procedure-section__image {
+// &__image {
+//   position: absolute;
+//   /* для растянуть картинку по всей ширине карточки procedure-card */
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 4px 120px;
+//   /* положить jpg ниже текста карточки, иначе текст не виден, накрывается картинкой */
+//   z-index: -1;
+//   /* max-width: 344px; */
+//   /* max-height: 456px; */
+// }
+
+
+// /* h3 без класса был, других h3 нет. только На картинках процедур */
+// // h3 {
+// // .procedure-section__titleh3 {
+// &__titleh3 {
+//   /* до процедуры де.,   Rectangle 5080,   Rectangle 5081  снизу от текста h3 .
+//       пока относительно себя (h3) - ни о чем в браузере. Для позже*/
+//   /* margin: 372px 77px 32px 115px; */
+//   /* пока вместо по-умолч для h3 22px сделать 32 */
+//   /* margin-bottom: 32px;   - padding сделать, причем разный... */
+//   margin-bottom: 0px;
+//   padding-bottom: 32px;
+//   /* margin: 0px;
+//   padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+
+//   font-size: 22px;
+//   /* должен наследоваться 400, но нет, здесь получается font-weight=700. Надо указать */
+//   font-weight: 400;
+//   text-align: center;
+//   color: var(--color-primary-white);
+//   /* 26/22=1.2 доминантная*/
+//   /* line-height: 1.2; */
+
+//   /* текст как в макете сделать на карточках 
+//   Max-width 152px не дает результата точного 
+//    Br делать,
+//     чтобы «для” на другой строке было */
+//   max-width: 152px;
+//   align-self: center;
+// }
+
+
+// //вверх
+// // .procedures-container {
+// // .procedure-section__container {
+// &__container {
+//   display: flex;
+//   /* центрировать кнопки - стрелки по вертикали в этом flex-родителе */
+//   align-items: center;
+//   /* между кнопками и div из 3-х карточек с обеих сторон*/
+//   gap: 32px;
+//   /* Центрировать элементы в flex по осн гориз оси. 
+//   Иначе справа остается место до края от кнопки, а слева - нет
+//   Так - поровну слева и справа остается до края. 
+//   Это из-за ширина общего div 1240, а ширина div procedures сложением всех элеемнтов и отступов меньше. 1216 */
+//   /* justify-content: center; */
+//   /* justify-content: space-between; ничего не меняет для ширины карточек*/
+//   /* по макету так. И так выдерживает 344 шириана карты без ее указания */
+//   max-width: 1216px;
+//   width: 100%;
+// }
+
+
+// //вверх
+// // .procedure-list {
+// // .procedure-section__list {
+// &__list {
+//   /* ul */
+//   /* расположить список горизонтально */
+//   display: flex;
+//   flex-wrap: wrap;
+//   /* max-width: 1064px; сначала помогло тотлько это расширению карточек до кнопок в ширину */
+//   /* Это помогло ширину карточек увеличить!!! без нее - снова сужается */
+//   width: 100%;
+//   /*на макете :*/
+//   gap: 16px;
+//   /* на всю ширину распределить (отцентрировалось) */
+//   /* justify-content: space-between;  тоже ненадо для ширины 3х карточек */
+//   /* +flex-basis: calc((100% - 112px) / 3); чтобы переносились на след. строку по 3 в ряд*/
+// }
+
+
+// //вверх
+// // .procedure-item {
+// // .procedure-section__item {
+// &__item {
+//   /* background-color: red; */
+//   /* убрала все, кроме расчета /3
+//   помогло - -карточки расширились до кнопок!!! */
+//   /* max-width: 344px;
+//   max-height: 456px; */
+//   /* width: 100%; */
+
+//   /* задать размер элементу для переноса на след. строку браузером по wrap.
+//    32 px это 2 gap по 16 px . Гибкое расстояние между блочками*/
+//   flex-basis: calc((100% - 32px) / 3);
+//   /* text-align: center; */
+// }
+
+
+//  <* вынесено в /componetes/_procedure-card.scss * -h>
+// //вверх
+// // .procedure-card {
+// // .procedure-section__card {
+// &__card {
+//   /* пока так градиент на 3х картинках процедур. позже слоями наверное */
+//   /* для спозиционирвать на карточке фон-изображение. вместе с .procedure-card-image      position: absolute; */
+//   position: relative;
+//   /* max-width: 344px;*/
+//   height: 456px;
+//   background-image: linear-gradient(180.05deg,
+//       rgba(1, 28, 68, 0) 48.53%,
+//       rgba(1, 28, 68, 0.725825) 84.61%,
+//       var(--color-primary-bluedark) 101.39%);
+//   border-radius: 4px 120px;
+
+//   /* для расположить текст на карточке к нижнему краю, был к верхнему */
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+// }
+
+// .procedure-item img {
+/* перенесено в .procedure-card-image но карточка исчезла - делать по мод14 завтра*/
+/* max-width: 344px;
+  max-height: 456px; */
+/* width: 100%;  ничего не меняет */
+/* border: 1px solid red; */
+/* Из макета: */
+/* border-radius: 4px 120px; */
+// }
+
+// //вверх
+// // .procedure-card-image {
+// // .procedure-section__image {
+// &__image {
+//   position: absolute;
+//   /* для растянуть картинку по всей ширине карточки procedure-card */
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 4px 120px;
+//   /* положить jpg ниже текста карточки, иначе текст не виден, накрывается картинкой */
+//   z-index: -1;
+//   /* max-width: 344px; */
+//   /* max-height: 456px; */
+// }
+
+// //вверх
+// /* h3 без класса, других h3 нет. только На картинках процедур */
+// // h3 {
+// // .procedure-section__titleh3 {
+// &__titleh3 {
+//   /* до процедуры де.,   Rectangle 5080,   Rectangle 5081  снизу от текста h3 .
+//       пока относительно себя (h3) - ни о чем в браузере. Для позже*/
+//   /* margin: 372px 77px 32px 115px; */
+//   /* пока вместо по-умолч для h3 22px сделать 32 */
+//   /* margin-bottom: 32px;   - padding сделать, причем разный... */
+//   margin-bottom: 0px;
+//   padding-bottom: 32px;
+//   /* margin: 0px;
+//   padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+
+//   font-size: 22px;
+//   /* должен наследоваться 400, но нет, здесь получается font-weight=700. Надо указать */
+//   font-weight: 400;
+//   text-align: center;
+//   color: var(--color-primary-white);
+//   /* 26/22=1.2 доминантная*/
+//   /* line-height: 1.2; */
+
+//   /* текст как в макете сделать на карточках 
+//   Max-width 152px не дает результата точного 
+//    Br делать,
+//     чтобы «для” на другой строке было */
+//   max-width: 152px;
+//   align-self: center;
+// }
+//  <* вынесено в /componetes/_procedure-card.scss * -e>
+
+
+// //  <* вынесено в /componetes/_carousel-button.scss * -h>
+// /* Carousel */
+// .carousel-button {
+//   width: 44px;
+//   height: 44px;
+//   /* Кнопочка кругленька */
+//   border-radius: 50%;
+
+//   /* исправить по-умолч что добавил браузер кнопке */
+//   background-color: var(--color-primary-white);
+//   /* background-color: transparent; */
+//   border: 1px solid var(--color-primary-bluedark);
+//   padding: 0;
+//   /*  Центрировать иконку внутри кнопки button: */
+//   display: flex;
+//   /* по основной оси */
+//   align-items: center;
+//   /* по вспомогательной оси, вертикально : */
+//   justify-content: center;
+//   /* чтобы круглые кнопки не сжимались до эллипса после display-flex новому div "formats-container" */
+//   flex-shrink: 0;
+//   /* курсор ручкой над кнопкой */
+//   cursor: pointer;
+//   /* fill наследуется от кнопки - перенесено  в кнопку из иконки .carousel-arrow {}*/
+//   fill: var(--color-primary-bluedark);
+// }
+
+// .carousel-button:hover {
+//   /* наведение на кнопку круглую со стрелкой - фон синий */
+//   background-color: var(--color-primary-blue);
+//   border: 1px solid var(--color-primary-white);
+//   /* fill наследуется от кнопки - перенесено  в кнопку из иконки .carousel-button: hover .carousel-arrow{} */
+//   fill: var(--color-primary-white);
+// }
+
+// .carousel-button.next {
+//   /* повернуть круглую кнопку-стрелку справа НАПРАВО */
+//   transform: rotate(180deg);
+// }
+
+// /* .carousel-button:hover .carousel-arrow {
+//   наведение на кнопку круглую со стрелкой - сама стрелка иконка svg внутри кнопки становится белой
+//   fill: var(--color-primary-white);
+// } */
+
+// /* .carousel-arrow { */
+// /* fill здесь в иконке-стрелке наследуется от кнопки - переносим в кнопку -родителя */
+// /* fill: var(--color-primary-bluedark); */
+// /* } */
+// //  <* вынесено в /componetes/_carousel-button.scss * -e>

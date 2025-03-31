@@ -1,0 +1,31 @@
+//перенесено из файла /layouts/_modal.scss
+.form-terms {
+    /* текст под кнопкой на форме */
+    /* Для Центрирвоать текст под кнопкой – margin: 0 auto */
+    margin: 0 auto;
+    max-width: 213px;
+    /* font-weight: 400; доминантный*/
+    font-size: 12px;
+    /* 1.5=18/12 */
+    line-height: 1.5;
+    color: var(--color-secondary-greylight);
+    text-align: center;
+
+    // .form-terms__link {
+    &__link {
+        /* по-умолч ссылка - фиолет, поменять на цвет по дизайну */
+        color: var(--color-secondary-greylight);
+        /* отступ до линии подчеркивания ссылки по-умолч отстутствует, а надо 2px */
+        text-underline-offset: 2px;
+    }
+
+}
+
+// //вверх
+// // .form-terms__link {
+// &__link {
+//     /* по-умолч ссылка - фиолет, поменять на цвет по дизайну */
+//     color: var(--color-secondary-greylight);
+//     /* отступ до линии подчеркивания ссылки по-умолч отстутствует, а надо 2px */
+//     text-underline-offset: 2px;
+// }

@@ -1,0 +1,82 @@
+/* Section all  */
+/* одинаковый класс всем секциям, кроме header,footer,hero-section -нет*/
+.section {
+  padding: 20px 0;
+
+  @media screen and (min-width: $bp-desktop) {
+    /* расстояния 96 между секциями - по 48 вертикальным отступам каждый соседний 
+  1.верхняя секция padding-bottom и 2. Нижняя соседняя секция padding-top  */
+    /* горизонтальные- 0 */
+    // padding: 48px 0; // dog  убрать сверху снизу 48 
+    // padding: 48px 0 0 0; // dog  (96 /2 между why-us porcedure)  
+    // dog - только моб версия ., только padding одинак
+    //добавлены каждой секции свои разныее padding top bottom
+
+    // эта  толкьо для why-us осталась  - снизу 48 (для 96/2 между why-us  procedure)
+    padding: 0 0 48px 0;
+
+  }
+
+  /* Main h2*/
+  /* Для всех section h2  : */
+  // /*section h2 {*/ 
+  // /*section h2*/ переделать в класс section__title 
+  // и добавить в html этот класс ко всем секциям 
+  //Для задания стиля тэгами section h2 (тэги) ненадо было в html ничего писать. 
+  //Если класс – надо добавлять во все тэги h2 этот класс
+  //перенесен в _section.scss
+  // .section__title {
+  &__title {
+    // font-family: "Rowdies", sans-serif;
+    font-family: "Rowdies";
+    font-weight: 400;
+    font-size: 32px;
+    // /*37.5px/32px =1.17 ~ 1.2 наследует*/    /* line-height: 1.2; */
+    // 39.74/32px=1.24  ~1.2 наследует
+    // line-height: 1.2;
+    line-height: 100%;
+    text-align: center;
+
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 56px;
+      // /*74px/64px =1.16 ~ 1.2 наследует*/       /* line-height: 1.2; */
+      // 69.55px/56px=1.24
+      // line-height: 1.24;
+
+      /* ДЛя всех h2 всех секций 48. ДЛя 2-й секции about-us - отдельный класс - только во 2й 40px */
+      margin-bottom: 48px;
+      // text-align: center;    вверху
+    }
+
+    &--left {
+      //     /* все h2 center, кроме about-us-section */
+      // так сработало left
+      // Проблема была - срабатывает только из section_title text-align: center;
+      // А Left Из других файлов scss не берет
+      text-align: left;
+      //так работает. Но - можно убрать. Другое решенеие - В maim.scss перенесла section вверх, как в образце - теперь приоритетено србатывают стили текущей секции. в ф12 они выше , над _section
+    }
+  }
+
+}
+
+// /* Main h2*/
+// /* Для всех section h2  : */
+// // /*section h2 {*/ 
+// // /*section h2*/ переделать в класс section__title 
+// // и добавить в html этот класс ко всем секциям 
+// //Для задания стиля тэгами section h2 (тэги) ненадо было в html ничего писать. 
+// //Если класс – надо добавлять во все тэги h2 этот класс
+// //перенесен в _section.scss
+// // .section__title {
+// &__title {
+//   font-family: "Play", sans-serif;
+//   font-size: 64px;
+//   font-weight: 700;
+//   /*74px/64px =1.16 ~ 1.2 наследует*/
+//   /* line-height: 1.2; */
+
+//   /* ДЛя всех h2 всех секций 48. ДЛя 2-й секции - отдельный класс - только во 2й 40px */
+//   margin-bottom: 48px;
+//   text-align: center;
+// }

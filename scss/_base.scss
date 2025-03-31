@@ -1,0 +1,96 @@
+/* Base */
+
+*,
+*::before,
+*::after {
+    /* размеры блока padding  border  отсчитывать внутрь блока */
+    box-sizing: border-box;
+}
+
+// html {
+//     scroll-behavior: smooth;
+// }
+
+body {
+
+    /* Доминантный */
+    // Ненадо для мобверсии отдельный шрифт – там больше текста тоже 18/21 400
+    // одинак для десктоп (меню и карточки why-us) и моб(about-us, why-us)
+
+    // @media screen and (min-width: $bp-desktop) {
+
+    background-color: var(--color-primary-light); //#FFFAF3; беж  , можно  ненадо
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    // color: var(--color-primary-bluedark);
+    // line-height: 1.2; /* 21 /18=1.2 */
+    color: var(--color-primary-black); //181817
+    line-height: 1.2; //18.75/16  = 1,18
+
+
+    /* center в доминантные задают? нужен в 1. .under-button 2. section h2 3.  .section-why-us-p 4. h3 ...
+  ПОка убираю здесь . м.б. отменять его будет больше , чем назначать. ПОзже  */
+    /* text-align: center; */
+
+    /* по-умолч margin body есть. убрать */
+    margin: 0;
+
+    // это фон от волны - _wave.scss
+    // background-image: linear-gradient(38.2deg,
+    //         rgba(43, 127, 255, 0.2) 39.74%,
+    //         rgba(43, 127, 255, 0) 54.16%,
+    //         rgba(43, 127, 255, 0) 66.66%);
+    // }
+
+    @media screen and (min-width: $bp-tablet) {
+        font-size: 18px;
+        line-height: 1.33; //24/18
+    }
+}
+
+/* УБрать дефолт margin-top всем заголовкам и параграфам*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+
+img {
+    //масштабирует картинки img (logo) при уменьшении ширины экрана < width img  (108 для Logo)
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    @media screen and (min-width: $bp-desktop) {
+        // Проблема – about-us-section 2я картинка – не справа. из-за display  block для img
+        //так - решается, но как на остальны Img влияет - неявно. Визуально - норм.
+        //Но - лучше локально  и  изменю на картинке last-child в about-us-section
+        //Нет - локально не отработало в about-us-section.  imgs last-child
+        display: inline;
+    }
+}
+
+a {
+    /* всем ссылкам, чтобы сделать ссылку блоковой. Т.е. в нем буду работать размеры,
+    но оно останется строчный(рядковым) . т.е. не будет растягиваться на всю ширину родительского элемента. */
+    display: inline-block;
+}
+
+address {
+    font-style: normal;
+}
+
+ul {
+    /* пока всем ul - margin сверху снизу 0 */
+    margin: 0;
+    padding: 0;
+    /* убрать значки кружков перед элементами списка ВСЕХ на странице. селектор тэга ul, без классов*/
+    list-style-type: none;
+}

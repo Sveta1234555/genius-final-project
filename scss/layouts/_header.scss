@@ -1,0 +1,332 @@
+/* Header */
+
+.header {
+    /* прозрачное меню , но надо еще бело-прозрачность меню добавить!!*/
+    /* меню над фоном слоем */
+    position: absolute;
+    /* к левому верхнему углу body.
+       Для absolute
+      Відлік значень top,  left, bottom і right 
+      ведеться щодо найближчого предка з позиціонуванням,
+        відмінного від static. Якщо такого предка не буде,
+        то відлік від меж body*/
+    top: 0;
+    left: 0;
+    /* Растянуть header по ширине на 100%  */
+    width: 100%;
+    //для моб версии сверху
+    padding-top: 16px;
+    padding: 16px 20px 0px;
+    // или ненадо 20 c боков!!! dog???  - глянуть по БЗ figma
+
+    // /* прозрачность меню header */
+    // от планшет начиная - вниз перенесено
+    // background: rgba(255, 255, 255, 0.25);
+    // /* --color-primary-white */
+    // backdrop-filter: blur(5px);
+
+
+    @media screen and (min-width: $bp-desktop) {
+
+        // /* для замеч по дз2 по высоте header -пока так. делается позже в уроках с позициоирвоаием, и мод12 прозрачность */
+        // padding: 32px 108px 0px; //padding: 32px; БЗ
+        // padding: 32px 0px; //убрала 108 - меню перенос на 2-ю при ресайз получается с 108
+        padding: 32px 0 0 0px; //убрала 108 - меню перенос на 2-ю при ресайз получается с 108
+
+        // или ненадо 108!!! dog???  - можно как хочу (БЗ - пекарня по-разному, нещависимо от фигмы)
+        // padding-top: 32px;
+        /* прозрачное меню , но надо еще бело-прозрачность меню добавить!!*/
+        /* меню над фоном слоем */
+        /* прозрачность меню header */
+        //dog убрать!!! 
+        background: rgba(255, 255, 255, 0.25);
+        /* --color-primary-white */
+        backdrop-filter: blur(5px);
+    }
+
+    // .header-container {
+    // .header__container {
+    &__container {
+        /* 2 блока (логотип+ меню   и   иконки) стали горизонтально рядом
+        но align-items=stretch по-умолч - поэтому растянут общий список  иконок по вертикали на всю высоту строки - родительского элемента */
+        display: flex;
+        /* сделать область иконок не растянутой stretch (по-умолч), а центрированной по вертикали */
+        align-items: center;
+        /* для разделить nav и иконки при уменьшении размера экрана */
+        gap: 40px;
+
+        @media screen and (min-width: $bp-desktop) {
+            /* для разделить nav и basket при уменьшении размера экрана */
+            gap: 115px;
+        }
+    }
+
+    // .header-nav {
+    // .header__nav {
+    &__nav {
+        /* для расположить горизонтально рядом лого и меню в nav навигации */
+        display: flex;
+        /* лого и меню - центрированной по вертикали*/
+        align-items: center;
+        /* nav занял все соб. место, 3 лого связи уехали вправо */
+        flex-grow: 1;
+        /* для разделить в nav лого и меню (слева)  при уменьшении размера экрана */
+        gap: 40px;
+
+        @media screen and (min-width: $bp-desktop) {
+            /* для разделить nav и basket при уменьшении размера экрана */
+            gap: 115px;
+        }
+    }
+
+    // .header-menu {
+    // .header__menu {
+    &__menu {
+        //моб версия и таблет - нет меню наваигации
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            // от десктоп версии - меню есть
+            /* Элементы меню расположить горизонтально */
+            display: flex;
+            /* для задать расстояние между элементами меню */
+            gap: 48px; // 56px;
+            /* Чтобы меню заняло все свободно место в родительском элементе nav (класс  .header-nav) :   часть займет лого, а все оставшееся - меню ul */
+            flex-grow: 1;
+            /* выравнять элементы меню по главной горизонтальной оси (в рамках занятого им (меню) места nav) */
+            justify-content: center;
+        }
+    }
+
+
+
+    // .header-link {
+    // .header__link {
+    &__link {
+        /* color: var(--color-primary-bluedark); доминантный/ Но не отработало без указания здесь цвета . М.б. это нажатый ранее цвет ссылки. Нет. доббавляла нов li - цвет неправильный*/
+        color: var(--color-primary-black);
+        white-space: nowrap; //не переносить меню .(при 108 с краев header и 115 gap от меню в стороны - 2-я строка меню)
+        /* font-size: 18px; */
+        // text-decoration: none;   //перенесено в класс и файл .link
+        /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
+        // transition: color 0.2s, font-weight 0.2s; //перенесено в класс и файл .link
+    }
+
+    &__socials {
+        // по БЭМ socials надо сделать элементом хедера, чтобы спрятать socials в рамках хедера
+        // (не смотря на то что есть файл со стилями _socials.scss)
+        // убрать 3иконки для моб версии до ширины 1200 px
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: flex;
+        }
+    }
+
+    // .address-icon-header {
+    // .header__address-icon {
+    // &__address-icon {
+    &__socials-icon {
+        // fill: var(--color-primary-bluedark);
+        fill: var(--color-primary-orange);
+        transition: fill 0.2s;
+
+        // .address-icon-header :hover {
+        // .header__address-icon :hover {
+        // &__socials-icon {
+        & :hover {
+            /* так - срабатывал hover только при наведении на саму линию на иконке( цвет менялся) */
+            // добавлено родителю цвет ( .icon-link-ul: hover)
+            // fill: var(--color-primary-blue);
+            fill: var(--color-secondary-yellow);
+        }
+    }
+
+    // header__basket
+    &__basket {
+        display: flex;
+        // justify-content: center;
+        // gap: 20px;
+        align-items: center;
+        // flex-shrink: 0; //не менять размер корзинки
+
+        justify-content: flex-start; //по гл.оси
+
+        // //16 – между basket и burger. 
+        // А это назначается между basket и кнопкой Contact.
+        // А contact в моб версии нет. // Где назначать 16 между basket и burger. 
+        gap: 16px;
+
+        @media screen and (min-width: $bp-desktop) {
+            gap: 24px; //от корзины basket до кнопки Contact.  desktop
+        }
+    }
+
+
+    // header__basket-icon {
+    &__basket-icon {
+        //корзинка в header
+        width: 24px;
+        height: 100%;
+
+        // fill: var(--color-primary-bluedark);
+        fill: var(--color-primary-orange);
+        transition: fill 0.2s;
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 40px;
+        }
+
+        & :hover {
+            /* так - срабатывал hover только при наведении на саму линию на иконке( цвет менялся) */
+            // добавлено родителю цвет ( .icon-link-ul: hover)
+            // fill: var(--color-primary-blue);
+            fill: var(--color-secondary-yellow);
+        }
+    }
+
+    &__burger {
+        // добавить кнопку 3 черточки меню для моб версии до ширины 768  px
+        // display: block;              кнопка burger и так блочная width: 24px;
+        height: 24px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        fill: var(--color-primary-orange); //линии стали оранж (были черные)
+
+        @media screen and (min-width: $bp-desktop) {
+            // на десктопе >768px кнопки мобильнонго меню нет
+            display: none;
+        }
+    }
+}
+
+
+
+
+//перенесен выше внутрь .container-a
+// // .header-container {
+// .header__container {
+//     /* 2 блока (логотип+ меню   и   иконки) стали горизонтально рядом
+//     но align-items=stretch по-умолч - поэтому растянут общий список  иконок по вертикали на всю высоту строки - родительского элемента */
+//     display: flex;
+//     /* сделать область иконок не растянутой stretch (по-умолч), а центрированной по вертикали */
+//     align-items: center;
+//     /* для разделить nav и иконки при уменьшении размера экрана */
+//     gap: 40px;
+// }
+
+//перенесен выше внутрь .container-a
+// // .header-nav {
+// .header__nav {
+//     /* для расположить горизонтально рядом лого и меню в nav навигации */
+//     display: flex;
+//     /* лого и меню - центрированной по вертикали*/
+//     align-items: center;
+//     /* nav занял все соб. место, 3 лого связи уехали вправо */
+//     flex-grow: 1;
+//     /* для разделить в nav лого и меню (слева)  при уменьшении размера экрана */
+//     gap: 40px;
+// }
+
+//перенесен выше внутрь .container-a
+// // .header-menu {
+// .header__menu {
+//     /* Элементы меню расположить горизонтально */
+//     display: flex;
+//     /* для задать расстояние между элементами меню */
+//     gap: 56px;
+//     /* Чтобы меню заняло все свободно место в родительском элементе nav (класс  .header-nav) :   часть займет лого, а все оставшееся - меню ul */
+//     flex-grow: 1;
+//     /* выравнять элементы меню по главной горизонтальной оси (в рамках занятого им (меню) места nav) */
+//     justify-content: center;
+// }
+
+
+/* .address-icon-header*/
+//перенесен выше внутрь .container-a
+// .address-icon-header  -> .header__address-icon
+
+// // .address-icon-header {
+// // .header__address-icon {
+// &__address-icon {
+//     fill: var(--color-primary-bluedark);
+// }
+
+// // .address-icon-header :hover {
+// // .header__address-icon :hover {
+// &__address-icon :hover {
+//     /* так - срабатывал hover только при наведении на саму линию на иконке( цвет менялся) */
+//     // добавлено родителю цвет ( .icon-link-ul: hover)
+//     fill: var(--color-primary-blue);
+// }
+
+
+
+//перенесен выше внутрь .container-a
+// // .header-link {
+// .header__link {
+//     /* color: var(--color-primary-bluedark); доминантный/ Но не отработало без указания здесь цвета . М.б. это нажатый ранее цвет ссылки. Нет. доббавляла нов li - цвет неправильный*/
+//     color: var(--color-primary-bluedark);
+//     /* font-size: 18px; */
+//     // text-decoration: none;   //перенесено в класс и файл .link
+//     /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
+//     // transition: color 0.2s, font-weight 0.2s; //перенесено в класс и файл .link
+// }
+
+
+
+/* .header-link:visited {
+  color: var(--color-primary-blue);
+} */
+
+
+/* .icon-link-ul */
+// // вынесла в отд. файл /components/_icon-link-ul.scss   @import в main.scss
+// // их 2 класса было с одним названием - перенесла сюда (в header)  из footer
+// /*  icon-link-ul */
+// .icon-link-ul {
+//     // от header
+//     display: flex;
+//     flex-flow: row wrap;
+//     /* вернуться!!! */
+//     background: white;
+//     /* background: transparent; */
+
+//     // от footer-a
+//     /* 174x42 */
+//     max-width: 174px;
+//     max-height: 42px;
+//     width: 100%;
+//     justify-content: space-between;
+//     /* иконки на синем фоне - нет так. свовсем не видно!!!! вернуться */
+//     /* по Mod10 иконки svg backcolor белый, теперь это надо */
+//     background-color: transparent;
+// }
+
+// .icon-link-ul :hover {
+//     /* При наведені на іконки hover зʼявляється тільки коли наводиш саме на лінію іконки, а коли курсор в середині іконки (на білому фоні) hover не працює. Думаю треба ховер задати "коробочці" іконки, тегу li наприклад */
+
+//     /* Выделяется при наведенеии только на свой квдратик самого значка, между ними (если это все для браузеоа - ul) – не срабаывает. 
+//   ок */
+//     /* Причем – это и хедер и в футер – один класс на ul */
+//     /* так - норм. при наведении  */
+//     fill: var(--color-primary-blue);
+// }
+
+
+// //перенесла в _header.scss пока. может потом выделю icon-link-ul
+// /* иконки в header и footer одинак с mrgn-bt=0. взял 16 от "address li". Обнулить */
+// // нужен в футере только по идее (в хедере этого родителя address нет , mrgn-bt=0 итак) но ничего не ломает. пусть
+// .icon-link-ul li {
+//     margin-bottom: 0;
+// }
+
+// // Img нет. Img cделано svg – можно убрать это:
+// // .icon-link-ul img {
+// //     /* margin-bottom: 0; */
+// //     /* ??? */
+// //     /* картинку как 42 42 сдеать? max-width: 42px; */
+// //     max-height: 42px;
+// //     width: 100%;
+// // }

@@ -1,0 +1,36 @@
+@import './utils/fonts';
+@import './utils/variables';
+@import './base';
+
+@import './utils/texts';
+@import './utils/utils';
+
+
+@import './components/buttons';
+@import './components/logo';
+@import './components/carousel-button';
+// @import './components/icon-link-ul';
+@import './components/input';
+@import './components/links';
+@import './components/procedure-card';
+@import './components/pagination';
+@import './components/sled';
+@import './components/stars';
+@import './components/socials';
+@import './components/wave';
+
+@import './layouts/section';
+@import './layouts/about-us-section';
+@import './layouts/contacts-section';
+@import './layouts/container';
+@import './layouts/footer';
+@import './layouts/form-terms';
+@import './layouts/header';
+@import './layouts/hero-section';
+@import './layouts/mobile-menu';
+@import './layouts/modal';
+@import './layouts/procedure-section';
+// @import './layouts/section-about-us';
+//@import './layouts/about-us-section';  вверх по алф.
+// @import './layouts/section'; //вверх по образцу - так, вверху, section Не перекрывает особые стили остальных секций
+@import './layouts/why-us-section';

@@ -1,0 +1,78 @@
+/* Carousel */
+.carousel-button {
+    width: 44px;
+    height: 44px;
+    /* Кнопочка кругленька */
+    border-radius: 50%;
+
+    /* исправить по-умолч что добавил браузер кнопке */
+    background-color: var(--color-secondary-grey);
+    backdrop-filter: blur(15.36px);
+
+    /* background-color: transparent; */
+    // border: 1px solid var(--color-primary-bluedark);
+    border: 2px solid var(--color-primary-white);
+
+    padding: 0;
+    /*  Центрировать иконку внутри кнопки button: */
+    display: flex;
+    /* по основной оси */
+    align-items: center;
+    /* по вспомогательной оси, вертикально : */
+    justify-content: center;
+    /* чтобы круглые кнопки не сжимались до эллипса после display-flex новому div "formats-container" */
+    flex-shrink: 0;
+    /* курсор ручкой над кнопкой */
+    cursor: pointer;
+    /* fill наследуется от кнопки - перенесено  в кнопку из иконки .carousel-arrow {}*/
+    // fill: var(--color-primary-bluedark);
+    fill: var(--color-primary-white);
+
+    // .carousel-button:hover {
+    &:hover {
+        /* наведение на кнопку круглую со стрелкой - фон оранж */
+        // background-color: var(--color-primary-blue);
+        background-color: var(--color-primary-orange);
+        // backdrop-filter: blur(15.36px);   //выше назначен
+        // border: 2px solid var(--color-primary-white); //выше назначен
+        /* fill наследуется от кнопки - перенесено  в кнопку из иконки .carousel-button: hover .carousel-arrow{} */
+        // fill: var(--color-primary-white); //выше назначен
+
+
+    }
+
+    // .carousel-button.next {
+    &.next {
+        /* повернуть круглую кнопку-стрелку справа НАПРАВО */
+        transform: rotate(180deg);
+    }
+
+}
+
+// //вверх
+// // .carousel-button:hover {
+// &:hover {
+//     /* наведение на кнопку круглую со стрелкой - фон синий */
+//     background-color: var(--color-primary-blue);
+//     border: 1px solid var(--color-primary-white);
+//     /* fill наследуется от кнопки - перенесено  в кнопку из иконки .carousel-button: hover .carousel-arrow{} */
+//     fill: var(--color-primary-white);
+// }
+
+
+// //вверх
+// // .carousel-button.next {
+// &.next {
+//     /* повернуть круглую кнопку-стрелку справа НАПРАВО */
+//     transform: rotate(180deg);
+// }
+
+/* .carousel-button:hover .carousel-arrow {
+  наведение на кнопку круглую со стрелкой - сама стрелка иконка svg внутри кнопки становится белой
+  fill: var(--color-primary-white);
+} */
+
+/* .carousel-arrow { */
+/* fill здесь в иконке-стрелке наследуется от кнопки - переносим в кнопку -родителя */
+/* fill: var(--color-primary-bluedark); */
+/* } */
