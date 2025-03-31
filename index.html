@@ -4,270 +4,1207 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOGclub Svet</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title lang="en">DOGclub Svet</title>
+    <!--index был - из d:\IT_FullStack\ФиналПроект\genius-homework-4-mainBEMafter\ -->
+    <!-- Fonts -->
+    <!--Font play 700 400-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- Font Roboto  900 700 400 -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Fonts dog-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&family=Roboto:wght@100..900&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/main.css" /> -->
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <!-- Logo and menu  -->
-        <img
-          src="./images/icon-sled-logo.svg"
-          alt="Veterinary clinic icon DOGclub"
-        />
-        <a href="#">
-          <img src="./images/logo.svg" alt="Veterinary clinic logo DOGclub"
-        /></a>
+    <!-- Это названия id section– для ссылок (SCSS называются по классам, а не по id) -->
+    <!-- section-about-us   - section-less-talk  -->
+    <!-- section-why-us  -> section-services-category -->
+    <!-- section-our-procedures-> section-happy-customer -->
+    <!-- section-contacts -->
 
-        <!-- Это названия id section– для ссылок (SCSS называются по классам, а не по id) -->
-        <!-- section-about-us   - section-less-talk  -->
-        <!-- section-why-us  -> section-services-category -->
-        <!-- section-our-procedures-> section-happy-customer -->
-        <ul>
-          <li>
-            <a class="header-link" href="#section-less-talk">Less talk</a>
-          </li>
-          <li>
-            <a class="header-link" href="#section-services-category"
-              >Services category</a
+    <!-- <div class="wave1"></div> -->
+    <header class="header">
+      <div class="container">
+        <!-- <div class="header-container"> -->
+        <div class="header__container">
+          <!-- <nav class="header-nav"> -->
+          <nav class="header__nav">
+            <!-- Logo and menu  -->
+            <!-- <img
+              src="./images/icon-sled-logo.svg"
+              alt="Veterinary clinic icon DOGclub"
+            /> -->
+
+            <!-- <a class="logo" href="#"> </a> -->
+            <!-- class logo - можно  для  before след на всех элементах - header, footer. Сейчас - flex// -->
+            <a class="logo" href="#">
+              <img
+                class="logo-sled-size logo-sled-size__header"
+                src="./images/icon-sled-logo.svg"
+                alt="Veterinary clinic icon DOGclub"
+              />
+
+              <img
+                class="logo-width__header"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a>
+
+            <!-- <ul class="header-menu"> -->
+            <ul class="header__menu">
+              <li>
+                <!-- <a class="header-link  -->
+                <a class="header__link link" href="#section-less-talk"
+                  >Less talk</a
+                >
+              </li>
+              <li>
+                <!-- <a class="header__link link" href="#section-why-us">Чому ми</a> -->
+                <a class="header__link link" href="#section-services-category"
+                  >Services category</a
+                >
+              </li>
+              <li>
+                <a class="header__link link" href="#section-happy-customer"
+                  >Happy customer</a
+                >
+              </li>
+              <li>
+                <a class="header__link link" href="#section-contacts"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <!-- <div> -->
+          <!-- <ul class="icon-link-ul"> -->
+          <!-- <ul class="socials socials--header"> -->
+          <!-- <ul class="header__socials socials socials--header"> -->
+          <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
+          <!-- </ul> -->
+
+          <!-- <div class="header__socials socials socials--header"> -->
+          <div class="header__basket">
+            <a
+              rel="noopener noreferrer"
+              href="tel:+38(096)0000007"
+              title="Veterinary clinic icon basket"
+              target="_blank"
             >
-          </li>
-          <li>
-            <a class="header-link" href="#section-happy-customer"
-              >Happy customer</a
+              <!-- <svg class="header__socials-icon" width="40" height="40"> -->
+              <svg class="header__basket-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-header-basket"></use>
+              </svg>
+            </a>
+
+            <button
+              class="button button__section button__mob-hide modal-btn-open"
+              type="button"
             >
-          </li>
-          <li><a class="header-link" href="#section-contacts">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- 3 contacts -->
-      <img
-        src="./images/icon-header-basket.svg"
-        alt="Veterinary clinic icon basket"
-      />
-      <button class="button-primary" type="button">Contact us</button>
+              Contact us
+            </button>
+          </div>
+
+          <button class="header__burger menu-btn-open" type="button">
+            <!-- меню бургер  3 черточки мобильного  -->
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <div class="mobile-menu">
+            <!-- class="mobile-menu__btn-close modal__btn-close menu-btn-close" -->
+            <button class="mobile-menu__btn-close menu-btn-close" type="button">
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <!-- dz4 <a class="mobile-menu__logo" href="/">
+              <img
+                class="logo-width"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a> -->
+
+            <!-- Logo and menu  -->
+
+            <a class="logo mobile-menu__logo" href="/">
+              <img
+                class="logo-sled-size"
+                src="./images/icon-sled-logo.svg"
+                alt="Veterinary clinic icon DOGclub"
+              />
+              <img
+                class="logo-width"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a>
+
+            <ul class="mobile-menu__list">
+              <li>
+                <a class="mobile-menu__link" href="#section-less-talk">
+                  Less talk
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-services-category"
+                  >Services category
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-happy-customer"
+                  >Happy customer</a
+                >
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-contacts"
+                  >Contact
+                </a>
+              </li>
+            </ul>
+            <ul class="mobile-menu__socials socials">
+              <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
+              <li>
+                <!-- <a class="icon-link" href=""> -->
+                <!-- class="icon-link" -->
+                <a
+                  rel="noopener noreferrer"
+                  href="https://www.instagram.com/"
+                  title="Instagram"
+                  target="_blank"
+                >
+                  <!-- <svg width="25" height="25" viewBox="0 0 32 32"> -->
+                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
+                  <svg class="header__socials-icon" width="32" height="32">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+                <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+              </li>
+              <li>
+                <!-- <a class="icon-link" href=""> -->
+                <!-- class="icon-link" -->
+                <a
+                  href="https://www.facebook.com/"
+                  title="Facebook"
+                  target="_blank"
+                >
+                  <!-- <svg width="16" height="28" viewBox="0 0 32 32"> -->
+                  <!-- <svg width="32" height="32" viewBox="0 0 32 32"> -->
+                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
+                  <svg class="header__socials-icon" width="32" height="32">
+                    <use href="images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-      <section>
-        <p>Косметологічна клініка</p>
-        <h1 class="hero-title" lang="en">Taking care for your Smart Dog!</h1>
-        <p class="under-button">
-          Human–canine bonding is the relationship between dogs and humans
-        </p>
-        <button class="button-primary" type="button">Explore More</button>
-        <img src="./images/dog_yellow.jpg" alt="Photo of dog" />
-        <img
-          src="./images/pexels-pixabay-220938-PhotoRoom 1.jpg"
-          alt="Photo of dog"
-        />
-        <img src="./images/hero-section-background.jpg" alt="фон" />
-        <p>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-section__container">
+            <div class="hero-section__title">
+              <!-- hero-title-mini ->   hero-section__title--mini" -->
+              <!-- hero-title-big ->   hero-section__title--big" -->
+
+              <!-- <p class="hero-section__title--mini">Косметологічна клініка</p> -->
+
+              <!-- <h1 class="hero-section__title--big" lang="en">beauty zone</h1> -->
+
+              <!-- class="text-brand    убрала из span - 'это синий цвет и все' -->
+              <h1 class="hero-section__title--big" lang="en">
+                Taking care for your
+                <span class="text-capitalize">smart dog!</span>
+              </h1>
+              <!-- </div> -->
+
+              <!-- <h1 class="hero-title" lang="en">
+          Косметологічна клініка
           <br />
-          <br />
-          --------------------
-        </p>
+          <span class="hero-title-big">beauty <br />zone</span>
+        </h1> -->
+
+              <!-- <h1 class="hero-title-mini" lang="en">Косметологічна клініка</h1>
+        <h3 class="hero-title-big">beauty zone</h3> -->
+
+              <!-- <div> -->
+
+              <!-- <p class="under-button"></p> -->
+              <p class="hero-section__top-button">
+                Human–canine bonding is the relationship between dogs and humans
+              </p>
+              <button
+                class="button button__section modal-btn-open"
+                type="button"
+              >
+                Explore More
+              </button>
+            </div>
+
+            <!-- <img
+          src="./images/photoWoman.jpg"
+          alt="Жінка лікар виконує косметологічну процедуру клієнтці"
+        /> -->
+            <!-- srcset="
+                ./images/sect1_pexels-pixabay.jpg    1x,
+                ./images/sect1_pexels-pixabay@2x.jpg 2x
+              "
+              src="./images/sect1_pexels-pixabay.jpg" -->
+
+            <img
+              class="hero-section__image"
+              srcset="./images/dog_yell.png 1x, ./images/dog_yell@2x.jpg 2x"
+              src="./images/dog_yell.jpg"
+              alt="Black dog"
+            />
+          </div>
+        </div>
       </section>
-      <section id="section-less-talk">
-        <!-- ------video - плзже разобраться . пока так     -->
-        <article style="border: 1px solid rgb(143, 143, 196); width: 250px">
-          <!-- Кнопка круглая еще!!!  видео -->
-          <!-- Simple video example -->
-          <!-- style="padding-top: 1%; background: rgb(143, 143, 196)" -->
-          <p style="padding-top: 1%">video Разобраться</p>
-          <video
-            src="./images/853770-sd_640_360_25fps.mp4"
-            autoplay="none"
-            width="250"
-            controls
-            poster="/images/video.jpg"
-          >
-            <!-- Sorry, your browser doesn't support embedded videos, but don't worry,
-          you can
-          <a href="./images/853770-sd_640_360_25fps.mp4">download it</a>
-          and watch it with your favorite video player! -->
-          </video>
-          <img src="./images/video.jpg" alt="button for video" />
 
-          <a class="footer-link" href="#">Learn more</a>
-          <button class="button-video" type="button">Video</button>
-        </article>
+      <!-- <section class="section about-us-section" id="section-about-us"> -->
+      <!-- Меняла местами, может приоритеты - нет -->
+      <!-- <section class="about-us-section section" id="section-about-us"> -->
+      <!-- убрать section - он делает только padding 48 0. Здесь перекрывают сверху др-друга Padding section и about-us-section -->
+      <!-- Вернуться к отступам между hero и about-us/
+        А пока - точно надо снизу от about-us до why-us  176=128+48 (48 - .section дают везде ниже) -->
+      <section class="about-us-section" id="section-less-talk">
+        <div class="container">
+          <!-- ------video - плзже разобраться . пока так     -->
+          <!-- <article вынесено пока в index_video.html - мешает разметке -->
 
-        <img
-          src="./images/shetland-sheepdog-lying.jpg"
-          alt="Shetland sheepdog lying"
-        />
+          <!-- <div class="about-us-container"> -->
+          <div class="about-us-section__container">
+            <!-- <svg class="star2" width="15" height="16"> -->
+            <!-- <svg class="star2">
+              <use href="./images/icons.svg#icon-star2mid"></use>
+            </svg>
+            <svg class="star1">
+              <use href="./images/icons.svg#icon-star1big"></use>
+            </svg>
+            <svg class="star3">
+              <use href="./images/icons.svg#icon-star3small"></use>
+            </svg> -->
 
-        <h2>Less talk and more walk</h2>
+            <!-- <ul class="about-us-ul-img"> -->
+            <!-- <ul class="about-us-section__imgs">
+              <li class="about-us-section__imgli">
+                <img
+                  srcset="./images/face2up.jpg 1x, ./images/face2up@2x.jpg 2x"
+                  src="./images/face2up.jpg"
+                  alt="Лицо клиента до процедур в клинике"
+                />
+              </li>
+            </ul> -->
 
-        <p class="about-us-p">
-          Sometimes our career, lifestyle, or routines can make it difficult to
-          provide your pet with the recommended amount of exercise that they
-          need. Which is why, it’s okay to use an extra hand in walking dogs so
-          they are in perfect shape, mentally and physically.
-        </p>
+            <img
+              class="about-us-section__image"
+              srcset="
+                ./images/sect2_shetland-sheepdog-lying.png    1x,
+                ./images/sect2_shetland-sheepdog-lying@2x.png 2x
+              "
+              src="./images/sect2_shetland-sheepdog-lying.png"
+              alt="Shetland sheepdog lying"
+            />
+            <svg class="food">
+              <use href="./images/icons.svg#icon-food"></use>
+            </svg>
 
-        <button class="button-primary" type="button">Explore More</button>
-        <!-- Для фона будет звездочки-->
-        <img src="./images/star3small.svg" alt="star3 for design small" />
-        <img src="./images/star2mid.svg" alt="star2 for design middle" />
-        <img src="./images/star1big.svg" alt="star1 for design big" />
+            <svg class="sled sled--left">
+              <use href="./images/icons.svg#icon-sled"></use>
+            </svg>
+            <svg class="sled sled--top">
+              <use href="./images/icons.svg#icon-sled"></use>
+            </svg>
+            <svg class="sled sled--right">
+              <use href="./images/icons.svg#icon-sled"></use>
+            </svg>
+
+            <!-- <div class="about-us-content"> -->
+            <div class="about-us-section__content">
+              <!-- <svg class="sled sled--arrow1"> -->
+              <svg class="arrow">
+                <use href="./images/icons.svg#icon-arrow11"></use>
+              </svg>
+              <!-- <h2 class="about-us-title section__title"> -->
+              <!-- <h2 class="about-us-section__title section__title"> -->
+              <!-- <div class="about-us-section__divforleft"> -->
+              <!-- <h2 class="about-us-section__title section__title text-left"> -->
+              <!-- <h2 class="about-us-section__title section__title section__title--left">   -->
+              <!-- //left своей секции теперь срабатывает т.к. @import section в main.scss перенесен вверх /layouts -->
+              <h2 class="about-us-section__title section__title">
+                Less talk <br />
+                and more walk
+              </h2>
+              <!-- </div> -->
+              <p class="about-us-section__p about-us-section__p--notlastp">
+                Sometimes our career, lifestyle, or routines can make it
+                difficult to provide your pet with the recommended amount of
+                exercise that they need. Which is why, it’s okay to use an extra
+                hand in walking dogs so they are in perfect shape, mentally and
+                physically.
+              </p>
+
+              <button
+                class="button button__section modal-btn-open"
+                type="button"
+              >
+                Explore More
+              </button>
+              <svg class="star4">
+                <use href="./images/icons.svg#icon-star1big"></use>
+              </svg>
+            </div>
+
+            <!-- <svg class="star2">
+              <use href="./images/icons.svg#icon-star2mid"></use>
+            </svg>
+            <svg class="star1">
+              <use href="./images/icons.svg#icon-star1big"></use>
+            </svg>
+            <svg class="star3">
+              <use href="./images/icons.svg#icon-star3small"></use>
+            </svg> -->
+          </div>
+        </div>
       </section>
-      <section id="section-services-category">
+
+      <!-- <section class="why-us-section section" id="section-why-us"> -->
+      <section class="why-us-section section" id="section-services-category">
         <!-- <h2>Чому люди <span>обирають нас</span></h2> -->
-        <h2>Services category</h2>
+        <div class="wave"></div>
+        <!-- <div class="container why-us-container"> -->
+        <div class="container">
+          <!-- <div class="wave"></div> -->
+          <!-- <h2 class="why-us-title section__title"> -->
+          <h2 class="why-us-section__title section__title">
+            Services category
+          </h2>
+          <div class="why-us-section__content">
+            <svg class="star2">
+              <use href="./images/icons.svg#icon-star2mid"></use>
+            </svg>
+            <svg class="arrow-services">
+              <use href="./images/icons.svg#icon-arrow11"></use>
+            </svg>
+            <ul class="why-us-section__list">
+              <li class="why-us-section__item why-us-section__item--hide">
+                <!-- <img src="./images/sect3_1grooming.svg" alt="Grooming sign" /> -->
+                <!-- <svg class="why-us-section__img" width="48" height="48">
+                <use href="images/icons.svg#icon-atom1"></use>
+              </svg> -->
+                <svg class="why-us-section__img" width="96" height="96">
+                  <use href="./images/icons.svg#icon-sect3_1grooming"></use>
+                </svg>
+                <p class="why-us-section__p">Grooming</p>
+              </li>
+              <li class="why-us-section__item">
+                <svg class="why-us-section__img" width="96" height="96">
+                  <use href="./images/icons.svg#icon-sect3_2nutrition"></use>
+                </svg>
+                <p class="why-us-section__p">Nutrition</p>
+              </li>
+              <li class="why-us-section__item why-us-section__item--hide">
+                <svg class="why-us-section__img" width="96" height="96">
+                  <use href="./images/icons.svg#icon-sect3_3training"></use>
+                </svg>
+                <p class="why-us-section__p">Training</p>
+              </li>
+              <li class="why-us-section__item why-us-section__item--hide">
+                <svg class="why-us-section__img" width="96" height="96">
+                  <use href="./images/icons.svg#icon-sect3_4bathing"></use>
+                </svg>
 
-        <ul>
-          <li>
-            <img src="./images/sect3_1grooming.svg" alt="Grooming sign" />
-            <p class="section-why-us-p">Grooming</p>
-          </li>
-          <li>
-            <img src="./images/sect3_2nutrition.svg" alt="Nutrition sign" />
-            <p class="section-why-us-p">Nutrition</p>
-          </li>
-          <li>
-            <img src="./images/sect3_3training.svg" alt="Training sign" />
-            <p class="section-why-us-p">Training</p>
-          </li>
-          <li>
-            <img src="./images/sect3_4bathing.svg" alt="Bathing sign" />
-            <p class="section-why-us-p">Bathing</p>
-          </li>
-        </ul>
+                <p class="why-us-section__p">Bathing</p>
+              </li>
+              <!-- Так получилось внизу текст. Но надо отдельный flex чтобы горизонтально рядом текст и стрелка и без gap с левыми карточками -->
+              <!-- поэтому 2 flex рядом  1. ul why-us-section__list 2. div внутри общего  -->
+              <!-- <li class="why-us-section__item--end"> -->
+              <!-- <a href="#">more services</a> -->
+              <!-- <img src="./images/arrow1.svg" alt="right arrow" /> -->
+              <!-- </li>  -->
+            </ul>
 
-        <a class="footer-link" href="#">more services</a>
-        <!-- стрелочка svg еще!!! -->
+            <!-- //так - стрелка не в ссылке -->
+            <!-- <div class="why-us-section__more why-us-section__more--end">
+              <a href="#">more services</a>
+              <svg class="icon-color" width="40" height="24">
+                <use href="./images/icons.svg#icon-arrow-more"></use>
+              </svg>
+            </div> -->
+
+            <div class="why-us-section__more why-us-section__more--end">
+              <a class="logo logo__gap" href="#"
+                >more services
+                <svg class="icon-color" width="40" height="24">
+                  <use href="./images/icons.svg#icon-arrow-more"></use>
+                </svg>
+              </a>
+              <!-- <img src="./images/arrow1.svg" alt="right arrow" /> -->
+            </div>
+            <!-- <a class="footer-link" href="#">more services</a> -->
+          </div>
+        </div>
       </section>
-      <section id="section-happy-customer">
-        <!-- <h2>Наші <span>процедури</span></h2> -->
-        <h2>Happy customer</h2>
-        <ul>
-          <li>
-            <article><h3>Christin & Tom</h3></article>
-            <img
-              src="./images/sect4_1christian-tom.jpg"
-              alt="Photo of customer Christin & Tom"
-            />
-            <p>Love the overall workout experience!</p>
-            <div>
-              <img src="./images/bone_count.svg" alt="Points counter" />
-              <p>5/5</p>
-            </div>
-          </li>
 
-          <li>
-            <article><h3>Anna & Tobby</h3></article>
-            <img
-              src="./images/sect4_2anna.jpg"
-              alt="Photo of customer Anna & Tobby"
-            />
-            <p>Amazing Products & Delivery on time.</p>
-            <div>
-              <img src="./images/bone_count.svg" alt="Points counter" />
-              <p>5/5</p>
-            </div>
-          </li>
-          <li>
-            <article><h3>Sindy & Kitch</h3></article>
-            <img
-              src="./images/sect4_3sindy.jpg"
-              alt="Photo of customer Sindy & Kitch"
-            />
-            <p>Great job with the trainer!</p>
-            <div>
-              <img src="./images/bone_count.svg" alt="Points counter" />
-              <p>5/5</p>
-            </div>
-          </li>
-        </ul>
-        <nav>. . .</nav>
+      <!-- <section class="procedure-section section" id="section-happy-customer"> -->
+      <!-- section - отступы только -->
+      <section class="procedure-section" id="section-happy-customer">
+        <div class="container">
+          <!-- <h2>Наші <span>процедури</span></h2> -->
+          <!-- <h2 class="procedure-section__title section__title"> -->
+          <h2 class="section__title">Happy customer</h2>
+
+          <!-- <div class="procedures-container"> -->
+          <div class="procedure-section__container">
+            <!-- <h2>Наші <span>процедури</span></h2> -->
+            <!-- <div></div> -->
+
+            <button
+              class="carousel-button procedure-section__button"
+              type="button"
+            >
+              <!-- <svg class="carousel-arrow" width="16" height="16"> -->
+              <svg width="16" height="16">
+                <use href="./images/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+
+            <!-- class="formats-section__container swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden" -->
+            <!-- <div class=""> -->
+            <!-- <ul class="procedure-list"> -->
+            <ul class="procedure-section__list">
+              <!-- <li class="procedure-item"> -->
+              <li class="procedure-section__item procedure-section__item--show">
+                <!-- <article><h3>Маски для обличчя</h3></article> -->
+                <!-- <img
+                  src="./images/faceprocMask1.jpg"
+                  alt="Фото жiнки на процедурi Маски для обличчя"
+                /> -->
+
+                <article class="procedure-card">
+                  <!-- <article class="procedure-section__card"> -->
+                  <!-- class="procedure-card-image" -->
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_1christian-tom.jpg    1x,
+                      ./images/sect4_1christian-tom@2x.jpg 2x
+                    "
+                    src="./images/sect4_1christian-tom.jpg"
+                    alt="Photo of customer Christin & Tom"
+                  />
+                  <div class="procedure-card__back-end">
+                    <div>
+                      <h3 class="procedure-card__titleh3">Christin & Tom</h3>
+                      <p class="procedure-card__p">
+                        Love the overall workout experience!
+                      </p>
+                      <div class="procedure-card__row-count">
+                        <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                        <div class="procedure-card__row-count--bone">
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                        </div>
+                        <p class="procedure-card__p procedure-card__p--counter">
+                          5/5
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <!-- <li class="procedure-item"> -->
+              <!-- <li class="procedure-section__item procedure-section__item--hide"> -->
+              <li class="procedure-section__item procedure-section__item--hide">
+                <article class="procedure-card">
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_2anna.jpg     1x,
+                      ./images/sect4_2anna@2x_.jpg 2x
+                    "
+                    src="./images/sect4_2anna.jpg"
+                    alt="Photo of customer Anna & Tobby"
+                  />
+                  <div class="procedure-card__back-end">
+                    <h3 class="procedure-card__titleh3">Anna & Tobby</h3>
+                    <p class="procedure-card__p">
+                      Amazing Products & Delivery on time.
+                    </p>
+                    <div class="procedure-card__row-count">
+                      <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                      <div class="procedure-card__row-count--bone">
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color__white" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                      </div>
+                      <p class="procedure-card__p procedure-card__p--counter">
+                        4/5
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <!-- <li class="procedure-item"> -->
+              <li class="procedure-section__item procedure-section__item--hide">
+                <article class="procedure-card">
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_3sindy.jpg    1x,
+                      ./images/sect4_3sindy@2x.jpg 2x
+                    "
+                    src="./images/sect4_3sindy.jpg"
+                    alt="Photo of customer Sindy & Kitch"
+                  />
+                  <div class="procedure-card__back-end">
+                    <h3 class="procedure-card__titleh3">Sindy & Kitch</h3>
+                    <p class="procedure-card__p">Great job with the trainer!</p>
+                    <div class="procedure-card__row-count">
+                      <div class="procedure-card__row-count--bone">
+                        <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                      </div>
+                      <p class="procedure-card__p procedure-card__p--counter">
+                        5/5
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <!-- </div> -->
+
+            <button
+              class="carousel-button procedure-section__button next"
+              type="button"
+            >
+              <!-- класс next добавлен для повернуть стрелку-кнопку вправо  -->
+              <svg width="16" height="16">
+                <use href="./images/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="pagination">
+            <span
+              class="pagination__button pagination__button--active"
+              aria-current="true"
+            ></span>
+            <span class="pagination__button"></span>
+            <span class="pagination__button"></span>
+          </div>
+        </div>
       </section>
-      <section id="section-contacts">
-        <!-- <h2>Як нас <span>знайти</span></h2> -->
-        <h2>Our experts will take care of your friend</h2>
+      <!-- <section class="contact-section section" id="section-contacts"> -->
+      <!-- <section class="contacts-section section" id="section-contacts"> -->
+      <!-- section - отступы только -->
+      <section class="contacts-section" id="section-contacts">
+        <div class="wave wave--contacts"></div>
 
-        <p>Fill out the form so we can contact you!</p>
-        <img
-          src="./images/sect5_187-1873965_pictures-of-dogs-walking-dog-walking-png 1.jpg"
-          alt="Photo of dog on leash"
-        />
-        <div class="signup-free">
-          <!-- <p>
-            Запишіться <span class="form-signupfree-free">безкоштовно</span>
-          </p>
-          <p>та отримайте подарунок</p> -->
-          <p class="signup-free-input">Your name</p>
-          <p class="signup-free-input">Pet name</p>
+        <div class="container">
+          <!-- <h2 class="contacts-section__title section__title">
+            Our experts will take care of your friend
+          </h2> -->
 
-          <p class="signup-free-input">Your phone</p>
-          <p class="signup-free-input">Your email</p>
-          <button class="button-primary" type="button">Contact us</button>
-          <!-- <p class="under-button">
-            Натискаючи на кнопку я погоджуюсь
-            <span class="privacy-policy">з політикою конфіденційності</span>
-          </p> -->
-          <div>
+          <svg class="sled__contacts sled__contacts--collar">
+            <use href="./images/icons.svg#icon-collar-contacts"></use>
+          </svg>
+          <svg class="sled__contacts sled__contacts--paw">
+            <use href="./images/icons.svg#icon-paw"></use>
+          </svg>
+          <svg class="sled__contacts sled__contacts--bone">
+            <use href="./images/icons.svg#icon-bone-contacts"></use>
+          </svg>
+          <div class="contacts-section__container">
+            <!-- Form         -->
+            <!-- <form name="contact-form" autocomplete="on" novalidate> -->
+            <!-- <div class="signup-free"> -->
+            <!-- <div class="contact-form-back"> -->
+
+            <img
+              class="contacts-section__imag"
+              src="./images/sect5_187-1873965_pictures-of-dogs-walking-dog-walking-png 1.png"
+              alt="Photo of dog on leash"
+            />
+
+            <div class="contacts-section__form--back">
+              <!-- <form name="contact-form" autocomplete="off"> -->
+
+              <form name="contact-form" autocomplete="off">
+                <h2 class="contacts-section__title section__title">
+                  Our experts will take care of your friend
+                </h2>
+                <p class="modal__text">
+                  Fill out the form so we can contact you!
+                </p>
+
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--user-name"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-name"
+                    >Your name</label
+                  >
+                  <input
+                    class="input__control"
+                    type="text"
+                    id="user-name"
+                    name="user-name"
+                    placeholder="Your name"
+                    pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$"
+                    required
+                  />
+                </div>
+
+                <!-- pet-name - id другое сделать!!! -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--pet-name"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="pet-name"
+                    >Pet name</label
+                  >
+                  <input
+                    class="input__control"
+                    type="text"
+                    id="pet-name"
+                    name="pet-name"
+                    placeholder="Pet name"
+                    pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$"
+                    required
+                  />
+                </div>
+
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--phone input"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-tel"
+                    >Your phone</label
+                  >
+                  <input
+                    class="input__control"
+                    type="tel"
+                    id="user-tel"
+                    name="user-tel"
+                    placeholder="Your phone"
+                    pattern="^\+380[0-9]{9}"
+                    required
+                  />
+                </div>
+
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--email input"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-email"
+                    >Your email</label
+                  >
+                  <input
+                    class="input__control"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
+
+                <!-- <button class="modal__button button" type="submit"> -->
+                <button
+                  class="button__section button button--center"
+                  type="submit"
+                >
+                  Contact us
+                </button>
+
+                <div class="footer__iagree footer__iagree--top8 text-center">
+                  <input type="checkbox" id="agree" name="agree" />
+                  <label for="agree">I agree to the privacy policy</label>
+                </div>
+
+                <!-- <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms__link" href="#"
+                    >з політикою конфіденційності</a
+                  >
+                </p> -->
+              </form>
+            </div>
+            <!-- <div class="signup-free">
+              <p class="signup-free-p">
+                Запишіться
+                <span class="text-brand">безкоштовно</span> та отримайте
+                подарунок
+              </p>
+              <p class="signup-free-input">Ваше ім'я та прізвище</p>
+              <p class="signup-free-input">Ваш номер телефону</p>
+              <p class="signup-free-input">Ваша електронна пошта</p>
+              <div class="signup-button">
+                <button class="button" type="button">
+                  Записатись безкоштовно
+                </button>
+                <p class="under-button">
+                  Натискаючи на кнопку я погоджуюсь
+                  <span class="privacy-policy"
+                    >з політикою конфіденційності</span
+                  >
+                </p>
+              </div>
+            </div> -->
+            <img
+              class="contacts-section__imag-right"
+              src="./images/pngaaa.com-4675506-min 1.png"
+              alt="Photo of a red dog peeking out"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__container-color">
+          <div class="footer__container-external">
+            <div class="footer__container">
+              <nav class="footer__nav">
+                <!-- Logo and menu  -->
+                <!-- div чтобы Logo был ссылкой с наведением только на тексте Img, поменьше -->
+                <!-- <div class="footer-logo"> -->
+                <!-- dz4  <div class="footer__logo">
+              <a href="#">
+                <img
+                  class="logo-width__footer"
+                  src="./images/logo.svg"
+                  alt="Логотип косметологічної клініки Beauty Zone"
+              /></a>
+            </div> -->
+                <div class="footer__logo-socias">
+                  <div class="footer__logo">
+                    <a class="logo" href="#">
+                      <img
+                        class="logo-sled-size logo-sled-size__footer"
+                        src="./images/icon-sled-logo.svg"
+                        alt="Veterinary clinic icon DOGclub"
+                      />
+
+                      <img
+                        class="logo-width__footer"
+                        src="./images/logo.svg"
+                        alt="Veterinary clinic logo DOGclub"
+                      />
+                    </a>
+                  </div>
+
+                  <ul class="socials footer__socials-before">
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/"
+                        title="Instagram"
+                        target="_blank"
+                      >
+                        <!-- <svg width="32" height="32"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-instagram"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                    </li>
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        href="https://www.facebook.com/"
+                        title="Facebook"
+                        target="_blank"
+                      >
+                        <!-- <svg width="22" height="37"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- <ul class="footer-menu footer--ul"> -->
+                <!-- <ul class="footer__menu footer__ul"> убрала footer__ul был только отстпу 16 для li-->
+                <ul class="footer__menu">
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-about-us"> -->
+                    <a class="footer__link link" href="#section-less-talk">
+                      Less talk</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-why-us">Чому ми</a> -->
+                    <a
+                      class="footer__link link"
+                      href="#section-services-category"
+                      >Services category</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-our-procedures" -->
+                    <a class="footer__link link" href="#section-happy-customer"
+                      >Happy customer</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-contacts" -->
+                    <a class="footer__link link" href="#section-contacts"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+
+              <ul class="socials footer__socials-after">
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/"
+                    title="Instagram"
+                    target="_blank"
+                  >
+                    <!-- <svg width="32" height="32"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                </li>
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    href="https://www.facebook.com/"
+                    title="Facebook"
+                    target="_blank"
+                  >
+                    <!-- <svg width="22" height="37"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                </li>
+              </ul>
+
+              <form name="contact-form" autocomplete="off">
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--email input"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-email"
+                    >Your email</label
+                  >
+                  <input
+                    class="input__control"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
+
+                <div class="contacts-section__form-field input">
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-cmc"
+                    >Your cmc</label
+                  >
+                  <input
+                    class="input__control"
+                    type="text"
+                    id="user-cmc"
+                    name="user-cmc"
+                    placeholder="Your cmc"
+                    required
+                  />
+                </div>
+
+                <!-- <button class="modal__button button" type="submit"> -->
+                <!-- <button class="contacts-section__button button" type="submit"></button> -->
+                <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
+
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div>
+
+                <!-- <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms__link" href="#"
+                    >з політикою конфіденційності</a
+                  >
+                </p> -->
+              </form>
+
+              <!-- <address class="footer-address footer-address-ul"> -->
+            </div>
+            <!-- png - чтобы лапка на фон  сверху свисала -->
+            <img
+              class="footer__dog-img"
+              src="./images/footer-dog.png"
+              alt="Photo of a small dog"
+            />
+          </div>
+        </div>
+        <!-- картинку псевдоэлементом ::after в _footer.scss -->
+        <!-- <img src="./images/PhotoRoom.png" alt="Фото пляшечок з ліками" /> -->
+        <!-- </div> -->
+      </div>
+    </footer>
+
+    <div class="backdrop is-hidden">
+      <!-- Пока убрать is-hidden на время разработки формы . Вернуть is-hidden потом!!! -->
+      <!-- <div class="backdrop is-hidden"> -->
+      <div class="modal">
+        <!-- <button class="modal-btn-close" type="button"> -->
+        <button class="modal__btn-close modal-btn-close" type="button">
+          <svg width="32" height="32">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <!-- <h2 class="modal-title">Замовити дзвінок</h2> -->
+        <h2 class="modal__title">Our experts will take care of your friend</h2>
+
+        <svg class="sled sled__modal sled__modal--right-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+        <svg class="sled sled__modal sled__modal--right-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <!-- <form name="contact-form" autocomplete="on" novalidate> -->
+        <form name="modal-form" autocomplete="on">
+          <p class="modal__text">Fill out the form so we can contact you!</p>
+          <!-- <div class="modal__form-field input"> -->
+          <!-- <div class="modal__form-field modal__form-field--user-name input"> -->
+          <!-- <div class="modal__form-field1 modal__form-field1--user-name input"> -->
+          <div class="modal__form-field modal__form-field--user-name input">
+            <label label class="input__label visually-hidden" for="user-name"
+              >Your name</label
+            >
+
+            <!-- class="input__control input__img input__img--user-name" -->
+            <!-- pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$" -->
+            <input
+              class="input__control"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Your name"
+              pattern="^[A-Za-z]+\s[A-Za-z]+$"
+              required
+            />
+          </div>
+
+          <!-- <div class="modal__form-field input"> -->
+          <div class="modal__form-field modal__form-field--pet-name input">
+            <label label class="input__label visually-hidden" for="pet-name"
+              >Pet name</label
+            >
+            <input
+              class="input__control"
+              type="text"
+              id="pet-name"
+              name="pet-name"
+              placeholder="Pet name"
+              pattern="^[A-Za-z]+$"
+              required
+            />
+          </div>
+
+          <div class="modal__form-field modal__form-field--phone input">
+            <label label class="input__label visually-hidden" for="user-tel"
+              >Your phone</label
+            >
+            <input
+              class="input__control"
+              type="tel"
+              id="user-tel"
+              name="user-tel"
+              placeholder="Your phone"
+              pattern="^\+380[0-9]{9}"
+              required
+            />
+          </div>
+          <!-- +380ХХХХХХХХХ -->
+
+          <div class="modal__form-field modal__form-field--email input">
+            <label label class="input__label visually-hidden" for="user-email"
+              >Your email</label
+            >
+            <input
+              class="input__control"
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+
+          <button class="modal__button button button__section" type="submit">
+            Contact us
+          </button>
+
+          <div class="footer__iagree text-center">
             <input type="checkbox" id="agree" name="agree" />
             <label for="agree">I agree to the privacy policy</label>
           </div>
-        </div>
-        <img
-          src="./images/pngaaa.com-4675506-min 1.jpg"
-          alt="Photo of a red dog peeking out"
-        />
-      </section>
-    </main>
-    <footer>
-      <nav>
-        <!-- Logo and menu  -->
-        <img
-          src="./images/icon-sled-logo.svg"
-          alt="Veterinary clinic icon DOGclub"
-        />
-        <a href="#">
-          <img src="./images/logo.svg" alt="Veterinary clinic logo DOGclub"
-        /></a>
 
-        <address>
-          <ul>
-            <li>
-              <a href="#"><!-- instagramm icon  --></a>
-            </li>
-            <li>
-              <a href="#"><!-- facebook icon  --></a>
-            </li>
-          </ul>
-        </address>
-        <ul>
-          <li>
-            <a class="footer-link" href="#section-less-talk">Less talk</a>
-          </li>
-          <li>
-            <a class="footer-link" href="#section-services-category"
-              >Services category</a
+          <!-- <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="form-terms__link" href="#"
+              >з політикою конфіденційності</a
             >
-          </li>
-          <li>
-            <a class="footer-link" href="#section-happy-customer"
-              >Happy customer</a
-            >
-          </li>
-          <li><a class="footer-link" href="#section-contacts">Contact</a></li>
-        </ul>
-      </nav>
+          </p> -->
 
-      <div>
-        <p class="signup-free-input">Your email</p>
-        <p class="signup-free-input">Your cmc</p>
-        <button class="button-primary" type="button">Contact us</button>
-        <input type="checkbox" id="agree" name="agree" />
-        <label for="agree">I agree to the privacy policy</label>
+          <!-- <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
+
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div> -->
+        </form>
       </div>
-      <!-- <a class="footer-link" href="#" target="_blank"
-        >Політика конфіденційності</a
-      >
-      
-      <p class="copyrigt">&copy; 2022 Дані захищені</p> -->
-    </footer>
+    </div>
+
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
