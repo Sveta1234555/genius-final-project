@@ -1,0 +1,23 @@
+        <!-- section-about-us   - section-less-talk  -->
+        <!-- section-why-us  -> section-services-category -->
+        <!-- section-our-procedures-> section-happy-customer -->
+
+
+		Class ДЗ4		Id ДЗ4				Class FinProj			Id FinProj
+									Сделать
+									(section – 
+									в конце названия)
+
+
+
+	 	header		 	header				-				-
+	 	hero-section		hero-section			-				-
+	 	about-us-section	section-about-us   	 	less-talk-section		section-less-talk
+
+	 	section	section-why-us  -				services-category-section	section-services-category
+
+	 	procedure-section 	section-our-procedures	 	happy-customer-section		section-happy-customer
+
+	 	contacts-section	section-contacts	 	contacts-section		section-contacts
+
+	 	footer			footer	 			footer				footer

@@ -1,0 +1,264 @@
+@font-face {
+  font-display: swap;
+  font-family: "Play";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/play-v19-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Play";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/play-v19-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 100;
+  src: url("../fonts/roboto-v30-cyrillic_latin-100.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 300;
+  src: url("../fonts/roboto-v30-cyrillic_latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("../fonts/roboto-v30-cyrillic_latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("../fonts/roboto-v30-cyrillic_latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 700;
+  src: url("../fonts/roboto-v30-cyrillic_latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 900;
+  src: url("../fonts/roboto-v30-cyrillic_latin-900.woff2") format("woff2");
+}
+
+:root {
+  --color-primary-white: #ffffff;
+  --color-primary-orange: #ff9f0e;
+  --color-primary-black: #181817;
+
+  --color-secondary-yellow: #fcb62a;
+  --color-secondary-beige: #fffaf3;
+  --color-secondary-greymid: #f1f3ff;
+  --color-secondary-grey: #839aa9;
+  --color-secondary-greylight: #f9f9ff;
+  --color-secondary-purple: #d9a6ff;
+
+  --color-primary-grey-font: #d8d8d8;
+  --color-primary-black-font: #09061c;
+
+  /* --color-primary-bluedark: #011c44;
+  --color-secondary-grey1: #4a4a4a;
+  --color-secondary-grey2: #4a4a4a;
+  --color-secondary-greylight: #747272;
+  --color-secondary-bluedark: #011f4a;
+  --color-secondary-yellow: #ffd02b;
+  --color-black: #000;*/
+}
+
+body {
+  /* font-family: "Play", sans-serif; */
+
+  /* Доминантный */
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-primary-bluedark);
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Hero-section*/
+/* .above-title {
+  font-size: 18px;
+} */
+
+.hero-title {
+  color: var(--color-primary-blue);
+  font-family: Play, sans-serif;
+  text-align: left;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 140px;
+  border-radius: 2px 2px 2px 116px;
+  /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);   из макета . Не работает*/
+  /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
+  /* -moz-text-decoration-line: 4px rgba(0, 0, 0, 0.25);
+  text-stroke: 4px rgba(0, 0, 0, 0.25); */
+  -webkit-text-stroke: 4px rgba(0, 0, 0, 0.25);
+
+  /* дальше пока ненадо */
+  line-height: 81%;
+
+  /* font-style: italic; */
+  /* text-transform: capitalize; */
+  /* text-shadow: 2px 2px 4px violet;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  white-space: nowrap; */
+}
+
+/* Header */
+.header-link {
+  /* color: var(--color-primary-bluedark); доминантный/ Но не отработало без указания здесь цвета . М.б. это нажатый ранее цвет ссылки. Нет. доббавляла нов li - цвет неправильный*/
+  color: var(--color-primary-bluedark);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  color: var(--color-primary-blue);
+  font-weight: 700;
+  /* text-decoration: underline; */
+}
+
+/* .header-link:visited {
+  color: var(--color-primary-blue);
+} */
+
+/* Main */
+/* Main Button*/
+.button-primary {
+  /* padding: 16px 32px;
+  width: 219px;
+  height: 53px; */
+  color: var(--color-primary-white);
+  font-weight: 600;
+  background-color: var(--color-primary-blue);
+  border: 1px solid var(--color-black);
+  border-radius: 32px;
+  padding: 16px 32px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  width: 219px;
+  height: 53px;
+}
+
+.button-primary:hover {
+  background-color: transparent;
+  color: var(--color-primary-bluedark);
+  cursor: pointer;
+
+  border: 2px solid #2b7fff;
+  border-radius: 32px;
+  padding: 16px 32px;
+  width: 219px;
+  height: 53px;
+}
+
+.under-button {
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 12px;
+  color: var(--color-secondary-grey1);
+}
+
+/* Main h2*/
+/* Для всех section h2  : */
+section h2 {
+  font-family: "Play", sans-serif;
+  font-size: 64px;
+}
+
+h2 span {
+  color: var(--color-primary-blue);
+}
+
+.beauty-zone-h2 {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+/* Section about us */
+.about-us-p {
+  font-size: 22px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.beauty-zone {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/* Section why us */
+.section-why-us-p {
+  color: var(--color-black);
+}
+
+/* Section procedure */
+h3 {
+  color: var(--color-primary-white);
+  font-size: 22px;
+}
+
+/* Section contacts */
+/* form sign up free */
+.signup-free p {
+  color: var(--color-primary-white);
+}
+
+.form-signupfree-free {
+  color: var(--color-primary-blue);
+}
+
+.signup-free-input {
+  font-size: 13px;
+}
+
+.signup-free .button-primary {
+  width: 281px;
+  /* height: 53px; */
+}
+
+.signup-free .under-button {
+  color: var(--color-secondary-greylight);
+}
+
+.privacy-policy {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+/* Footer */
+
+.footer-link {
+  color: var(--color-primary-white);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* вопрос - в макете ничем не отличается выделенный элемент меню нвигации */
+.footer-link:hover {
+  color: var(--color-primary-blue);
+  /* text-decoration: underline; */
+}
+
+.copyrigt {
+  font-size: 13px;
+  color: var(--color-secondary-greylight);
+}
