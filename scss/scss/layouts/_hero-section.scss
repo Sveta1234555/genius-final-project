@@ -1,0 +1,342 @@
+/* Hero-section*/
+
+.hero-section {
+    /* к Блок1 */
+    /* padding: 1358px 1175px 337px 397px; */
+    /* к «Group 46196» */
+    /* width: 1501.96px;
+    height: 687.93px;
+    top: -0.6px;
+    left: -38px;
+    gap: 0px;
+    opacity: 0px; */
+    //чтобы заголовок мобильный центрировался от краянего лева
+    // padding-left: 0px;
+    // padding: 71px 0 0 0px;
+    //до след. секции about-us снизу 56px
+    // padding: 71px 0 56px 0px;
+    // padding: 73px 0 56px 0px;
+
+    // padding: 73px 0 65px 0px; //от блока текста вверх 73 до границы окна и вниз
+    // 65 перенести в div .hero-section__container
+    //чтобы элементы фона помещались по высоте под кнопкой
+    padding: 73px 0 0 0px; //от блока текста вверх 73 до границы окна и вниз
+
+
+
+    // padding - top, bottom - расстояния между секциями!!!!
+
+    /* background-color: burlywood; */
+    // /* позже наверное слоями позиционированием */
+    // background-image: linear-gradient(89.38deg,
+    //         var(--color-primary-white) 30.62%,
+    //         rgba(255, 255, 255, 0.850898) 41.31%,
+    //         rgba(92, 88, 88, 0.193) 58.65%,
+    //         rgba(255, 255, 255, 0) 72.78%),
+    //     url("../images/hero-section-background.jpg");
+    /* background-image: url("../images/hero-section-background.jpg"); через запятую сделан к градиенту */
+    // background-image: url("../images/icons.svg#icon-bckgr-hero");
+
+    background-image: url("../images/vector1.png"); //пока так jpg черный- иначе бледно, нпонятно
+    background-size: 1563px 808px;
+    // background-size: 1563px auto;
+    // background-size: cover;
+    background-repeat: no-repeat;
+
+    /* позиционирвоание - позже , h1 ездит , img большая  */
+    /* background-position: center bottom; */
+    /* Голова помещается */
+    // background-position: center top;
+    background-position: center 80px; //vektor вниз опустить на 80 от самого верха, под меню header
+    background-size: cover;
+
+    // Backgr hero-section,
+    //     чтобы было как в макете – надо делать не всему hero-section,
+    //     А hero-section__container-y
+    //пусть пока здесь
+
+    // иначе для таблет накрывается верхний текст  меню прозрачным от headera
+    //Убрать прозрачность дл меню для таблет, меню -то там нет!!!
+    //хотя не должно 123 от desktop, а до desktop д.б. 71. Но почему-то нет
+    @media screen and (min-width: $bp-tablet) {
+        /* padding: 123px 729px 157px 244px; перенесено в .hero-title . нет, здесьнадо*/
+        // padding: 71px 0 0 0;
+        //до след. секции about-us снизу 56px
+        // padding: 71px 0 56px 0px;
+
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+        background-position: -123px 80px; //vektor вниз опустить на 80 от самого верха, под меню header и влево на -123
+        /* padding: 123px 729px 157px 244px; перенесено в .hero-title . нет, здесьнадо*/
+        // padding: 123px 0 0 206px;
+        //для отстсупа между hero-section и about-us 126.48
+        // padding: 297px 0 126px 206px;
+        // padding: 297px 0 236px 206px; //stop16 - проверить по БЗ  236 !!!
+        //слева сдвига нет!!!,  от самого  верха 297
+        // padding: 297px 0 236px 0; //stop16 - проверить по БЗ  236 !!!
+        // 236 - это вниз до след. секции от  низа текста, а не от низа секции всей hero
+        // между секциями hero и ниже - 8 а не 236
+        // padding: 297px 0 8px 0; //stop16 - проверить по БЗ  236 !!!
+        // от самого верха до hero  80 а не  297 (297- это от самого верха окан до верха блока текста hero).
+        //hero начинается сразу под меню
+        padding: 80px 0 8px 0;
+        // margin-bottom: 126px;  лучше padding - тогда волна видна
+    }
+
+
+    @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        background-image: linear-gradient(89.38deg,
+                var(--color-primary-white) 30.62%,
+                rgba(255, 255, 255, 0.850898) 41.31%,
+                rgba(92, 88, 88, 0.193) 58.65%,
+                rgba(255, 255, 255, 0) 72.78%),
+            url('../images/hero-section-background@2x.jpg');
+    }
+
+
+    // hero-section__container {
+    &__container {
+        display: flex;
+        // display: inline-block;
+        //центрировать тблок с текстом в секции для мобильной версии. Иначе- пустое справа место
+        justify-content: center; // так звезда ездит при ресайз - пока убрать , пусть влево
+
+
+        //чтобы звезда не ездила с resize - отсчет для star1 (position: relative)  не здесь, 
+        //а от блока с текстом about-us-section__content (а не всего about-us-section__container вместе с картинками как для десктоп)
+        //нет, звезды в index  над ним (_content). надо вниз перенести
+        //позже
+        // Можно убрать justify-content: center;  и все влево , и звезда небудет ездить при ресайз
+        //пусть пока все влево для моб
+        // position: relative;
+        // position: static;
+        background-image: url("./../images/hero-section-background_mob.png");
+        background-repeat: no-repeat;
+        background-position-y: 45px; //подбором ф12
+        // background-position-x: 62px; //подбором ф12   // c px - ездит при ресайз
+        background-position-x: center;
+        padding-bottom: 65px; //чтобы элементы фона помещались по высоте под кнопкой
+
+        @media screen and (min-width: $bp-desktop) {
+            /*чтобы горизонтально расположить: текстоввая часть слева - 2 картинки справа */
+            // display: flex; //вверху 
+            /* ДЛя адаптива .  + max-width 709 в .about-us-content  */
+            // justify-content: space-between;
+            justify-content: center; //подбором ф12 вместе с фоном элементов
+
+            /* между div c  текстами слева и ul c картинками справа бз 34*/
+            /* между картинкой слева и div c текстами справа  - dog 24*/
+            gap: 24px; //34px;
+            /* для star , там  - absolute*/
+            position: relative;
+
+            background-image: url("./../images/hero-section-background.png");
+            // background-repeat: no-repeat;
+            background-position-y: 156px; //подбором ф12
+            background-position-x: 416px; //подбором ф12 
+        }
+    }
+
+    // .under-button {
+    // &__under-button {
+    // hero-section__top-button
+    &__top-button {
+        // margin-bottom: 0;  // для чего-то надо было (по-умолч убрать может, выдерживать этот 0 снизу)
+        // Для центрировать текст под кнопкой в моб версии. при указании max-width для переноса без br пкрестает работать text-align: center;
+        margin: 0 auto;
+        /* font-family: "Roboto", sans-serif; наслед*/
+        // color: наслед
+        // font-weight: 400;   наслед
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+
+        /* текст ограничить по ширине вмесТо br, чтобы перенос на 2ю строку был  */
+        max-width: 296px; //238px;
+
+        /* отступ от кнопки  до параграфа под кнопкой */
+        // перенесла сюда из .hero-section .button, чтобы его (.hero-section .button) убрать вообще
+        // было margin-bottom: 14px;
+        // это сделано padding-top у параграфа .under-button
+
+        // padding-top: 14px;   //бз было, dog ненадо
+        padding-bottom: 16px; // dog
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 22px;
+            /* 34/22=1.5 */
+            line-height: 1.5;
+            text-align: left;
+            // margin-bottom: 0;
+            // без этого в десктопе влево не центрируется текcт под кнопкой после установки  max-width
+            margin: 0px;
+            max-width: 499px;
+            padding-bottom: 24px; // dog
+        }
+    }
+
+
+    // .hero-title {
+    // .hero-section__title {
+    &__title {
+        // padding: 123px 729px 157px 244px;
+        // 123 - top. 244 - 206+38(отступ фона) надо по фигме left. Беру 206 (экспорт картинки  с волной 1440х725, а не 1501х688)
+        // padding: 123px 729px 157px 206px;
+        //таки padding от hero-section внутрь надо - перенессла вверх в hero-section
+        // padding: 123px 0 0 206px;
+        // снова сюда  . если вверху оставить, потом адаптив мобильного центрируется не от всего, не от самомго лева
+        // а так - непохоже расположение на макетнон - сноа вверх убрала
+
+        /* Hero-title */
+
+        /* Плохой вариант  (единый h1  = mini + span big),
+не нравится мне пока
+1. Шрифт мелкий все равно браузером увеличиватеся. А он доминантный,
+заново задавать здесь дял вернуть на доминантный или … 
+a. Менять доминантный – уже что-то на этом основано ниже. Не буду пока 
+2. 16px между обеспечивать – пробовала – пока без div никак,
+span –плохо, br … 
+Пока оставлю p mini + h1 big .
+ Потом вса-равно блоки из них делать,
+чтобы позиционировать квадратиком по всем грницам. */
+
+        //так в моб - все тексты -=и заголовки центрируются
+        text-align: center;
+
+        @media screen and (min-width: $bp-desktop) {
+            padding: 217px 0 0 0;
+            max-width: 635px; //530px;
+            width: 100%;
+            text-align: left;
+        }
+
+        /*  Hero   h1 отдельно:  
+p mini "Косметологічна клініка" + h1 big "beauty zone" */
+
+        /*1. Косметологічна клініка   mini-text  p параграфом*/
+        // .hero-title-mini {
+        // .hero-section__title--mini {
+        // &_title--mini {
+        &--mini {
+            font-size: 12px;
+            /* 18 /12=1.5 */
+            line-height: 1.5;
+            /* меняем дефолтный для <p> margin-bottom 18px на 16 px по дизайну*/
+            margin-bottom: 0px;
+            margin-top: 25px;
+            /* font все из доминанта 18px 400  1.2 */
+            color: var(--color-primary-bluedark);
+            /* тени нет */
+            /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+            @media screen and (min-width: $bp-desktop) {
+                //доминантные, но после моби 1-го 12 надо восстановить, само не берет наследование 18
+                font-size: 18px;
+                /* 21 /18=1.2 */
+                line-height: 1.2;
+                /* меняем дефолтный для <p> margin-bottom 18px на 16 px по дизайну*/
+                margin-bottom: 16px;
+                margin-top: 16px;
+            }
+        }
+
+        /*2. Hero h1   -  big beauty zone*/
+
+        // .hero-title-big {
+        // .hero-section__title--big {
+        // &__title--big {
+        &--big {
+
+            // color: домнантн наслед;
+            font-family: Rowdies;
+            font-weight: 400; //400 не наследует. Пишет 700. поэтому пишу сюда доминантный 400
+            // text-align: center;   н уровне родител центрирутеся
+            font-size: 32px;
+            /*Line height  46 / font-size 54    46/54= 0.86 */
+            line-height: 100%;
+            /* в 1 строкe beauty zone big */
+
+            max-width: 303px; //dog
+            margin: 0 auto 24px; // margin-bottom: 24px; //dog
+
+            @media screen and (min-width: $bp-desktop) {
+                /* УБрать дефолт margin-bottom этому заголовку (аж 116 был дефолт)*/
+                /* Пока оставлю 40 - снизу до кнопки, пменять потом мб на 0!!!!!!!! После div */
+                margin-bottom: 40px; //dog
+
+                // color: var(--color-primary-blue);
+                // font-family: Play, sans-serif;
+                // text-align: left;  на уровне родитеял - все  влево
+                // text-bold можно в index .   // убрала font-weight 700 здесь, но он сам в вычислено 700 пишет. от h2 из section__title  font-width 700
+                // font-weight: 700;
+
+                // text-transform: capitalize; //.text-capitalize
+                font-size: 72px;
+                /*Line height  114 / font-size 140  */
+                // line-height: 0.81;
+                /* в 2 строки h1 */
+                max-width: 635px; //dog
+                letter-spacing: 5%;
+
+                /* border-radius: 2px 2px 2px 116px; */
+                /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);   из макета . Не работает*/
+                /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
+                /* -moz-text-decoration-line: 4px rgba(0, 0, 0, 0.25);
+  text-stroke: 4px rgba(0, 0, 0, 0.25); */
+                /* у меня визуально был шрифт с обрамлением. в макете - таки нет. */
+                /* -webkit-text-stroke: 4px rgba(0, 0, 0, 0.25); */
+
+                /* 16px между minn and big-SPAN не получается ни margin-top: 16px; ни  padding-top: 16px; */
+                /* margin-top: 16px; */
+                /* padding-top: 16px; */
+
+                /* font-style: italic; */
+                /* text-transform: capitalize; */
+                /* text-shadow: 2px 2px 4px violet;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  white-space: nowrap; */
+            }
+        }
+
+    }
+
+
+
+
+
+    //about-us-section__image копия
+    //hero-section__image
+    &__image {
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: block;
+            max-width: 506px; //картинка dog-yell
+            // //фон vector собаке - позже - желтый сделать
+            // background-image: url("./../images/vector.svg");
+            // // padding-right: 60px;    //справа между собакой и текстом 84-24gap=60 . после 175 сверху - не влияет
+            // background-repeat: no-repeat;
+            // background-position-y: 68px; //подбором ф12 фон ниже на собаку
+
+            //в hero-section__container перенесла
+            //здесь ограничивается размером самой картинки собаки
+            // background-image: url("./../images/hero-section-background.jpg");
+            //     background-repeat: no-repeat;
+            //     background-position-y: -84px; //подбором ф12 фон ниже на собаку
+            //     background-position-x: -248px; //подбором ф12 фон ниже на собаку
+
+            padding-top: 240px; //пропорцициональено уменьшилась картинка. Так и надо
+
+            // снизу до границы всего блока (весь h 808)   135
+            padding-bottom: 52px; //и кусок фона снизу открылся (margin-bottom - не открывался)
+        }
+
+    }
+
+
+
+}

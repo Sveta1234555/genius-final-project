@@ -1,0 +1,242 @@
+.wave {
+    // волна по-центру
+
+    //position relative к нему у родителей нет - от body позиционирование
+    position: absolute;
+    // max-width: 1849px;
+    // как container width.чтобы в него вписался
+    // max-width: 1288px;
+    // dog - 1988x521 vector3
+    width: 100%;
+    height: 100%;
+    // подбором ф12 по волне
+    top: 632px;
+
+
+    // так угол слева сверху меньше выглядывает от фона или картинки
+    // background-image: url('../../images/background.png'),
+    //     linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%);
+
+    // background-image: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%),
+    //     url('../../images/background.jpg');
+
+    // относительный путь так понимает и здесь и гит
+    // (предыдущий формировлся выбором в среде разработки VScode)
+    // background-image: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%),
+    //     url('./../images/background.jpg'); 
+    // background-image: url('./../images/background.jpg'); //по замеч дз4 убрала градиент    бз
+    background-image: url('./../images/vector3.png'); //по замеч дз4 убрала градиент
+    //jpg непрозрачный. На моем сером фоне браузера – выглядит прямоуголльником . Из-за очень бледного кремового фона. Поэтому png оставляю
+
+    // background: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%);
+
+    // transform: rotate(142.77deg);
+    // background-repeat: no-repeat, repeat-y;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-position: center top;
+    z-index: -1;
+
+    @media screen and (min-width: $bp-desktop) {
+        // подбором ф12 по волне
+        top: 1631px;
+    }
+
+    // wave--contacts
+    &--contacts {
+        background-image: url('./../images/vector4.jpg'); //пустой  маленький//по замеч дз4 убрала градиент
+        // background-image: url('./../images/background4_.jpg'); //с иконками
+
+        // width: 619;
+        // height: 256.6585388183594;
+        // top: 1683px;
+        // left: -80px;
+
+
+        // top: 1479px; //1683px;
+        // width: 162%;
+
+        // //поймать при правильной ширине для мобильного  в ф12!!!
+        // top: 1417px;
+        // width: 138%;
+        // background-size: contain;
+        // background-position: -48px 31px;
+
+        //поймать при правильной ширине для мобильного  в ф12!!!
+        top: 1548px; //1683px;
+        // width: 619px;
+        height: 257px;
+        width: 100%;
+        // height: 100%;
+        background-size: cover;
+        background-position: center top;
+
+        @media screen and (min-width: $bp-desktop) {
+            // background-image: url('./../images/background4_.jpg'); //с иконками
+            // // подбором ф12 по волне
+            // // width: 2009;
+            // //     height: 833;
+            // //     top: 2636px;
+            // //     left: -413px; 
+            // // background-image: url('./../images/vector4.png'); //по замеч дз4 убрала градиент
+            background-image: url('./../images/background4_.jpg'); //с иконками
+            width: 100%;
+            height: 100%;
+            background-position: center top;
+            // background-size: cover;
+            background-size: auto; //по-умолч вернуть
+
+            top: 2668px; //2636px;
+        }
+    }
+
+    // визуально по ф12 для фона:
+    //     // max-height: 1785px;  убрать
+    //         height: 120%;  120%
+    //             // подбором ф12 по волне
+    //                 top: 1400px;
+    //                     // background-repeat: no-repeat, repeat-y;
+    //                         background-repeat: no-repeat;
+    //                         // background-size: cover;
+    //                             background-position: center top;
+}
+
+
+// wave-bckgr-page2
+.wave-bckgr-page2 {
+    // фон 2й страницы Nutrition
+    position: absolute;
+    // // background-image: url('./../images/img_page2/background2_png.jpg'); //пустой  маленький
+    // background-image: url('./../images/background4_.jpg'); //с иконками дескотоп
+    // background2-mob0.jpg 21 566
+    // background2-mob0.png 17 931- взяла пока этот для прозрачноти 
+    // background2-mob-jpg.jpg 2 607
+    // background2-mob-png.jpg 5 141
+
+    background-image: url('./../images/img_page2/background2-mob0.png');
+
+
+    // top: 1548px; //1683px;
+    // // width: 619px;
+    // height: 257px;
+    // width: 100%;
+    // // height: 100%;
+    // background-size: cover;
+    // background-position: center top;
+
+    // width: 447.4482421875;
+    // height: 2126.83203125;
+    // top: 169.8px;
+    // left: -17px;
+    width: 447px;
+    height: 2127px;
+    top: 170px;
+    // left: -17px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    // цвет моб фона не написан в макете справа
+
+
+
+    @media screen and (min-width: $bp-desktop) {
+
+        // width: 1661.6348876953125;
+        //     height: 2721.875;
+        //     top: 43.22px;
+        //     left: -127.07px;
+        // background: #FFFAF3;
+
+        // background-image: url('./../images/img_page2/background2_png.jpg');
+        // background-image: url('./../images/img_page2/background2.jpg');
+        background-image: url('./../images/img_page2/background2_0.png');
+        width: 1662px;
+        height: 2722px;
+        width: 100%;
+        height: 100%;
+        background-position: center top;
+        background-color: burlywood; //на время разр.
+        background-color: var(--color-secondary-light);
+
+        // background-size: cover;
+        background-size: auto; //по-умолч вернуть   - так лапкии как на макете, в области контента страницы
+        // background-repeat: no-repeat;    вверху
+        top: 43px;
+        // left: -127px;
+        z-index: -1; //иначе header невидно, накрывается картинкой фона
+    }
+}
+
+.wave1 {
+    // волна по-центру
+    // от body background: 
+
+    // из footer пекарни
+    // padding: 32px 0;
+    //   position: relative;
+    //   background-color: var(--color-primary-dark);
+    //   background-image: url('../images/footer-background.png');
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   background-position: center;
+
+    // из hero-section пекарни
+    //   padding: 124px 0;
+    //   background-image: linear-gradient(
+    //       102.76deg,
+    //       rgba(18, 18, 17, 0.78) 2.03%,
+    //       rgba(18, 18, 17, 0.6) 58.46%,
+    //       rgba(18, 18, 17, 0) 90.36%
+    //     ),
+    //     url('../images/hero-section-background.jpg');
+    //   background-repeat: no-repeat;
+    //   background-position: center top;
+    //   background-size: cover;
+
+
+
+    position: absolute;
+    // max-width: 1849px;
+    // как container width.чтобы в него вписался
+    max-width: 1400px;
+    width: 100%;
+    // max-height: 1785px;
+    height: 100%;
+    // подбором ф12 по волне
+    top: 1400px;
+    //left: 1955.13px;
+    //top: 2121.31px;
+
+    // так угол слева сверху меньше выглядывает от фона или картинки
+    // background-image: url('../../images/background.png'),
+    //     linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%);
+
+    // background-image: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%),
+    //     url('../../images/background.jpg');
+
+    // относительный путь так понимает и здесь и гит
+    // (предыдущий формировлся выбором в среде разработки VScode)
+    background-image: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%),
+        url('./../images/background.jpg');
+    // background: linear-gradient(38.2deg, rgba(43, 127, 255, 0.2) 39.74%, rgba(43, 127, 255, 0) 54.16%, rgba(43, 127, 255, 0) 66.66%);
+
+    // transform: rotate(142.77deg);
+    // background-repeat: no-repeat, repeat-y;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-position: center top;
+    opacity: 0;
+    // z-index: -1;
+
+    // визуально по ф12 для фона:
+    //     // max-height: 1785px;  убрать
+    //         height: 120%;  120%
+    //             // подбором ф12 по волне
+    //                 top: 1400px;
+    //                     // background-repeat: no-repeat, repeat-y;
+    //                         background-repeat: no-repeat;
+    //                         // background-size: cover;
+    //                             background-position: center top;
+}

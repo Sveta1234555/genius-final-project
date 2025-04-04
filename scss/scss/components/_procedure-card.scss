@@ -1,0 +1,146 @@
+// вынесно сюда из /layouts/_procedure-section.scss
+
+.procedure-card {
+
+    // .procedure-card {
+    // .procedure-section__card {
+    // &__card {
+    /* пока так градиент на 3х картинках процедур. позже слоями наверное */
+    /* для спозиционирвать на карточке фон-изображение. вместе с .procedure-card-image      position: absolute; */
+    position: relative;
+    /* max-width: 344px; dog*/
+    // моб -width 320 320x416. но width - расчетная в десктопной
+    max-width: 320px;
+    height: 416px;
+    // background-image: linear-gradient(180.05deg,
+    //         rgba(1, 28, 68, 0) 48.53%,
+    //         rgba(1, 28, 68, 0.725825) 84.61%,
+    //         var(--color-primary-bluedark) 101.39%);
+
+    // на макете dog был
+    // background-color: var(--color-primary-yellow-font);
+
+    border-radius: 16px;
+
+    /* для расположить текст на карточке к нижнему краю, был к верхнему */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    //  /* плавнее увеличение размера карточки при Hover */
+    transition: transform 0.3s;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-desktop) {
+        //  max-width: 344px; dog  но она расчетная 
+        height: 456px;
+        border-radius: 24px;
+    }
+
+    :hover {
+        transform: scale(1.05);
+    }
+
+
+    // .procedure-card-image {
+    // .procedure-section__image { нет,  отдельный файл
+    // .procedure-card__image {
+    &__image {
+        position: absolute;
+        /* для растянуть картинку по всей ширине карточки procedure-card */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // border-radius: 4px 120px;
+        /* положить jpg ниже текста карточки, иначе текст не виден, накрывается картинкой */
+        z-index: -1;
+        /* max-width: 344px; */
+        /* max-height: 456px; */
+    }
+
+    // procedure-card__back-end
+    &__back-end {
+        // подложка внизу фото - серая  344х130
+        //вниз выставлена flex-ом в .procedure-card
+        border-radius: 0 0 24px 24px;
+        background-color: var(--color-secondary-grey);
+        height: 130px; //потом убрать - высота прыгает
+
+    }
+
+    /* h3 без класса был, других h3 нет. только На картинках процедур */
+    // h3 {
+    // .procedure-section__titleh3 { нет  отдельный файл
+    // .procedure-card__titleh3 {
+    &__titleh3 {
+        /* до процедуры де.,   Rectangle 5080,   Rectangle 5081  снизу от текста h3 .
+        пока относительно себя (h3) - ни о чем в браузере. Для позже*/
+        /* margin: 372px 77px 32px 115px; */
+        /* пока вместо по-умолч для h3 22px сделать 32 */
+        /* margin-bottom: 32px;   - padding сделать, причем разный... */
+        margin-bottom: 0px; //dog
+        padding-bottom: 8px; //dog
+        padding-top: 16px; //dog
+        /* margin: 0px;
+    padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+
+        font-size: 24px; //22px;
+        font-weight: 600;
+
+        text-align: center;
+        color: var(--color-primary-white);
+        /* 26/22=1.2 доминантная*/
+        /* line-height: 1.2; ДЗ*/
+        line-height: 100%;
+        // max-width: 152px;
+        align-self: center;
+
+    }
+
+
+    // .procedure-card__p{
+    &__p {
+        // margin-bottom: 0px;
+        // padding-bottom: 32px;
+        /* margin: 0px;
+            padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+        // margin-bottom: 24px; //dog  - для flex - стал мешать
+        font-size: 16px;
+        // font-weight: 400;       //доминантн - наслед
+
+        text-align: center;
+        color: var(--color-primary-white);
+
+        line-height: 100%;
+        // max-width: 152px;
+        align-self: center;
+
+        // .procedure-card__p--counter
+        &--counter {
+            //текст - счетчиквнизу справа  желтый на фото
+            color: var(--color-primary-yellow-font);
+            margin-bottom: 0px; //это убрало лишний отступ в flex косточек. установлен был в <p> выше, над косточками
+        }
+    }
+
+    // procedure-card__row-count
+    &__row-count {
+        // 5косточек/цифры
+        display: flex;
+        max-width: 257px;
+        gap: 40px;
+        flex-direction: row;
+        // align-items: center;
+        justify-content: center; //элементы внутри flex центрир
+        margin: 0 auto; //весь flex центрир 
+
+        &--bone {
+            //5 косточек flex
+            display: flex;
+            max-width: 192px;
+            gap: 8px;
+            align-items: end; //косточки книзу
+        }
+    }
+
+}

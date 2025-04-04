@@ -1,0 +1,564 @@
+/* Section 2 About us */
+
+// .section-about-us {
+.about-us-section {
+
+  //по той же схеме - padding между секциями ниже 3-й по 40  одинаковые (как 96 для десктоп) 
+  //  104=84этот +20 будет в след секц  - отличается для между  2about-us и 3why-us секц
+  // padding-bottom: 104px;
+  //нет. какие 84 не поняла теперь
+
+  padding-top: 40px; //между 1hero и 2about-us  - все на abou-us
+  padding-bottom: 20px; //40/2 между 2about-us и 3why-us секц
+
+  // margin-top: 50px; //по замеч по дз4
+
+  @media screen and (min-width: $bp-desktop) {
+    /* убрать от одинаковых отступов между .section для между 1-2 отступ. тут иначе, пока неясно как /
+  pad-bot=0  остается для 2-й, надо*/
+    padding-top: 0;
+    /*между 2 и 3й секциями не 96, а 176. 128=176-48 (pdgtop 3й секции  одинаковые)*/
+    padding-bottom: 32px; //128px;
+
+    // margin-top: 96px; //по замеч по дз4
+
+    // index.html
+    // < !-- убрала section из классов about0us-section - он делает только padding 48 0. 
+    // перекрывают по ф12 сверху др-друга Padding классов  section и about-us-section -->
+    // < !-- Вернуться к отступам между hero и about-us/ 
+    // А пока - точно надо снизу от about-us до why-us 176=128+48 (48 - .section дают везде ниже) -->
+  }
+
+  //about-us-section__image
+  &__image {
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: block;
+      max-width: 516px; //картинка
+      //фон vector собаке
+      background-image: url("./../images/vector.svg");
+      // padding-right: 60px;    //справа между собакой и текстом 84-24gap=60 . после 175 сверху - не влияет
+      background-repeat: no-repeat;
+      padding-top: 175px; //пропорцициональено уменьшилась картинка. Так и надо
+      background-position-y: 68px; //подбором ф12 фон ниже на собаку
+      // снизу до границы всего блока (весь h 703)   135
+      padding-bottom: 135px; //и кусок фона снизу открылся (margin-bottom - не открывался)
+    }
+
+  }
+
+  // .about-us-container {
+  // .about-us-section__container {
+  &__container {
+    display: flex;
+    // display: inline-block;
+    //центрировать тблок с текстом в секции для мобильной версии. Иначе- пустое справа место
+    justify-content: center; // так звезда ездит при ресайз - пока убрать , пусть влево
+
+
+    //чтобы звезда не ездила с resize - отсчет для star1 (position: relative)  не здесь, 
+    //а от блока с текстом about-us-section__content (а не всего about-us-section__container вместе с картинками как для десктоп)
+    //нет, звезды в index  над ним (_content). надо вниз перенести
+    //позже
+    // Можно убрать justify-content: center;  и все влево , и звезда небудет ездить при ресайз
+    //пусть пока все влево для моб
+    // position: relative;
+    // position: static;
+
+    @media screen and (min-width: $bp-desktop) {
+      /*чтобы горизонтально расположить: текстоввая часть слева - 2 картинки справа */
+      // display: flex; //вверху 
+      /* ДЛя адаптива .  + max-width 709 в .about-us-content  */
+      justify-content: space-between;
+      /* между div c  текстами слева и ul c картинками справа бз 34*/
+      /* между картинкой слева и div c текстами справа  - dog 24*/
+      gap: 24px; //34px;
+      /* для star , там  - absolute*/
+      position: relative;
+    }
+  }
+
+  // .about-us-content {
+  // .about-us-section__content {
+  &__content {
+
+    max-width: 320px;
+    /* для star */
+    //тогда в index star1 д.б. внутри этого __content, а он - снаружи, в __container
+    //в index star4, arrow для моб внутри этого __content
+    position: relative;
+
+    @media screen and (min-width: $bp-desktop) {
+      /* ширина блока с текстом на макете так. */
+      max-width: 640px; // 709px;
+
+      /*+ justify-content: space-between; в .about-us-container  */
+
+      // отменить position: relative;, установленную для звездв моб версии
+      // position: static;
+    }
+  }
+
+  // .about-us-title {
+  // .about-us-section__title {
+  &__title {
+    /* для переноса текста - как на макете, "and" на 2й строке надо. br, ширина не поможет */
+    max-width: 320px; // 264px;
+    margin-bottom: 24px; //от  h2 вниз до p
+    /* все h2 center, кроме этого */
+    text-align: left;
+
+    @media screen and (min-width: $bp-desktop) {
+      /* h2 отличается от всех h2 отступ снизу 40px, поэтому этоу h2 отдельный класс */
+      margin-bottom: 40px; //от  h2 вниз до p
+      /* картинка первая выше текста на 40px бз*/
+      // отступ от h2 вверх 155  - dog
+      padding-top: 155px; // 40px;
+      // /* все h2 center, кроме этого */
+      // text-align: left;  вверх
+      /* для переноса текста - как на макете это не поможет (и по макету видно),  "and" на 2й строке надо. br */
+      max-width: 428px; // 529px;
+    }
+  }
+
+  // &__divforleft {
+  //   //для влеов только заоголовк h2 about-us-section.about-us-container
+  //   // остальные h2 секций - центрированный от section__title . Он всегда срабатывает, оменняя остальные предыдущие стили
+  //   text-align: left;
+  // нет
+  // }
+
+  /* .about-us-p { */
+  /* Класс у параграфов  в section about-us  можно убрать . Убрала.
+Шрифт задать от родительского div*/
+  // .about-us-content p {
+  // .about-us-section__p {
+  &__p {
+    font-size: 18px;
+    letter-spacing: 5%;
+    /* font-weight: 400; наследует */
+    /* 21/18 =.17  ~ 1.2 наследует */
+    // line-height: 1.2;
+    /* 24/18 =1.333 наследует */
+    // line-height: 1.3
+    line-height: 1.33; //dog -почему-то не наследовал
+
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 22px;
+      /* font-weight: 400; наследует */
+
+      /* 38/22 */
+      // line-height: 1.7;
+      // 34/22=1.54
+      line-height: 1.54;
+      letter-spacing: 0;
+      /* тени нет */
+      /* text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
+    }
+
+
+    // .about-us-content p:last-of-type {
+    // .about-us-section__p--lastp {
+    &--lastp {
+      /* последнему параграфу обнулить отступ снизу (или можно всем параграфам секции 2 обнулить отступ снизу в .about-us-p {}).
+              Чтобы потом НЕПОСЛЕДНИМ p сделать отступ margin-bottom 40) */
+      /* Легче здесь было бы - параграфам сделать margin-top=40, margin-bottom=0 , 
+        а h2 обнулить сверху-снизу margin. 
+        Но - принято margin-bottom задавать внутри родительских */
+      // ДЛя БЭМ - снова относительно верхнего div .about-us-section
+      margin-bottom: 0px;
+      /* для переноса текста в p1 - как на макете, не получится ограничением max-width. 
+        На макете слишком разные строки по длите - одной длиной не получится. 
+         br делать.
+           НО- br при изменении размера экрана некрасиво скачут. Лучше вообще убрать. Одну оставить br первую. и последнюю*/
+      /* max-width: 603px; для перенести на2ю строку "та"*/
+    }
+
+
+    // так самой надо управлять - куда класс поставить в index. если оставить псевдоклассы, то класс в Index не пишем,  и оно само определяет последний 
+
+    // .about-us-content p:not(:last-of-type) {
+    // .about-us-section__p--notlastp {
+    &--notlastp {
+      margin-bottom: 24px; //16px;
+      // переноса текста в p1 - итак как на макете (max-width: 320px;от родителя __content сработало)
+
+
+      @media screen and (min-width: $bp-desktop) {
+        /* параграф от следующего отделяется 40 px. НЕ ПОСЛЕДНИЙ. вдруг добавят параграф, добавляла -ок) */
+        // //dog -24  -одинак с моб
+        // margin-bottom: 24px; //40px;
+        /* для переноса текста в p1 - как на макете, буква "з догляду" на 2й строке . или br   - 670 бз*/
+        max-width: 640px //670px;
+      }
+    }
+
+  }
+
+  // .beauty-zone {
+  // .about-us-section__beauty-zone {
+  &__beauty-zone {
+    /* span in p */
+    font-weight: 700;
+
+    @media screen and (min-width: $bp-desktop) {
+      // text-transform: capitalize;  //.text-capitalize
+      font-weight: 600; //остается один фонт в классе beauty-zone , надо по фигме для этого span, а <p> вокруг - 400, а h2 все 700
+      //< !-- Класс Beaty-zone 600  – или text-bold ! ! ! 600 -->
+      //этот используется в Index, "about-us-section__beauty-zone", т.к.  600 только здесь надо
+    }
+  }
+
+
+  /* About-us Image */
+
+  // .about-us-ul  -> .about-us-section__
+  // .about-us-ul-img {
+  // .about-us-section__imgs {
+  &__imgs {
+    // Фотки справа для моб версии убрать
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: block;
+      /* список img размер для разного выравнивания элементов li влево вправо */
+      max-width: 499px;
+      /* таки ненадо – уезжает из-за этого ф12 картинка нижняя на 1px под границу вниз области ul 695: */
+      /* max-height: 695px; */
+      /* Влияет на расположение картинок к разным краям. если убрать - четко одна под одной, без сдвигов влево вправо :*/
+      width: 100%;
+    }
+
+    /* max-height: 695px; */
+    /* ненадо – уезжала область списка с картинками снизу за div .about-us-container 1240x783.
+     а about-us-ul-img 499x695. 695+40=735 по высоте картинки+40. 
+     Т.е. 735 < 783. норм.
+      А что уезжает вниз за границу div?
+      ф12  -  Margin-bottom у самих картинок. Убрать
+    */
+
+
+    // .about-us-ul-img :last-child {
+    // .about-us-section__imgs--last-child {
+    // &--last-child {  нет , оставить псевдоклассом : last-child
+    //а как будет с пробелом работать? норм
+    // .about-us-section__imgs :last-child {
+    & :last-child {
+      /* background-color: red; */
+      /* img нижняя вправо */
+      text-align: right;
+      //после добавления в _base.scss img {display: block;.. } для масштабирования logo при уменьщении экрана< width img
+      // 2я картинка уехала влево, а надо вправо - вернуть display
+      //(адаптацией в _base.scss img  для десктоп тоже можно, но лучше локально в проблемное место, чтобы не влияло на остальное)
+      //нет - здесь (локально не отработало - 2я фотка влево осталась, ано вправо)
+      // работает в base.scss   img
+      // display: inline;
+    }
+
+    //----------Блок для 2-х фоток справа - для отступа снизу только под первым li, а под последним Li - нет отступа---------h
+    /* Было так (без li - добавляло отступ снизу ОБЕИМ картинкам img) */
+    /* .about-us-ul-img :first-child { */
+    // .about-us-ul-img li:first-child {
+    // .about-us-section__imgs li:first-child {
+    // & li:first-child {
+    // чтобы без тэга li (в БЭМ работает, но не приветствуется):
+    //1.
+    // &:first-child {
+    // пробую без пробела и без Li- только первый вложенный уровень, чтобы не писать в псевдоклассе тэг li.
+    // без проблеа и без Li (&:first-child )- не видит вообще никого first - нет отступа ни от li первого (а должно быть именно так), ни от img первого, ни от вторых li  img
+    //2.
+    // & :first-child {
+    // с пробелом без li - 2 отступа по 40 снизу(80)- img и li первыеа , а надо 1 - по li
+    // так что отсавляю  пробел и li  - нет , получилось ниже с __imgli
+    // & li:first-child {
+    //   /* background-color: green; */
+    //   /* img верхн влево итак  */
+    //   /* text-align: left; */
+    //   /* отступ между картинками 40px */
+    //   margin-bottom: 40px;
+    // }
+
+    //это не отработало сначала - уровень не тот, потом на нправильносм уровне отработало
+    // //вынесла выше на уровень (в .about-us-section), (по тексту здесь, см. ниже)
+    // // можно &:first-child , но к классу не вложенному (как здесь к "about-us-section__imgs"), 
+    // // а к самому текущему классу (другому новому):
+    // // прописать в index возле каждого <li class="about-us-section__imgli">
+    // // //   и убрать: & li:first-child {
+    // //а здесь, на уровень выше (в .about-us-section),  добавить:
+    // &__imgli {
+    //   margin-bottom: 40px;
+
+    //   &:last-child {
+    //     margin-bottom: 0;
+    //   }
+    // }
+
+    //реальный тестированный исходник этого блока (на нужном уровен вложенности (в .about-us-section)) 
+    //- см. ниже по тексту здесь
+    //----------Блок для 2-х фоток справа - для отступа снизу только под первым li, а под последним Li - нет отступа---------e
+
+
+
+    // .about-us-ul-img img {
+    // .about-us-selection__img img {
+    & img {
+      /* размер картинок для установки расстояния между  ними по вертикали */
+      /* background-color: blue; */
+      max-width: 327px;
+      max-height: 327px;
+      /* не убрало в области картинок отступ . */
+      /* margin-bottom: 0; */
+      /* Да,
+      он ниже назначается. Или наследоание от li,
+      - послденее назначение срабатывает.
+      Или надо выдеить при назначении margin-bottom: 40px; тип – список li, исключив картиинку . 
+      да. указание типа первого дочернего li помогло, исключив img из .about-us-ul-img: first-child */
+
+      /* в круг картинку (ф12 подбирала, потом размер/2  327/2=163)*/
+      border-radius: 163px;
+    }
+  }
+
+
+
+
+  // //это не отработало сначала - уровень не тот, потом на правильном уровне отработало
+  // на уровне .about-us-section надо.
+  // можно &:first-child , но к классу не вложенному (как здесь к "about-us-section__imgs"), 
+  // а к самому текущему классу (другому новому):
+  // в index возле каждого из двух дописать класс <li class="about-us-section__imgli">
+  // //   И убрать: & li:first-child {
+  //А здесь, на уровень в .about-us-section,  добавить:
+  &__imgli {
+    // ф12 это не видит, не отрабатывает отступ (не последний же ) (на другом уровне вложенности было так)
+    margin-bottom: 40px;
+
+    // //добавила – не видит на первом это в ф12 (на другом уровне вложенности  было так)
+    // &:first-child {
+    //   margin-bottom: 40px;
+    // }
+
+    // //добавила – не видит на первом это в ф12 (на другом уровне вложенности было так)
+    // &:not(:last-child) {
+    //   margin-bottom: 40px;
+    // }
+
+    //ф12 видит только этот
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //это скобка самая верхня, от .about-us-section:
+}
+
+// //вверх перенесено в .about-us-section
+// // .about-us-container {
+// // .about-us-section__container {
+// &__container {
+//   /*чтобы горизонтально расположить: текстоввая часть слева - 2 картинки справа */
+//   display: flex;
+//   /* ДЛя адаптива .  + max-width 709 в .about-us-content  */
+//   justify-content: space-between;
+//   /* между div c  текстами слева и ul c картинками справа */
+//   gap: 34px;
+//   /* для star */
+//   position: relative;
+// }
+
+
+/* About-us-title */
+
+
+// //вверх
+// // .about-us-title {
+// // .about-us-section__title {
+// &__title {
+//   /* h2 отличается от всех h2 отступ снизу 40px, поэтому этоу h2 отдельный класс */
+//   margin-bottom: 40px;
+//   /* картинка первая выше текста на 40px */
+//   padding-top: 40px;
+//   /* все h2 center, кроме этого */
+//   text-align: left;
+//   /* для переноса текста - как на макете, буква "в" на 2й строке */
+//   max-width: 529px;
+// }
+
+// .beauty-zone-h2 {
+//   /* span in h2*/
+//   // text-transform: capitalize;   //.text-capitalize
+//   // font-weight: 700;   //от h2 section__title
+//   /* line-height =1.2    74.05/64=1/1=1.15 округл до 1.2 - доминантный возьмется */
+// }
+
+/* About-us-text */
+
+// //вверх
+// // .about-us-content {
+// // .about-us-section__content {
+// &__content {
+//   /* ширина блока с текстом на макете так. */
+//   max-width: 709px;
+//   /*+ justify-content: space-between; в .about-us-container  */
+// }
+
+//вверх
+// /* .about-us-p { */
+// /* Класс у параграфов  в section about-us  можно убрать . Убрала.
+// Шрифт задать от родительского div*/
+// // .about-us-content p {
+// // .about-us-section__p {
+// &__p {
+//   font-size: 22px;
+//   /* font-weight: 400; наследует */
+
+//   /* 38/22 */
+//   line-height: 1.7;
+//   /* тени нет */
+//   /* text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
+// }
+
+
+
+/* последний параграф - 0px. все параграфы этого класса обнулить margin-bottom, 
+  чтобы потом непоследнему p сделать отступ 40) */
+/* .about-us-p {  
+  margin-bottom: 0px;
+} */
+
+/* А чего это я аж от самого верхнего уровня .section-about-us  до p добиралась.
+  Навернео не было еще столько div внутри .
+  Поближе div взять */
+/* .section-about-us p:last-of-type { */
+
+
+// //вверх
+// // .about-us-content p:last-of-type {
+// // .about-us-section__p--lastp {
+// &--lastp {
+//   /* последнему параграфу обнулить отступ снизу (или можно всем параграфам секции 2 обнулить отступ снизу в .about-us-p {}).
+//         Чтобы потом НЕПОСЛЕДНИМ p сделать отступ margin-bottom 40) */
+//   /* Легче здесь было бы - параграфам сделать margin-top=40, margin-bottom=0 , 
+//   а h2 обнулить сверху-снизу margin. 
+//   Но - принято margin-bottom задавать внутри родительских */
+//   // ДЛя БЭМ - снова относительно верхнего div .about-us-section
+//   margin-bottom: 0px;
+//   /* для переноса текста в p1 - как на макете, не получится ограничением max-width. 
+//   На макете слишком разные строки по длите - одной длиной не получится. 
+//    br делать.
+//      НО- br при изменении размера экрана некрасиво скачут. Лучше вообще убрать. Одну оставить br первую. и последнюю*/
+//   /* max-width: 603px; для перенести на2ю строку "та"*/
+// }
+
+/* Так (если от section идти к p)-  все элементы - тэги, и img звездочки . Тип p надо выделить */
+/* .section-about-us :not(:last-child) { */
+
+/* .section-about-us p:not(:last-of-type) {   поближе div взять*/
+
+//   //вверх
+// // .about-us-content p:not(:last-of-type) {
+// // .about-us-section__p--notlastp {
+// &--notlastp {
+//   /* параграф от следующего отделяется 40 px. НЕ ПОСЛЕДНИЙ. вдруг добавят параграф, добавляла -ок) */
+//   margin-bottom: 40px;
+//   /* для переноса текста в p1 - как на макете, буква "з догляду" на 2й строке . или br*/
+//   max-width: 670px;
+// }
+
+// //вверх
+// // .beauty-zone {
+// // .about-us-section__beauty-zone {
+// &__beauty-zone {
+//   /* span in p */
+//   // text-transform: capitalize;  //.text-capitalize
+//   font-weight: 600; //остается один фонт в классе beauty-zone , надо по фигме для этого span, а <p> вокруг - 400, а h2 все 700
+//   //< !-- Класс Beaty-zone 600  – или text-bold ! ! ! 600 -->
+//   //этот используется в Index, "about-us-section__beauty-zone", т.к.  600 только здесь надо
+// }
+
+/* можно  так  font-weight: 700; сделать для h2 , если одинак классы beauty-zone*/
+/* .about-us-title span {
+  background-color: red;
+  font-weight: 700;
+} */
+
+
+
+/* About-us Image */
+
+// //вверх
+// // .about-us-ul  -> .about-us-section__
+// // .about-us-ul-img {
+// // .about-us-section__imgs {
+// &__imgs {
+//   /* список img размер для разного выравнивания элементов li влево вправо */
+//   max-width: 499px;
+//   /* таки ненадо – уезжает из-за этого ф12 картинка нижняя на 1px под границу вниз области ul 695: */
+//   /* max-height: 695px; */
+//   /* Влияет на расположение картинок к разным краям. если убрать - четко одна под одной, без сдвигов влево вправо :*/
+//   width: 100%;
+
+//   /* max-height: 695px; */
+//   /* ненадо – уезжала область списка с картинками снизу за div .about-us-container 1240x783.
+//    а about-us-ul-img 499x695. 695+40=735 по высоте картинки+40. 
+//    Т.е. 735 < 783. норм.
+//     А что уезжает вниз за границу div?
+//     ф12  -  Margin-bottom у самих картинок. Убрать
+//   */
+// }
+
+
+// // вверх в  &__img
+// // .about-us-ul-img :last-child {
+// // .about-us-section__imgs--last-child {
+// // &--last-child {  нет , оставить псевдоклассом : last-child
+// //а как юудет с пробелом работать?
+// // .about-us-section__imgs :last-child {
+// & :last-child {
+//   /* background-color: red; */
+//   /* img нижняя вправо */
+//   text-align: right;
+// }
+
+
+// // // вверх в  &__img
+// /* Было так (без li - добавляло отступ снизу ОБЕИМ картинкам) */
+// /* .about-us-ul-img :first-child { */
+
+// // .about-us-ul-img li:first-child {
+// // .about-us-section__imgs li:first-child {
+// & li:first-child {
+//   /* background-color: green; */
+//   /* img верхн влево итак  */
+//   /* text-align: left; */
+//   /* отступ между картинками 40px */
+//   margin-bottom: 40px;
+// }
+
+
+
+/* .about-us-ul-img li:last-child {
+  background-color: red;
+} */
+
+
+// // // // вверх в  &__img
+// // .about-us-ul-img img {
+// // .about-us-selection__img img {
+// & img {
+//   /* размер картинок для установки расстояния между  ними по вертикали */
+//   /* background-color: blue; */
+//   max-width: 327px;
+//   max-height: 327px;
+//   /* не убрало в области картинок отступ . */
+//   /* margin-bottom: 0; */
+//   /* Да,
+//       он ниже назначается. Или наследоание от li,
+//       - послденее назначение срабатывает.
+//       Или надо выдеить при назначении margin-bottom: 40px; тип – список li, исключив картиинку . 
+//       да. указание типа первого дочернего li помогло, исключив img из .about-us-ul-img: first-child */
+
+//   /* в круг картинку (ф12 подбирала, потом размер/2  327/2=163)*/
+//   border-radius: 163px;
+// }

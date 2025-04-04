@@ -1,0 +1,484 @@
+/* Section 5 Contacts */
+/* 1059x602 */
+// .contact-section {
+.contacts-section {
+  padding-top: 36px; //72/2
+  padding-bottom: 20px; //40/2
+  // position: relative; //для моб иконок - следов .sled   sled__contacts
+  //волна wave голубая исчезла. У нее position absolute 
+
+  @media screen and (min-width: $bp-desktop) {
+    //   /* только последней секции, для обеспечить расстояние до футера 96
+    // эти 96 и установить, а не 48 пополам , как было для отступов между секциями выше */
+    //   padding-bottom: 72px; //от contacts до footer dog 72  , бз - 96px;
+
+    // position: auto; //отменить , wave теряется
+
+
+    //dog  - для между секциями . 31 сверху до proc, 36 - снизу 72/2 до footer
+    padding-top: 31px;
+    padding-bottom: 36px;
+    // position: static; //отмена  мобильного relative. мешаеттрасположению голубого фонв десктоп
+  }
+
+  // .contacts-container {
+  // .contacts-section__container {
+  &__container {
+    /* 1059x480 - без h2 */
+    /*чтобы горизонтально расположить:   карта слева - форма справа */
+    display: flex;
+    flex-direction: column-reverse; //для моб. - форма и карта вертикально один под одним
+    // /* ДЛя адаптива .  + max-width 709   */
+    // max-width: 1059px;
+    // justify-content: space-between;
+    /* между  div формы и картой по вертикали */
+    gap: 24px;
+    // /* отцентрировать этот flex относительно внешнего container */
+    // margin: 0 auto;  на моб - не влияет
+
+    @media screen and (min-width: $bp-desktop) {
+      /* ДЛя адаптива .  + max-width 709   */
+      max-width: 1240px;
+      flex-direction: row; //от десктопа -  форма и карта горизонтально в строку  
+      // justify-content: space-between;    //бз
+      /* между картой слева и div формы справа gap: 32px; бз*/
+      // между формой и собаками. Правла, 67слева и справа 98.
+      // Но там и собака странно левая за блок вылазит на макете. 
+      // У меня так же получилось после justify-center.
+      //  Сделала 67. Визуально центрировано норм от общей container-a.
+      gap: 67px;
+      /* отцентрировать этот flex относительно внешнего container */
+      // margin: 0 auto; // это не центрирует flex весь с собаками за границами. Пока что!!!
+
+      // //---v1 центрирования flex c собаками, НЕ уезжает левая собака за границы
+      // justify-content: space-between; //dog - отключала - не влияет. Меняб на center
+      // //flex больше внешнего общего containera - двигала руками. може, ненадо, надо пока. посмотерть позже , после всех отступов!!!
+      // margin: 0 auto 0 -75px;
+      // //НО – двигала вручную. Ловила. А как потом центрироваться будет при изменении ширины ?  !!!
+      // //  Двигала в браузере=вроде ничего, центрировано остается с этим -75px
+
+      //--- v2 центрирования flex c собаками, уезжает левая собака за границу слева (как в макете фигма)
+      // justify-content: center; //space-between; //dog - отключала - не влияет. Меняю на center
+      // margin-left: 75px; // для вернуть по центру весь flex - все равно подбор. теже 75px
+      //ненадо. собаку влево подвинула на 100, как по макету
+      //Убрала center - после margin-left собакам для разных gap слева-справа от формы. и собаки выезжают слева справа за container
+      //это помогло разному gap и выезжанию собак как надо по макету
+    }
+  }
+
+  //contacts-section__title
+  &__title {
+    max-width: 254px;
+    // text-align: center;
+    margin: 0 auto 8px; //после max-width центрировать так
+
+    @media screen and (min-width: $bp-desktop) {
+      //для h2 в 2 строки по макетц
+      max-width: 605px;
+      margin-bottom: 16px;
+      margin-top: 137px;
+    }
+  }
+
+  /* .contacts-container iframe { */
+  // .contact-map {
+  // .contacts-section__map {
+  &__map {
+    /* чтобы карта не сжималась после flex родителю и gap. Она в БЗ и не сжималась */
+    flex-shrink: 0;
+    /* убрать рамку вокруг map. Ее и нет  (из-за border-color: transparent; )*/
+    border: none;
+
+    //в образце у карты - width  height четко указаны, без max и 100%:
+    // width: 360px;
+    height: 232px;
+    // width: 100%;  //растянуть  по ширине   сделано margin -24
+    // height: 100%;
+    margin: 0 -24px; //до границ родителя
+
+
+    @media screen and (min-width: $bp-desktop) {
+      //в образце у карты - width  height четко указаны, без max и 100%:
+      width: 605px;
+      height: 481px;
+
+      border-radius: 32px;
+      border-color: transparent;
+      //для Центрировать карту по высоте в flex-e существующем,общем с формой.
+      //Когда убрала высоту для формы (по замечаниям к дз3), явно стала видна разница высоты
+      // карты и формы (форма стала выше без h), а фон у карты и формы разный , разница в глаза бросается
+      //Решение - центрирвоать по высоте карту в общем flex с формой
+      margin: auto;
+    }
+
+  }
+
+  // .contacts-section__imag
+  &__imag {
+    //левая собака. в фигме - лишнее пустое пространство слева.
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: block;
+      // max-width: 353px;   // так не уменьшается
+      max-height: 520px; //так уменьшидась - по отношению к др. элементам своего flex
+      align-self: end; //книзу flex-a все
+      // padding-bottom: 43px;  //так меняется пропорционально размеры - уменьшается собака 
+      margin-bottom: 43px; // левая собака выше нижней границы на 43 (на фигме - от нижей границы правой собаки до нижней границы левой собаки)
+      max-width: 353px; //реальная ширина картинки
+      margin-left: -100px; //картинка влево за общий container
+    }
+  }
+
+  &__imag-right {
+    //правая собака 
+    // стилей нет, кроме спрятать для моб
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: block;
+      margin-left: 30px; //для разных отступов между формой и собаками при одинак gap  (67  97) 
+    }
+  }
+
+  // .contacts-section__form
+  &__form {
+
+    // /* .signup-free {   переименовала*/
+    // .contact-form-back {
+    // хотя .contacts-section__form  - нет. но пусть пока
+    // .contacts-section__form--back {
+    &--back {
+      /* 320x434 */
+      // max-width: 320px;  // ненадо, так форма гораздо уже, чем padding 24 от общего  родителя container
+
+      // background-color: var(--color-primary-bluedark);
+      // border: 2px solid var(--color-secondary-bluedark);
+      // border-radius: 24px;
+
+      /* 320x451 dog*/
+
+      /* justify-content: space-between; */
+      //бз -2*2=4 border  padding: 42px 24px; тогда нормально padding 15 с боков до текста в button, без переноса строки.
+
+      // padding: 36px 20px; //dog 36=72/2 между секциями по высоте. надо
+      // нет! - между секциями - устанавливается в section. Здесь - не об этом. УБрать
+      // padding: 0 20px;
+      //20 до краев, до красных. м.б .ненадо. пусть пока.
+      //до красных краев в моб - красный мой тестовый - это container общий . там везде 24, без разницы для моб и десктопн. В образце пекарни тоже
+      // так что эти 20 моб здесь ненадо. они padding 24 общий в container
+      padding: 0px;
+
+
+      //центриров формы
+      // margin: 0px auto;   // ненадо, когда убрала max-width 320 ( так форма гораздо уже, чем padding 24 от общего  родителя container)
+      // padding-top: 0px; //только 8 сверху от h2 - уже устанолвено h2
+      //dog - остальные padiing - с мод формой доделать!!!
+
+      /* подложка формы - фон, бордер... */
+      @media screen and (min-width: $bp-desktop) {
+        // /* 423x481 */ max-width: 422px; бз
+        // 600х595 
+        max-width: 600px;
+        // border: 4px solid var(--color-secondary-bluedark); бз
+        // border-radius: 32px; бз
+        // для позиционировать собак по бокам, за границами общего container-a
+        flex-basis: 600px;
+        // flex-grow: 2;
+        flex-shrink: 0; //!!!это помогло к flex-basis. Не изменять размер flex-а
+        // фактор сжатия flex-элемента, когда >(когда стандартная ширина flex-элементов шире, чем flex-контейнер.)
+
+        // Приберіть властивість max-height для форми (.contact-form-back) - на випадок,
+        //     якщо замовник вирішить додати додаткові поля,
+        //     щоб не було обмеження по висоті
+        // max-height: 482px;
+
+        //так, без указания высоты, резко видно разницу высоты соседней карты и этой формы
+        // max-height: 482px;
+        //вернула пока - так одинаковая высота карты и формы на странице визуально
+        // Без этого h - форма больше карты по высоте. но карта выравнена по высоте по центру margin auto
+        //посмотреть размеры и отступы самой формы, может она долдна выйти на  высоту 482 сама!!! 
+        //!!!
+        // да. ! ! ! Отступы 16,  а не 24 (как в modal) - сделано ниже 16 для contacts &__form-field 
+
+        // background-color: var(--color-primary-bluedark);
+        //   border: 4px solid var(--color-secondary-bluedark);
+        //   border-radius: 32px;
+
+        /* justify-content: space-between; */
+        // -4*2=8 border  padding: 48px 56px; тогда нормально padding 15 с боков до текста в buton, без переноса строки.
+
+        padding: 0px; // отменить отступы от моб версии . там  - между секциями установлены. надо
+        // нет ! между секциями расстояния - установлены в section, а не здесь, в подложке формы.
+        // padding-top: 0px; //только 16 сверху от h2 - уже устанолвено h2. Неакутально, перенесено h2 в form
+
+      }
+    }
+
+  }
+
+  // .modal__form-field { modal 24 , contacts 16)
+  // .contacts-section__form-field
+  &__form-field {
+    // поля ввода уже заголовка h2 в моб - нет
+    // padding: 0px 15.5px;
+    /* отступы между div (label+input)   для contacts другие , 16 (не 24 как для Modal) */
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $bp-desktop) {
+      // поля ввода одинак с шириной заголовка h2 в десктоп
+      padding: 0px;
+      // /* отступы между div (label+input)   для contacts 24 как для Modal) */
+      margin-bottom: 24px;
+
+    }
+
+    // .contacts-section__form-field--user-name
+    &--user-name {
+      background: url('../images/mod4_1username.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_1username.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
+    }
+
+    &--pet-name {
+      background: url('../images/mod4_2petname.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_2petname.svg') no-repeat 40px 8px / 32px 32px;
+      }
+    }
+
+    &--phone {
+      background: url('../images/mod4_3phone.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_3phone.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
+
+    }
+
+    &--email {
+      background: url('../images/mod4_4email.svg') no-repeat 24px 8px / 24px 24px;
+
+      @media screen and (min-width: $bp-desktop) {
+        background: url('../images/mod4_4email.svg') no-repeat 40px 8px / 32px 32px;
+      }
+
+    }
+  }
+
+  // .modal__button {
+  // .contacts-section__button {
+  &__button {
+    /* центрировать кнопку на форме */
+    /* кнопка по-умолч не является блоком. Она display-inlineblock (f12 видно) */
+    /* сделать кнопку на офрме block, чтобы центрировать ее с пом. margin 0 auto */
+    display: block;
+
+    /* доб 8 px снизу до параграфа отступ от кнопки */
+    // margin: 0 auto 8px;
+
+    //чтобы была моб форма не узкая, убрала Max-width 320 в --back
+    //после этого кнопка с явным указанием 15 с боков не центрируется.
+    // для центрирования - с боков надо таки auto
+    //для мобильной 
+    margin: 0 auto 8px;
+
+    @media screen and (min-width: $bp-desktop) {
+      //кнопка н адесктопе на 15 слева справа уже, чем input. Но при 15 не помещается в 1 строку текст на кнопке. Беру 10, чтобы помешлся текст
+      // margin: 0 10px 8px;
+      //после учета Border 4 в padding родителя contacts-section__form--back
+      //норм текст в кнопке , не переносится
+      //без адаптации. т.к. 14.5 и 15.5  одним 15 можно сделать
+      // margin: 0 15px 8px;
+
+      //чтобы была моб форма не узкая, убрала Max-width 320 в --back
+      //после этого кнопка с явным указанием 15 с боков не центрируется.
+      // для центрирования - с боков надо таки auto
+      //для мобильной 
+      // margin: 0 auto 8px;
+
+      //таки с адаптацией. декстопу с боков 15., а не авто
+      //т.к. у десктопной формы указан max-width, по отношению к нему с боков 15
+      // чтобы кнопка дескотпная на форме осталась меньше Input-ов . Так по фигме
+      //хотя можно и одинаковый margin делать моб и дсктопной  кнопке формы
+      // разница -  в задании max-width для десктопной, а для моильно й- нет max-width формеб родителю (--back), чтобы форма не была узкая
+      // и задание margin с боков - или меняет повдение размера кнопки при ресайз
+      // в обоих случаяых - норм (можно расширять кнопку, можно нет. Но с 15 вместо auto - не центрируется на мобильной , без max-width)
+      margin: 0 15px 8px;
+
+    }
+
+    // .modal__button:hover {   БЗ, для dog- ненадо
+    // &:hover {
+    //   /* Hover – цвет текста поменять для модальной формы.
+    //              Не видно текст при наведении.
+    //              Он по button-ptimary для кнопок на странице – темно-синий (так на странице надо и норм)
+    //               А на модальной форме – одинак с фоном */
+    //   color: var(--color-primary-blue);
+    // }
+  }
+
+  &__btn-center {
+    justify-content: center;
+  }
+
+  // //.contacts-section____iagree
+  // ненадо отдельный класс - все одинак iagree - модальн, contacts, footer , мобильн
+  // &__iagree {
+  //   //фонт chek-box "I agree" - одинаково моб, дскт
+  //   font-weight: 300;
+  //   font-size: 12px;
+  //   line-height: 1;
+  //   margin-top: 17px; //сверху до кнопки
+  //   color: var(--color-secondary-grey); //#839AA9;
+  // }
+}
+
+// //вверх
+// // .contacts-container {
+// // .contacts-section__container {
+// &__container {
+//     /* 1059x480 - без h2 */
+//     /*чтобы горизонтально расположить:   карта слева - форма справа */
+//     display: flex;
+//     /* ДЛя адаптива .  + max-width 709   */
+//     max-width: 1059px;
+//     justify-content: space-between;
+//     /* между картой слева и div формы справа */
+//     gap: 32px;
+//     /* отцентрировать этот flex относительно внешнего container */
+//     margin: 0 auto;
+// }
+
+
+// //вверх
+// /* .contacts-container iframe { */
+// // .contact-map {
+// // .contacts-section__map {
+// &__map {
+//     /* чтобы карта не сжималась после flex родителю и gap. Она в БЗ и не сжималась */
+//     flex-shrink: 0;
+//     /* убрать рамку вокруг map. Ее и нет нет (из-за border-color: transparent; )*/
+//     border: none;
+//     /* max-width: 605px;
+//   max-height: 481px;
+//  */
+//     //в образце у карты - width  height четко указаны, без max и 100%:
+//     width: 605px;
+//     height: 481px;
+
+//     border-radius: 32px;
+//     border-color: transparent;
+// }
+
+
+/* form sign up free */
+/* .signup-free {   переименовала*/
+// .contact-form-back {
+
+// //вверх
+// /* .signup-free {   переименовала*/
+// // .contact-form-back {
+// // .contacts-section__form--back {
+// хотя .contacts-section__form  - нет. но пусть пока
+// &--back {
+//     /* подложка формы - фон, бордер... */
+//     /* 423x481 */
+//     max-width: 422px;
+//     // Приберіть властивість max-height для форми (.contact-form-back) - на випадок,
+//     //     якщо замовник вирішить додати додаткові поля,
+//     //     щоб не було обмеження по висоті
+//     // max-height: 482px;
+//     background-color: var(--color-primary-bluedark);
+//     border: 4px solid var(--color-secondary-bluedark);
+//     border-radius: 32px;
+//     /* justify-content: space-between; */
+//     padding: 48px 56px;
+// }
+
+/* дальше  .signup-free  все ненадо. Была разметка без формы. уберется при scss
+// форма работает - по modal
+.signup-free-p {
+  max-width: 274px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.signup-free p:first-child {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-primary-white);
+}
+
+/* signup-free-p-free  -> text-brand,
+ из .css убрать .signup-free-p-free. 
+ Будет работать существующий теперь .text-brand */
+/* .signup-free-p-free { */
+/* или .signup-free-p span{} */
+/* span "безкоштовно" на форме  */
+/* color: var(--color-primary-blue); */
+/* } */
+
+/* .signup-free-p span {
+  background-color: red;
+} */
+
+// .signup-free-input {
+//     font-size: 13px;
+//     /* 400 и 15/13=1.2 дефолт */
+//     color: var(--color-primary-white);
+//     border-radius: 32px;
+//     border: 2px solid var(--color-secondary-greylight);
+//     padding: 18px 33px;
+//     /* между всеми полями ввода и до кнопки сверху */
+//     margin-bottom: 16px;
+// }
+
+// .signup-free-input:hover {
+//     /* не видно серого как на KIT, все синее вернуться!!! */
+//     background-color: transparent;
+// }
+
+// .signup-button {
+//     /* для расположить кнопку с текстом под ней - по центру и ппо нужному width */
+//     max-width: 281px;
+//     max-height: 97px;
+//     width: 100%;
+//     text-align: center;
+// }
+
+// .signup-free .button {
+//     /* width: 281px; */
+//     width: 100%;
+//     max-width: 281px;
+//     /* Width, height не задавать в px, надо в %, и   max-width: 1240px; */
+//     /* height: 53px; */
+//     /* отступ снизу до параграфа под кнопкой */
+//     margin-bottom: 8px;
+// }
+
+// /* стиль .button у 2х кнопок - .hero-section  и на форме .signup-free
+// но форма - синяя, буквы такие же при hover невидно текста.
+// в uikit нет стиля. поэтому так  - цвет фона здесь не транспарант, а мепнять на синенький*/
+// .signup-free .button:hover {
+//     background-color: var(--color-primary-blue);
+// }
+
+// .signup-free .under-button {
+//     /* background-color: red; */
+//     color: var(--color-secondary-greylight);
+//     /* для переноса текста */
+//     max-width: 213px;
+//     /* text-align: center; */
+//     margin: 0 auto;
+// }
+
+// .privacy-policy {
+//     text-decoration: underline;
+//     text-decoration-skip-ink: none;
+// }

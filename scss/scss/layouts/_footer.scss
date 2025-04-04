@@ -1,0 +1,708 @@
+/* Footer */
+
+.footer {
+    // /* пока на весь экран по горизонтали. позже наверное*/
+    // /* png - Прозрачная картинка */
+    // background-image: url("../images/footer-background.png");  бз
+    // background-color: var(--color-primary-bluedark); бз
+    // background-repeat: no-repeat; бз
+    // background-position: center top; бз
+    /* background-size: cover; бз*/
+    padding: 20px 0px 40px; // 20 = 40/2 между мециями , 40 целые снизу footer
+
+    @media screen and (min-width: $bp-desktop) {
+        /* padding: 56px; убрать отступы слева справа*/
+        // padding: 56px 0;
+        padding: 36px 0 50px; //36=72/2 между секциями
+        /* Слева- спрва в уроке убрали. Но можно 100 поставить, если Надо. Не меняет при resize визуально  ничего */
+        /* padding: 56px 100px; */
+
+        // /* для пары к   position: absolute;  к ::after  картинке бутылочек*/
+        // position: relative;   бз
+        // //картинка только в десктоп версии
+    }
+
+
+
+    // // .footer::after {
+    // &::after {
+    //     dog - сделан картинкйо вноутри footer. after ненадо //в моб версии картиник в футере нет.
+
+    //     //Можно display none - display block добавить. Но работает и так
+    //     @media screen and (min-width: $bp-desktop) {
+    //         /* картинка бутылочки внизу справа  */
+    //         position: absolute;
+    //         /* png - Прозрачная картинка */
+    //         // background-image: url(../images/PhotoRoom.png);
+    //         background-image: url(../images/footer-dog.png);
+    //         /* т.к. это – декор, ненадо добавлять через разметку html тэгом img, а делаем псевдоэлементом after. */
+    //         content: "";
+    //         /* добавлением размера фона картинка не появилась */
+    //         /* background-size: 247px 152px; */
+    //         /* размеры задать явно*/
+    //         width: 247px;
+    //         height: 152px;
+    //         /* размеры задали явно, поэтому меняем на 100% */
+    //         /* background-size: 100%; */
+    //         /* убрали 100% т.к. доавили no-repeat */
+    //         background-repeat: no-repeat;
+
+    //         /* поместить в нижний правый угол after */
+    //         bottom: 0;
+    //         right: 0;
+    //     }
+    // }
+
+
+    // .footer__container color
+    &__container-color {
+        background-color: greenyellow;
+        // margin: 122.5px auto 0; //от фона вертикально до футера 18  50, а не по 30
+        //-24 вместо auto  - чтобы закрашивалось до вертик. краев футера
+        margin: 122.5px -24px 40px; //40 – низ цветной области до футера отстоит на 40
+
+        // margin-top: 122.5px; //опустить фон с содержимым вниз, от верха футера
+
+        //еще внешний контейнер для фона
+        @media screen and (min-width: $bp-desktop) {
+            // padding: 30px 0;//фон Bckgr заливает только весь элемент внутри.  вместе с padding внутрь
+            // margin: 30px -24px; //-24 общий container 24 внутрь, а закрасить надо до границ внешних
+            margin: 18px -24px 50px; //от фона вертикально до футера 18  50, а не по 30
+            // background-color: aquamarine;
+        }
+
+    }
+
+    // .footer__container-external {
+    &__container-external {
+        //внешний flex - footer__container + собачка
+        display: flex;
+        flex-direction: column-reverse; //для моб. - вертик  и наоборот, сначала собачка
+        gap: 16px;
+        border: 1px solid green; //убрать!!!
+
+        @media screen and (min-width: $bp-desktop) {
+            flex-direction: row; //для десктоп. - гориз
+            gap: 6px; // gap: 20px;
+        }
+    }
+
+    // .footer__dog-img
+    &__dog-img {
+        max-width: 128px;
+        // margin: 0 auto; //центрировать собвчку
+        margin: -122.5px auto; //выехать собачку за фон вверх
+
+        @media screen and (min-width: $bp-desktop) {
+            max-width: 292px;
+            // margin-right: 100px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
+            // 100-24=76
+            margin-right: 76px; //десктопная собачка не поцентру, а влево. На макете - 100 справа
+            //собачка за границы фона вверх-вниз вылазит , до гориз.границ футера
+            margin-top: -18px;
+            margin-bottom: -50px;
+        }
+    }
+
+    // .footer__container {
+    &__container {
+        display: flex;
+        flex-direction: column; //для моб. - вертикs
+        /* между блоками крупными 2-мя - элементами flex (nav и address) родительского footer-container */
+        // между контакты и Политика 16 (из-за socials между Политика и coptight)
+        gap: 16px;
+        margin: 122.5px auto 0; //блок текстов footer-container – до футера 122.5 (собачка наезжает снизу на logo)
+        border: 1px solid blue; //убрать!!!
+
+        @media screen and (min-width: $bp-desktop) {
+            flex-direction: row; //для десктоп. - гориз
+            gap: 136px; // gap: 20px;
+            // padding: 32px 0px 31px 100px;  
+            // 100-24 слева = 76
+            padding: 32px 0px 31px 76px;
+            margin: 0 auto; //убрать 122.5 от моб 
+            justify-content: space-between; //убрать отступ от собачки слева, распределять в flex-е слева по краям
+        }
+    }
+
+
+    // .footer-nav,  .footer-address {
+    // .footer__nav, .footer__address {
+    &__nav,
+    &__address {
+        display: flex;
+        flex-direction: column; //для моб. - вертик
+        /* между блоками- элементами flex каждого родительского. попарно 
+        // бз - nav : logo - menu, в address:  contacts  -  address-info ) */
+        // dog - от лого до меню в моб версии. Это gap. этот один
+        gap: 24px; //20px;
+        text-align: center; //для моб. надо центрировать .  сюда - чтобы наследовалось на все элементы
+
+        @media screen and (min-width: $bp-desktop) {
+            /* .footer-nav -  для логотип и список ul стали в один ряд */
+            /* .footer-address -  чтобы ul и addres-info (copyright и ...) стали в ряд */
+            // display: flex;    //вверх в моб.
+            flex-direction: row; //для десктоп. - гориз
+            flex-basis: 50%;
+            /* между блоками- элементами flex каждого родительского. попарно */
+            // gap: 20px; //вверх в моб.
+            text-align: left;
+            gap: 136px; //dog
+        }
+
+    }
+
+    &__address-mob-gap {
+        // <address class="footer__address footer__address-mob-gap">
+        //в моб версии для особого расположения socials (над copyright) 
+        //эти 8px - это Gap 
+        //( а в десктопной 16 - margin-top от copyright)
+        gap: 8px;
+
+        @media screen and (min-width: $bp-desktop) {
+            gap: 20px;
+        }
+    }
+
+    // .footer-logo,.footer-menu {
+    // .footer__logo, .footer__menu {
+    //разделяю исходник &__logo,  &__menu. Для убрать footer__ul li - чисто отступ, и все, в2= местах был. СДелать flex footer__menu   footer__address-list
+    // &__logo,
+    // &__menu {
+    //     /* для логотип и список ul заняли по 50% в своем flex*/
+    //     flex-grow: 1;
+    // }
+
+    // footer__logo-socias
+    &__logo-socias {
+        //только для центрирования logo моб. После доб социконок
+        margin: 0 auto;
+        // На десктопную не повлияло. Осталось влево.,
+        // как и надо.
+        //т.к. там отмена центрирования для декстоп есть
+        //  (.footer__logo - margin: 0; 
+        // и .socials justify-content: flex-start; ).
+    }
+
+    // .footer__logo
+    &__logo {
+        /* для логотип и список ul заняли по 50% в своем flex-родителе footer__nav*/
+        // у &__menu тоже останется (установлен) flex-grow: 1;
+        flex-grow: 1;
+        margin: 0 auto; //центрировать logo в моб
+
+        @media screen and (min-width: $bp-desktop) {
+            margin: 0; //отменить центр. logo  для декстоп
+        }
+    }
+
+    // .footer__menu
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        /* для логотип и список ul заняли по 50% в своем flex-родителе footer__nav*/
+        // у &__logo тоже останется (установлен) flex-grow: 1;
+        flex-grow: 1;
+    }
+
+
+    // //    Убрала footer__ul li - это был чисто отступ 16,      и все,
+    // //     в2-х местах был. СДелать flex footer__menu footer__address-list и там gap 16
+    // &__ul {
+    //     // для отступов между меню навигации и адреса 16
+    //     // index - <ul class="footer__ul">
+    //     //причем - всех списков в футере (навигации, адресов)
+    //     // background-color: aqua;
+
+    //     // // /* между Li -ссылками - снизу 16, кроме последнего */
+    //     // // .footer-ul li:not(:last-child) {
+    //     // // .footer__ul li:not(:last-child) {
+    //     // // &__ul li:not(:last-child) {
+    //     // // & li:not(:last-child) {
+    //     // & li:not(:last-child) {
+    //     //     margin-bottom: 16px;
+    //     //     // background-color: chartreuse;
+    //     // }
+
+    //     // // .footer-ul li:last-child {
+    //     // // &__ul li:last-child {
+    //     // & li:last-child {
+    //     //     margin-bottom: 0;
+    //     // }
+
+    //     // /* между Li -ссылками - снизу 16, включая последний */
+    //     // Будет везде под элементами списков 16 в футере. Под последним у навигации тоже. НО – там визуально много места,
+    //     // неважно. Но – если надо – там (последнему li меню –списку навигации) отдельный класс сделать,
+    //     // убирающий этот отступ для последнего элемента меню
+
+
+    //     // & { так не рабюотает (без li). 
+    //     // И li без пробела не сработал,
+    //     // он (footer_ul в indeх) далеко от1-го уровня вложенности в index (<address class="footer__address footer__ul">).address-icon
+    //     //и близко не сработал без пробела <ul class="footer__ul">
+    //     & li {
+    //         margin-bottom: 16px;
+    //         // background-color: chartreuse;
+    //     }
+
+    //     //    Убрала footer__ul li - это был чисто отступ 16,      и все,
+    //     //     в2-х местах был. СДелать flex footer__menu footer__address-list и там gap 16
+
+    // }
+
+    // .footer-link {
+    // .footer__link {
+    &__link {
+        //меню nav  - шрифт
+        color: var(--color-primary-black);
+        font-size: 16px;
+        line-height: 1;
+        // font-weight: 400  наслед
+        /* 14/16,4 ~1.17  1.2 default */
+        // display: none;--
+        white-space: nowrap; //не переносить меню на 2-ю строка
+
+        @media screen and (min-width: $bp-desktop) {
+            font-size: 18px;
+            /* 24/18 =1.18  1.333 default */
+            //не взялось после моб 100% . назначить явно заново
+            line-height: 1.33;
+            letter-spacing: 5%; //браузер ругается, VScode - норм
+
+            //text-decoration: none; //перенесено в класс .link
+            /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
+            //transition: color 0.2s, font-weight 0.2s; //перенесено в класс .link
+            // display: inline-block;--
+        }
+
+        // &--mob {
+        //     display: block;
+
+        //     // < !-- Если надо в моб версии реально так,
+        //     // - иконки socials между политикаКонф и copyright,
+        //     // (а не как в футере десктоп - политикаКонф и copyright рядом) -->
+        //     @media screen and (min-width: $bp-desktop) {
+        //         display: none;
+        //     }
+        // }
+    }
+
+    &__poltk-mob {
+        // Внимание ! Класс footer__link используется в других списках footer,
+        // его не меняю. Добавляю отд. Новый класс footer__poltk-mob--hide и --show.
+
+        // display: block;
+
+        // // < !-- Если надо в моб версии реально так,
+        // // - иконки socials между политикаКонф и copyright,
+        // // (а не как в футере десктоп - политикаКонф и copyright рядом) -->
+        // @media screen and (min-width: $bp-desktop) {
+        //     display: none;
+        // }
+
+        &--show {
+            // <a Політика>  в  <div class="footer__contacts">  после "footer__address-list"
+            //1. моб - показать Политик над соц, десктоп -скрыть 
+            display: block;
+
+            @media screen and (min-width: $bp-desktop) {
+                display: none;
+            }
+        }
+
+        &--hide {
+            // <a Політика> в <div class="footer__address-info">
+            //2. моб - спрятать Политик под соц, десктоп - показать
+            display: none;
+
+            @media screen and (min-width: $bp-desktop) {
+                display: inline-block;
+            }
+        }
+    }
+
+
+    // .address-lists, .address-info {
+    // .footer__address-lists, .footer_address-info {
+    // &__address-lists,     &__address-info {
+    &__contacts,
+    &__address-info {
+        //это классы div-ов, в которых список и info соответственно
+        /* во 2м flex address - 2 внутренних элемента ( div .address-lists  и .address-info) занимают по 50% */
+        //чтобы одинаковое свободное место занимали
+        flex-grow: 1;
+    }
+
+
+    //   &__address-list,
+    //   &__address-info {
+    &__address-list {
+        display: none;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 16px;
+        }
+
+    }
+
+    //   &__address-list,
+    //   &__address-info {
+    //       flex-grow: 1;
+    //   }
+
+    // &__address-info  у меня не flex 
+
+    // footer__socials-before
+    &__socials-before {
+        // социконки для моб - под меню, для десктоп - под лого
+        //бз- между адресами address-list и группой иконок socials (над иконками)
+        // моб - этой группы нет. 
+        //в моб версии - они под меню расположены  (footer__socials-after)
+        display: none;
+        gap: 8px;
+
+        @media screen and (min-width: $bp-desktop) {
+            display: flex;
+            margin-top: 24px; //между logo и группой иконок socials 
+        }
+    }
+
+
+
+    &__socials-after {
+        //after и before - это социконки относительно меню 
+        // социконки для моб - под меню, для десктоп - под лого
+        // десктоп - этой группы нет. в моб версии - они под меню расположены 
+
+        // margin-top: 24px; // расстояние до меню над соц иконками
+        // margin-bottom: 24px; // расстояние от меню ндо формы вниз
+        // Убрать margin-top -bottom 24.  Сделано в footer__container gap: 24px;
+        gap: 8px;
+
+        @media screen and (min-width: $bp-desktop) {
+
+            // для декстоп версии - этой группы нет. социконки под logo (&__socials-before)
+            display: none;
+        }
+    }
+
+    //это чисто тэги были   address li
+    /* между Li -адресами - снизу 16 у всех, включая последний */
+    //теперь - 1. расстояние между li 16 с пом. footer__ul 
+    //         2. последнему - таки тоже 16 снизу, но с пом. - над соц.иконками 16
+    //         2.1. нет - всем 2м спискам ul снизу li в футере - 16, включая последний Li 
+    //               (использ. в списках 1.меню навигации  и 2.меню адресов-ссылок)
+    //               .footer_ul    переделать на БЕЗ last-child
+    //         2.1.1 одному последнему Li  в меню навигации - отдельный класс можно (убрать отступ снизу). Но визуально - там неважно, много места снизу, можно оставить с отступом после последнго li
+    // address li {
+    // .footer__social-before li {
+    //убрала - выше есть &__socials-before
+    // &__social-before li {
+    //     margin-bottom: 16px;
+    // }
+
+
+    //вверх на уровень footer
+    /* .address-icon */
+    // .address-icon -> .footer__address-icon
+    // .address-icon {
+    // .footer__address-icon {
+    // &__address-icon {
+    &__socials-icon {
+        width: 32px;
+        height: 100%;
+
+        fill: var(--color-primary-orange);
+        transition: fill 0.2s;
+        /* выше на flex-Родителе .icon-link-ul   
+  background: transparent; */
+        /* обводка иконки нет */
+        /* stroke: red; */
+
+        @media screen and (min-width: $bp-desktop) {
+            width: 40px;
+        }
+
+        //вверх на уровено address-icon
+        // .address-icon :hover {
+        // .footer__address-icon :hover {
+        // &__address-icon :hover {
+        & :hover {
+            /* иконки как текст при навдении, мб ненадо, в UIKit один цвет иконок, но разный цвет текста рядом есть */
+            fill: var(--color-primary-blue);
+        }
+    }
+
+
+    // .copyright {
+    // .footer__copyright {
+    &__copyright {
+        color: var(--color-secondary-greylight);
+        font-size: 12px;
+        //18/12 =1.5
+        line-height: 1.5;
+        margin-bottom: 0;
+
+        @media screen and (min-width: $bp-desktop) {
+            /* иначе a от p не подвинулось, только mrgn-top */
+            margin-top: 16px;
+            // margin-bottom: 0;  вверх
+            font-size: 13px;
+            //15,2/13 =1.17 ~1.2 наслед
+            //но надо вернуть после моб версии 1.5 (иначе 19 , а не 15)
+            line-height: 1.17;
+            // color: var(--color-secondary-greylight);  вверх
+        }
+    }
+
+    //footer__iagree
+    &__iagree {
+        //фонт chek-box "I agree" - одинаково моб, дскт
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1;
+        margin-top: 17px; //сверху до кнопки
+        color: var(--color-secondary-grey); //#839AA9;
+
+        //footer__iagree--top8
+        &--top8 {
+            // в мобверсии формы сверху до кнопки “Explore more”– не 17 (как везде в iagree),а 8 !!!
+            margin-top: 8px; //сверху до кнопки 1 раз  и только в моб вресии
+
+            @media screen and (min-width: $bp-desktop) {
+                margin-top: 17px; //сверху до кнопки для десктопной вернуть 
+            }
+        }
+    }
+}
+
+// //вверх
+// // .footer::after {
+// &::after {
+//     /* картинка бутылочки внизу справа  */
+//     position: absolute;
+//     /* png - Прозрачная картинка */
+//     background-image: url(../images/PhotoRoom.png);
+//     /* т.к. это – декор, ненадо добавлять через разметку html тэгом img, а делаем псевдоэлементом after. */
+//     content: "";
+//     /* добавлением размера фона картинка не появилась */
+//     /* background-size: 247px 152px; */
+//     /* размеры задать явно*/
+//     width: 247px;
+//     height: 152px;
+//     /* размеры задали явно, поэтому меняем на 100% */
+//     /* background-size: 100%; */
+//     /* убрали 100% т.к. доавили no-repeat */
+//     background-repeat: no-repeat;
+
+//     /* поместить в нижний правый угол after */
+//     bottom: 0;
+//     right: 0;
+// }
+
+
+//этот никуда не поднимала, не используется пока
+.footer-container-my0 {
+    /*  общий внешний .container 1440x278 */
+    /* этот .footer-container 1240x166 */
+    /* background-color: red; */
+    border: 4px solid var(--color-secondary-bluedark);
+    max-width: 1240px;
+    width: 100%;
+    /* 4 блока (логотип+ nav+ address+copyright) стали горизонтально рядом
+        но align-items=stretch по-умолч - поэтому растянут общий список  иконок по вертикали на всю высоту строки - родительского элемента */
+    display: flex;
+    /* сделать область иконок не растянутой stretch (по-умолч), а центрированной по вертикали */
+    /* align-items: center; */
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
+    /* для разделить все 4 блока внутри при уменьшении размера экрана */
+    /* gap: 186px; */
+    padding: 56px 100px;
+
+    /* ДЛя адаптива .    */
+    /* max-width: 1240px; */
+
+    justify-content: space-between;
+
+    /* отцентрировать этот flex относительно внешнего container */
+    /* margin: 0 auto; */
+}
+
+
+// //вверх
+// // .footer-container {
+// // .footer__container {
+// &__container {
+//     display: flex;
+//     /* между блоками крупными 2-мя - элементами flex (nav и address) родительского footer-container */
+//     gap: 20px;
+// }
+
+// //вверх
+// // .footer-nav,  .footer-address {
+// // .footer__nav, .footer__address {
+// &__nav,
+// &__address {
+//     /* .footer-nav -  для логотип и список ul стали в один ряд */
+//     /* .footer-address -  чтобы ul и addres-info (copyright и ...) стали в ряд */
+//     display: flex;
+//     flex-basis: 50%;
+//     /* между блоками- элементами flex каждого родительского. попарно */
+//     gap: 20px;
+// }
+
+
+// //вверх
+// // .footer-logo,.footer-menu {
+// // .footer__logo, .footer__menu {
+// &__logo,
+// &__menu {
+//     /* для логотип и список ul заняли по 50% в своем flex*/
+//     flex-grow: 1;
+// }
+
+
+
+// //вверх
+// // .footer-link {
+// // .footer__link {
+// &__link {
+//     color: var(--color-primary-white);
+//     font-size: 16px;
+//     /* 16/19 =1.18  1.2 default */
+//     //text-decoration: none; //перенесено в класс .link
+//     /* анимация переход цвета ссылки при hover - плавно меняется цвет текста и фонт*/
+//     //transition: color 0.2s, font-weight 0.2s; //перенесено в класс .link
+// }
+
+/* вопрос - в макете ничем не отличается выделенный элемент меню нвигации footer
+Сделан, как header-link:hover*/
+/* перенесен к .header-link:hover  Через запятую */
+/* .footer-link:hover { */
+/* color: var(--color-primary-blue); */
+/* text-decoration: underline; */
+/* font-weight: 700; */
+/* } */
+
+
+// //вверх - 1.на уровне footer Доб-ть &__ul  2. в уровень &__ul вложить эти 2 
+// /* между Li -ссылками - снизу 16, кроме последнего */
+// // .footer-ul li:not(:last-child) {
+// // .footer__ul li:not(:last-child) {
+// &__ul li:not(:last-child) {
+//     margin-bottom: 16px;
+// }
+
+// // .footer-ul li:last-child {
+// &__ul li:last-child {
+//     margin-bottom: 0;
+// }
+
+
+
+/* .footer-address-ul {
+  сузить блок адресов
+  max-width: 192px;
+  max-height: 166px;
+  width: 100%;
+} */
+
+/* .footer-address-ul li:last-child {
+  max-width: 203;
+} */
+
+
+// // вверх вложить в уровень footer 1й
+// //это чисто тэги были
+// /* между Li -адресами - снизу 16 у всех, включая последний */
+// //теперь - 1. расстояние между li 16 с пом. footer__ul 
+// //         2. последнему - таки тоже 16 снизу - над соц.иконками 16
+// // address li {
+// // .footer__social-before li {
+// &__social-before li {
+//     margin-bottom: 16px;
+// }
+
+
+// //вверх
+// // .address-lists, .address-info {
+// // .footer__address-lists, .footer_address-info {
+// &__address-lists,
+// &__address-info {
+//     /* во 2м flex address - 2 внутренних элемента ( div .address-lists  и .address-info) занимают по 50% */
+//     flex-grow: 1;
+// }
+
+// // их 2 класса было с одним названием - переношу в header  отсюда  (из footer)
+// .icon-link-ul {
+//     // от footer-a
+//     /* 174x42 */
+//     max-width: 174px;
+//     max-height: 42px;
+//     width: 100%;
+//     justify-content: space-between;
+//     /* иконки на синем фоне - нет так. свовсем не видно!!!! вернуться */
+//     /* по Mod10 иконки svg backcolor белый, теперь это надо */
+//     background-color: transparent;
+// }
+
+// //перенесла в _header.scss пока. может потом выделю icon-link-ul
+// /* иконки в header и footer одинак с mrgn-bt=0. взял 16 от "address li". Обнулить */
+// .icon-link-ul li {
+//     margin-bottom: 0;
+// }
+
+// .icon-link-ul img {
+//     /* margin-bottom: 0; */
+//     /* ??? */
+//     /* картинку как 42 42 сдеать? max-width: 42px; */
+//     max-height: 42px;
+//     width: 100%;
+// }
+
+/* .footer-last li:not(:last-child) { */
+/* .confidens { */
+/* background-color: red; */
+/* f12 отражает, но поверх текста нижнего, реально не отодвигает :*/
+/* margin-bottom: 16px; */
+/* } */
+
+
+// //вверх на уровень footer
+// /* .address-icon */
+// // .address-icon -> .footer__address-icon
+// // .address-icon {
+// // .footer__address-icon {
+// &__address-icon {
+//     fill: var(--color-primary-white);
+//     /* выше на flex-Родителе .icon-link-ul   
+//   background: transparent; */
+//     /* обводка иконки нет */
+//     /* stroke: red; */
+// }
+
+// //вверх на уровено address-icon
+// // .address-icon :hover {
+// // .footer__address-icon :hover {
+// // &__address-icon :hover {
+// & :hover {
+//     /* иконки как текст при навдении, мб ненадо, в UIKit один цвет иконок, но разный цвет текста рядом есть */
+//     fill: var(--color-primary-blue);
+// }
+
+
+// //вверх
+// // .copyright {
+// // .footer__copyright {
+// &__copyright {
+//     /* иначе a от p не подвинулось, только mrgn-top */
+//     margin-top: 16px;
+//     margin-bottom: 0;
+//     font-size: 13px;
+//     color: var(--color-secondary-greylight);
+// }
