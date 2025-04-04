@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title lang="en">DOGclub Svet page2</title>
+    <!--index был - из d:\IT_FullStack\ФиналПроект\genius-homework-4-mainBEMafter\ -->
+    <!-- Fonts -->
+    <!--Font play 700 400-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- Font Roboto  900 700 400 -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Fonts dog-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&family=Roboto:wght@100..900&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/main.css" /> -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <!-- Это названия id section– для ссылок (SCSS называются по классам, а не по id) -->
+    <!-- section-about-us   - section-less-talk  -->
+    <!-- section-why-us  -> section-services-category -->
+    <!-- section-our-procedures-> section-happy-customer -->
+    <!-- section-contacts -->
+
+    <!-- <div class="wave1"></div> -->
+    <header class="header">
+      <div class="container">
+        <!-- <div class="header-container"> -->
+        <div class="header__container">
+          <!-- <nav class="header-nav"> -->
+          <nav class="header__nav">
+            <!-- Logo and menu  -->
+            <!-- <img
+              src="./images/icon-sled-logo.svg"
+              alt="Veterinary clinic icon DOGclub"
+            /> -->
+
+            <!-- <a class="logo" href="#"> </a> -->
+            <!-- class logo - можно  для  before след на всех элементах - header, footer. Сейчас - flex// -->
+            <a class="logo" href="#">
+              <img
+                class="logo-sled-size logo-sled-size__header"
+                src="./images/icon-sled-logo.svg"
+                alt="Veterinary clinic icon DOGclub"
+              />
+
+              <img
+                class="logo-width__header"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a>
+
+            <!-- <ul class="header-menu"> -->
+            <ul class="header__menu">
+              <li>
+                <!-- <a class="header-link  -->
+                <a class="header__link link" href="#section-less-talk"
+                  >Less talk</a
+                >
+              </li>
+              <li>
+                <!-- <a class="header__link link" href="#section-why-us">Чому ми</a> -->
+                <a class="header__link link" href="#section-services-category"
+                  >Services category</a
+                >
+              </li>
+              <li>
+                <a class="header__link link" href="#section-happy-customer"
+                  >Happy customer</a
+                >
+              </li>
+              <li>
+                <a class="header__link link" href="#section-contacts"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <!-- <div> -->
+          <!-- <ul class="icon-link-ul"> -->
+          <!-- <ul class="socials socials--header"> -->
+          <!-- <ul class="header__socials socials socials--header"> -->
+          <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
+          <!-- </ul> -->
+
+          <!-- <div class="header__socials socials socials--header"> -->
+          <div class="header__basket">
+            <a
+              rel="noopener noreferrer"
+              href="tel:+38(096)0000007"
+              title="Veterinary clinic icon basket"
+              target="_blank"
+            >
+              <!-- <svg class="header__socials-icon" width="40" height="40"> -->
+              <svg class="header__basket-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-header-basket"></use>
+              </svg>
+            </a>
+
+            <button
+              class="button button__section button__mob-hide modal-btn-open"
+              type="button"
+            >
+              Contact us
+            </button>
+          </div>
+
+          <button class="header__burger menu-btn-open" type="button">
+            <!-- меню бургер  3 черточки мобильного  -->
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <div class="mobile-menu">
+            <!-- class="mobile-menu__btn-close modal__btn-close menu-btn-close" -->
+            <button class="mobile-menu__btn-close menu-btn-close" type="button">
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <!-- dz4 <a class="mobile-menu__logo" href="/">
+              <img
+                class="logo-width"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a> -->
+
+            <!-- Logo and menu  -->
+
+            <a class="logo mobile-menu__logo" href="/">
+              <img
+                class="logo-sled-size"
+                src="./images/icon-sled-logo.svg"
+                alt="Veterinary clinic icon DOGclub"
+              />
+              <img
+                class="logo-width"
+                src="./images/logo.svg"
+                alt="Veterinary clinic logo DOGclub"
+              />
+            </a>
+
+            <ul class="mobile-menu__list">
+              <li>
+                <a class="mobile-menu__link" href="#section-less-talk">
+                  Less talk
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-services-category"
+                  >Services category
+                </a>
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-happy-customer"
+                  >Happy customer</a
+                >
+              </li>
+              <li>
+                <a class="mobile-menu__link" href="#section-contacts"
+                  >Contact
+                </a>
+              </li>
+            </ul>
+            <ul class="mobile-menu__socials socials">
+              <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
+              <li>
+                <!-- <a class="icon-link" href=""> -->
+                <!-- class="icon-link" -->
+                <a
+                  rel="noopener noreferrer"
+                  href="https://www.instagram.com/"
+                  title="Instagram"
+                  target="_blank"
+                >
+                  <!-- <svg width="25" height="25" viewBox="0 0 32 32"> -->
+                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
+                  <svg class="header__socials-icon" width="32" height="32">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+                <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+              </li>
+              <li>
+                <!-- <a class="icon-link" href=""> -->
+                <!-- class="icon-link" -->
+                <a
+                  href="https://www.facebook.com/"
+                  title="Facebook"
+                  target="_blank"
+                >
+                  <!-- <svg width="16" height="28" viewBox="0 0 32 32"> -->
+                  <!-- <svg width="32" height="32" viewBox="0 0 32 32"> -->
+                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
+                  <svg class="header__socials-icon" width="32" height="32">
+                    <use href="images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="nutri-menu-section">
+        <div class="wave-bckgr-page2"></div>
+        <div class="container">
+          <div class="nutri-menu-section__container">
+            <div class="nutri-menu-section__title">Nutrition</div>
+            <div class="nutri-menu-section__sort">
+              <!-- <p class="nutri-menu-section__sorting">Sorting:</p> -->
+
+              <p class="nutri-menu-section__sorting--text">Sorting:</p>
+              <svg
+                class="nutri-menu-section__sorting--icon"
+                width="24"
+                height="24"
+              >
+                <use href="images/icons.svg#icon-arrow-sort"></use>
+              </svg>
+
+              <ul class="nutri-menu-section__sort-menu">
+                <li
+                  class="nutri-menu-section__sort-item nutri-menu-section__sort-item--show"
+                >
+                  Popularity
+                </li>
+                <li class="nutri-menu-section__sort-item">Cheaper first</li>
+                <li class="nutri-menu-section__sort-item">
+                  More expensive first
+                </li>
+                <li class="nutri-menu-section__sort-item">By name</li>
+                <li class="nutri-menu-section__sort-item">New ones first</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="nutri-food-section">
+        <div class="container">
+          <div class="nutri-food-section__container">
+            <ul class="food__list">
+              <li class="food__item">
+                <article class="food-card">
+                  <div class="food-card__back-img">
+                    <img
+                      class="food-card__image"
+                      srcset="
+                        ./images/img_page2/pg2_nutr_1r-1c-1-image7.jpg 1x,
+                        ./images/sect4_1christian-tom@2x_!!!.jpg       2x
+                      "
+                      src="./images/img_page2/pg2_nutr_1r-1c-1-image7.jpg"
+                      alt="Photo of Dry food for dogs of average breeds Savory 3 kg (turkey and lamb)"
+                    />
+                  </div>
+                  <div class="food-card__back-end">
+                    <div>
+                      <div class="food-card__row-count">
+                        <p class="food-card__p food-card__p--counter">
+                          Vendor code: 37875
+                        </p>
+                        <div class="food-card__row-count--bone">
+                          <svg class="icon-color" width="16" height="16">
+                            <use href="./images/icons.svg#icon-star-food"></use>
+                          </svg>
+                          <svg class="icon-color" width="16" height="16">
+                            <use href="./images/icons.svg#icon-star-food"></use>
+                          </svg>
+                          <svg class="icon-color" width="16" height="16">
+                            <use href="./images/icons.svg#icon-star-food"></use>
+                          </svg>
+                          <svg class="icon-color" width="16" height="16">
+                            <use href="./images/icons.svg#icon-star-food"></use>
+                          </svg>
+                          <svg class="icon-color__gray" width="16" height="16">
+                            <use href="./images/icons.svg#icon-star-food"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <h3 class="food-card__titleh3">
+                        Dry food for dogs of average breeds Savory 3 kg (turkey
+                        and lamb)
+                      </h3>
+                      <div class="food-card__row-count">
+                        <p class="food-card__p food-card__p--actual">136.00$</p>
+                        <p class="food-card__p food-card__p--counter">
+                          320.43$
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="button__section button button--center"
+                    type="submit"
+                  >
+                    Buy
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="procedure-section" id="section-happy-customer">
+        <div class="container">
+          <div class="procedure-section__container">
+            <ul class="procedure-section__list">
+              <!-- <li class="procedure-item"> -->
+              <li class="procedure-section__item procedure-section__item--show">
+                <!-- <article><h3>Маски для обличчя</h3></article> -->
+                <!-- <img
+                  src="./images/faceprocMask1.jpg"
+                  alt="Фото жiнки на процедурi Маски для обличчя"
+                /> -->
+
+                <article class="procedure-card">
+                  <!-- <article class="procedure-section__card"> -->
+                  <!-- class="procedure-card-image" -->
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_1christian-tom.jpg    1x,
+                      ./images/sect4_1christian-tom@2x.jpg 2x
+                    "
+                    src="./images/sect4_1christian-tom.jpg"
+                    alt="Photo of customer Christin & Tom"
+                  />
+                  <div class="procedure-card__back-end">
+                    <div>
+                      <h3 class="procedure-card__titleh3">Christin & Tom</h3>
+                      <p class="procedure-card__p">
+                        Love the overall workout experience!
+                      </p>
+                      <div class="procedure-card__row-count">
+                        <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                        <div class="procedure-card__row-count--bone">
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                          <svg class="icon-color" width="32" height="14">
+                            <use
+                              href="./images/icons.svg#icon-bone-count"
+                            ></use>
+                          </svg>
+                        </div>
+                        <p class="procedure-card__p procedure-card__p--counter">
+                          5/5
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <!-- <li class="procedure-item"> -->
+              <!-- <li class="procedure-section__item procedure-section__item--hide"> -->
+              <li class="procedure-section__item procedure-section__item--hide">
+                <article class="procedure-card">
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_2anna.jpg     1x,
+                      ./images/sect4_2anna@2x_.jpg 2x
+                    "
+                    src="./images/sect4_2anna.jpg"
+                    alt="Photo of customer Anna & Tobby"
+                  />
+                  <div class="procedure-card__back-end">
+                    <h3 class="procedure-card__titleh3">Anna & Tobby</h3>
+                    <p class="procedure-card__p">
+                      Amazing Products & Delivery on time.
+                    </p>
+                    <div class="procedure-card__row-count">
+                      <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                      <div class="procedure-card__row-count--bone">
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color__white" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                      </div>
+                      <p class="procedure-card__p procedure-card__p--counter">
+                        4/5
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <!-- <li class="procedure-item"> -->
+              <li class="procedure-section__item procedure-section__item--hide">
+                <article class="procedure-card">
+                  <img
+                    class="procedure-card__image"
+                    srcset="
+                      ./images/sect4_3sindy.jpg    1x,
+                      ./images/sect4_3sindy@2x.jpg 2x
+                    "
+                    src="./images/sect4_3sindy.jpg"
+                    alt="Photo of customer Sindy & Kitch"
+                  />
+                  <div class="procedure-card__back-end">
+                    <h3 class="procedure-card__titleh3">Sindy & Kitch</h3>
+                    <p class="procedure-card__p">Great job with the trainer!</p>
+                    <div class="procedure-card__row-count">
+                      <div class="procedure-card__row-count--bone">
+                        <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                        <svg class="icon-color" width="32" height="14">
+                          <use href="./images/icons.svg#icon-bone-count"></use>
+                        </svg>
+                      </div>
+                      <p class="procedure-card__p procedure-card__p--counter">
+                        5/5
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="pagination">
+            <span
+              class="pagination__button pagination__button--active"
+              aria-current="true"
+            ></span>
+            <span class="pagination__button"></span>
+            <span class="pagination__button"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="hero-section">
+        <div class="wave-bckgr-page2"></div>
+        <div class="container">
+          <div class="hero-section__container">
+            <div class="hero-section__title">
+              <h1 class="hero-section__title--big" lang="en">
+                Taking care for your
+                <span class="text-capitalize">smart dog!</span>
+              </h1>
+
+              <p class="hero-section__top-button">
+                Human–canine bonding is the relationship between dogs and humans
+              </p>
+              <button
+                class="button button__section modal-btn-open"
+                type="button"
+              >
+                Explore More
+              </button>
+            </div>
+
+            <img
+              class="hero-section__image"
+              srcset="./images/dog_yell.png 1x, ./images/dog_yell@2x.jpg 2x"
+              src="./images/dog_yell.jpg"
+              alt="Black dog"
+            />
+          </div>
+        </div>
+      </section> -->
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__container-color">
+          <div class="footer__container-external">
+            <div class="footer__container">
+              <nav class="footer__nav">
+                <!-- Logo and menu  -->
+                <!-- div чтобы Logo был ссылкой с наведением только на тексте Img, поменьше -->
+                <!-- <div class="footer-logo"> -->
+                <!-- dz4  <div class="footer__logo">
+              <a href="#">
+                <img
+                  class="logo-width__footer"
+                  src="./images/logo.svg"
+                  alt="Логотип косметологічної клініки Beauty Zone"
+              /></a>
+            </div> -->
+                <div class="footer__logo-socias">
+                  <div class="footer__logo">
+                    <a class="logo" href="#">
+                      <img
+                        class="logo-sled-size logo-sled-size__footer"
+                        src="./images/icon-sled-logo.svg"
+                        alt="Veterinary clinic icon DOGclub"
+                      />
+
+                      <img
+                        class="logo-width__footer"
+                        src="./images/logo.svg"
+                        alt="Veterinary clinic logo DOGclub"
+                      />
+                    </a>
+                  </div>
+
+                  <ul class="socials footer__socials-before">
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/"
+                        title="Instagram"
+                        target="_blank"
+                      >
+                        <!-- <svg width="32" height="32"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-instagram"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                    </li>
+                    <li>
+                      <!-- <a class="icon-link" href=""> -->
+                      <!-- class="icon-link" -->
+                      <a
+                        href="https://www.facebook.com/"
+                        title="Facebook"
+                        target="_blank"
+                      >
+                        <!-- <svg width="22" height="37"> -->
+                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                        <svg
+                          class="footer__socials-icon"
+                          width="40"
+                          height="40"
+                        >
+                          <use href="images/icons.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- <ul class="footer-menu footer--ul"> -->
+                <!-- <ul class="footer__menu footer__ul"> убрала footer__ul был только отстпу 16 для li-->
+                <ul class="footer__menu">
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-about-us"> -->
+                    <a class="footer__link link" href="#section-less-talk">
+                      Less talk</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-why-us">Чому ми</a> -->
+                    <a
+                      class="footer__link link"
+                      href="#section-services-category"
+                      >Services category</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-our-procedures" -->
+                    <a class="footer__link link" href="#section-happy-customer"
+                      >Happy customer</a
+                    >
+                  </li>
+                  <li>
+                    <!-- <a class="footer-link link" href="#section-contacts" -->
+                    <a class="footer__link link" href="#section-contacts"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+
+              <ul class="socials footer__socials-after">
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/"
+                    title="Instagram"
+                    target="_blank"
+                  >
+                    <!-- <svg width="32" height="32"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
+                </li>
+                <li>
+                  <!-- <a class="icon-link" href=""> -->
+                  <!-- class="icon-link" -->
+                  <a
+                    href="https://www.facebook.com/"
+                    title="Facebook"
+                    target="_blank"
+                  >
+                    <!-- <svg width="22" height="37"> -->
+                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
+                    <svg class="footer__socials-icon" width="42" height="42">
+                      <use href="images/icons.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                  <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
+                </li>
+              </ul>
+
+              <form name="contact-form" autocomplete="off">
+                <!-- <div class="modal__form-field input"> -->
+                <div
+                  class="contacts-section__form-field contacts-section__form-field--email input"
+                >
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-email"
+                    >Your email</label
+                  >
+                  <input
+                    class="input__control"
+                    type="email"
+                    id="user-email"
+                    name="user-email"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
+
+                <div class="contacts-section__form-field input">
+                  <label
+                    label
+                    class="input__label visually-hidden"
+                    for="user-cmc"
+                    >Your cmc</label
+                  >
+                  <input
+                    class="input__control"
+                    type="text"
+                    id="user-cmc"
+                    name="user-cmc"
+                    placeholder="Your cmc"
+                    required
+                  />
+                </div>
+
+                <!-- <button class="modal__button button" type="submit"> -->
+                <!-- <button class="contacts-section__button button" type="submit"></button> -->
+                <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
+
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div>
+
+                <!-- <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms__link" href="#"
+                    >з політикою конфіденційності</a
+                  >
+                </p> -->
+              </form>
+
+              <!-- <address class="footer-address footer-address-ul"> -->
+            </div>
+            <!-- png - чтобы лапка на фон  сверху свисала -->
+            <img
+              class="footer__dog-img"
+              src="./images/footer-dog.png"
+              alt="Photo of a small dog"
+            />
+          </div>
+        </div>
+        <!-- картинку псевдоэлементом ::after в _footer.scss -->
+        <!-- <img src="./images/PhotoRoom.png" alt="Фото пляшечок з ліками" /> -->
+        <!-- </div> -->
+      </div>
+    </footer>
+
+    <div class="backdrop is-hidden">
+      <!-- Пока убрать is-hidden на время разработки формы . Вернуть is-hidden потом!!! -->
+      <!-- <div class="backdrop is-hidden"> -->
+      <div class="modal">
+        <!-- <button class="modal-btn-close" type="button"> -->
+        <button class="modal__btn-close modal-btn-close" type="button">
+          <svg width="32" height="32">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <!-- <h2 class="modal-title">Замовити дзвінок</h2> -->
+        <h2 class="modal__title">Our experts will take care of your friend</h2>
+
+        <svg class="sled sled__modal sled__modal--right-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+        <svg class="sled sled__modal sled__modal--right-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-top">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <svg class="sled sled__modal sled__modal--left-end">
+          <use href="./images/icons.svg#icon-sled"></use>
+        </svg>
+
+        <!-- <form name="contact-form" autocomplete="on" novalidate> -->
+        <form name="modal-form" autocomplete="on">
+          <p class="modal__text">Fill out the form so we can contact you!</p>
+          <!-- <div class="modal__form-field input"> -->
+          <!-- <div class="modal__form-field modal__form-field--user-name input"> -->
+          <!-- <div class="modal__form-field1 modal__form-field1--user-name input"> -->
+          <div class="modal__form-field modal__form-field--user-name input">
+            <label label class="input__label visually-hidden" for="user-name"
+              >Your name</label
+            >
+
+            <!-- class="input__control input__img input__img--user-name" -->
+            <!-- pattern="^[Є-ЯҐа-їґ]+\s[Є-ЯҐа-їґ]+$" -->
+            <input
+              class="input__control"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Your name"
+              pattern="^[A-Za-z]+\s[A-Za-z]+$"
+              required
+            />
+          </div>
+
+          <!-- <div class="modal__form-field input"> -->
+          <div class="modal__form-field modal__form-field--pet-name input">
+            <label label class="input__label visually-hidden" for="pet-name"
+              >Pet name</label
+            >
+            <input
+              class="input__control"
+              type="text"
+              id="pet-name"
+              name="pet-name"
+              placeholder="Pet name"
+              pattern="^[A-Za-z]+$"
+              required
+            />
+          </div>
+
+          <div class="modal__form-field modal__form-field--phone input">
+            <label label class="input__label visually-hidden" for="user-tel"
+              >Your phone</label
+            >
+            <input
+              class="input__control"
+              type="tel"
+              id="user-tel"
+              name="user-tel"
+              placeholder="Your phone"
+              pattern="^\+380[0-9]{9}"
+              required
+            />
+          </div>
+          <!-- +380ХХХХХХХХХ -->
+
+          <div class="modal__form-field modal__form-field--email input">
+            <label label class="input__label visually-hidden" for="user-email"
+              >Your email</label
+            >
+            <input
+              class="input__control"
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+
+          <button class="modal__button button button__section" type="submit">
+            Contact us
+          </button>
+
+          <div class="footer__iagree text-center">
+            <input type="checkbox" id="agree" name="agree" />
+            <label for="agree">I agree to the privacy policy</label>
+          </div>
+
+          <!-- <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="form-terms__link" href="#"
+              >з політикою конфіденційності</a
+            >
+          </p> -->
+
+          <!-- <div class="contacts-section__btn-center">
+                  <button
+                    class="button__footer button button--center"
+                    type="submit"
+                  >
+                    Contact us
+                  </button>
+
+                  <div class="footer__iagree text-center">
+                    <input type="checkbox" id="agree" name="agree" />
+                    <label for="agree">I agree to the privacy policy</label>
+                  </div>
+                </div> -->
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/modal.js"></script>
+  </body>
+</html>
