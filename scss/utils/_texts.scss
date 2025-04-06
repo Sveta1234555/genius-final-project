@@ -23,6 +23,12 @@
     text-align: center;
 }
 
+.text-through {
+    //перечеркнутый текст. Page2 food-card  цена 
+    text-decoration: line-through;
+}
+
+
 .logo-width {
     //размеры лого разные. в 5 местах (по index – в 3х, еще 2 – это адаптив хедера и футера)
     //3 мобильные - одинак (моб хедер, моб футер, моб меню)
@@ -87,6 +93,12 @@
         //цвет иконкам косточкиСчета на фотках светлый
         fill: var(--color-secondary-greymid);
     }
+
+    &__gray {
+        //цвет иконкам звездочки food-card Счета на фотках светлый
+        fill: var(--color-secondary-grey);
+    }
+
 }
 
 // .text-uppercase {

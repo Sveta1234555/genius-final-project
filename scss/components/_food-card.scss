@@ -1,0 +1,264 @@
+//food-card.scss -2я страница - карточка одного товара 
+.food-card {
+
+
+    // .food-card {
+    // &__card {
+    /* пока так градиент на 3х картинках процедур. позже слоями наверное */
+    /* для спозиционирвать на карточке фон-изображение. вместе с .procedure-card-image      position: absolute; */
+
+    //это к  position -absolute   .food-card__image - чтобы надписи были поверх картинки внизу- здесь ненадо!!!
+    // position: relative;
+
+    /* max-width: 344px; dog*/
+    // сама картиинка моб -width 88 88x162. но width - расчетная в десктопной
+    // вся карта моб -width 152 152x366. но width - расчетная в десктопной
+    max-width: 152px;
+    // height: 366px; 
+    padding-bottom: 16px; //снизу карты до кнопки buy
+    // background-image: linear-gradient(180.05deg,
+    //         rgba(1, 28, 68, 0) 48.53%,
+    //         rgba(1, 28, 68, 0.725825) 84.61%,
+    //         var(--color-primary-bluedark) 101.39%);
+
+    // на макете dog был
+    background-color: var(--color-primary-white);
+    border-radius: 8px;
+
+    /* для расположить текст на карточке к нижнему краю, был к верхнему */
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-end;   //здесь ненадо. пусть кверхуц
+    //  /* плавнее увеличение размера карточки при Hover */
+    transition: transform 0.3s;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-desktop) {
+        //  max-width: 288px; dog  но она расчетная 
+        max-width: 288px;
+        padding-bottom: 24px; //снизу карты до кнопки buy
+        // height: 512px; //если убрать - схлопывается по высоте почти до картинки
+        //Убрать обе высоты (моб и десктоп) - это схлопывалось до размера height мобильной 2366
+        // border-radius: 8px;
+
+    }
+
+
+    :hover {
+        transform: scale(1.05);
+    }
+
+    // food-card__back-img
+    &__back-img {
+        // квадрат вокруг Img
+        border-radius: 8px;
+        background-color: var(--color-primary-white);
+        max-width: 152px;
+        max-height: 178px;
+        padding: 8px 32px;
+
+        @media screen and (min-width: $bp-desktop) {
+            //  max-width: 288px; dog  но она расчетная 
+            max-width: 288px;
+            max-height: 288px;
+            // border-radius: 8px;
+            padding: 14px 75px;
+        }
+    }
+
+    // .procedure-card-image {
+    // .procedure-section__image { нет,  отдельный файл
+    // .procedure-card__image {
+    &__image {
+        // position -relative к нему в .food-card - чтобы надписи были поверх картинки внизу- здесь ненадо!!!
+        // position: absolute;
+
+        // w138 h260
+        // width: 138;
+        //     height: 260;
+        //     top: 14px;
+        //     left: 75px;
+        // /* для растянуть картинку по всей ширине карточки procedure-card */
+        // top: 14px;
+        // left: 0;
+        width: 100%;
+        height: 100%;
+        // border-radius: 4px 120px;
+        // /* положить jpg ниже текста карточки, иначе текст не виден, накрывается картинкой */
+        // z-index: -1;
+        /* max-width: 344px; */
+        /* max-height: 456px; */
+    }
+
+    // food-card__back-end
+    &__back-end {
+        // подложка внизу фото - серая  344х130 procedure
+        //вниз выставлена flex-ом в .procedure-card
+        // border-radius: 0 0 24px 24px;
+        // background-color: var(--color-secondary-grey);
+
+        // page2 - блок всего текста карты
+
+        max-width: 152px;
+        // моб -129= 38 vendor+star +8 margin+83 нижний текст крупный до кнопки
+        height: 129px; //потом убрать - высота прыгает
+        //между квадратом (__back-img) вокруг img и этим блоком текста карты (__back-end)
+        padding-top: 0px; // у моб  впритык текст vendor к внешнему квдрату img
+        margin: 0 auto 8px; //center + 8 вниз до кнопки buy
+
+        @media screen and (min-width: $bp-desktop) {
+            max-width: 256px;
+            height: 115px; //потом убрать - высота прыгает
+            //между квадратом (__back-img) вокруг img и этим блоком текста карты (__back-end)
+            padding-top: 8px;
+            margin: 0 auto 24px; //center + 24 вниз до кнопки buy
+        }
+
+    }
+
+    /* h3 без класса был, других h3 нет. только На картинках процедур */
+    // h3 {
+    // .food-card__titleh3 {
+    &__titleh3 {
+        /* до процедуры де.,   Rectangle 5080,   Rectangle 5081  снизу от текста h3 .
+        пока относительно себя (h3) - ни о чем в браузере. Для позже*/
+        /* margin: 372px 77px 32px 115px; */
+        /* пока вместо по-умолч для h3 22px сделать 32 */
+        /* margin-bottom: 32px;   - padding сделать, причем разный... */
+
+
+        // roboto 400 14 14
+        font-size: 14px;
+        font-weight: 400; //доминтн 400, но 700
+        line-height: 100%;
+        text-align: center;
+        color: var(--color-primary-black);
+
+        margin-bottom: 0px;
+        padding-bottom: 16px;
+        padding-top: 8px;
+
+        // max-width: 152px;
+        @media screen and (min-width: $bp-desktop) {
+            margin-bottom: 0px;
+            padding-bottom: 24px;
+            padding-top: 16px;
+            /* margin: 0px;
+                padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+
+            // roboto 400 16 16
+            font-size: 16px;
+            // font-weight: 400; //доминтн 400, но 700
+
+            // text-align: center;
+            // color: var(--color-primary-black);
+
+            // line-height: 100%;
+            // max-width: 256px;
+            // align-self: center;  //не flex, не сработает
+        }
+
+
+    }
+
+    // food-card__row-count
+    &__row-count {
+        // 5косточек/цифры  page1
+        // page2.  стиль flex обеих блоков - над и под h3
+        //1.div : vendor + star  (над h3)
+        //2.div : Price1+price2  (под h3)
+        // моб вертик - вниз (star под vendor)
+        display: flex;
+        max-width: 128px;
+        gap: 8px; //вниз 
+        flex-direction: column;
+        align-items: center; //так центрировать горизонатльно каждый элемент внутренние этого flex (vendor Отдельно, star отдельно)
+        // justify-content: center; //элементы внутри flex центрир 
+        margin: 0 auto; //весь flex центрир 
+
+        @media screen and (min-width: $bp-desktop) {
+
+            max-width: 256px;
+            gap: 16px;
+            flex-direction: row;
+            // align-items: center;
+            justify-content: center; //элементы внутри flex центрир
+            margin: 0 auto; //весь flex центрир 
+        }
+
+        &--price {
+            // моб price -в строку, а не в кол, как vendor+star
+            // десктопный price - тоже в строку
+            flex-direction: row;
+            gap: 8px; //между ценами одинаково 8 моб и десктоп
+        }
+
+        // food-card__row-count--star
+        // &--bone {
+        &--star {
+            //5 ico flex
+            display: flex;
+            max-width: 112px; //112х16
+            gap: 8px;
+            align-items: end; //ico книзу
+        }
+    }
+
+    // .food-card__p{
+    &__p {
+        // margin-bottom: 0px;
+        // padding-bottom: 32px;
+        /* margin: 0px;
+            padding: auto 77px 32px 115px;  так ругается. надо отдельно каждую сторону писать*/
+        // margin-bottom: 24px; //dog  - для flex - стал мешать
+
+        //строка сразу под картинкой 
+        // vendor  roboto 300 12 12    
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 12px;
+
+        @media screen and (min-width: $bp-desktop) {
+            // vendor  roboto 400 14 14
+            font-size: 14px;
+            font-weight: 400; //доминантн - наслед
+            line-height: 100%;
+            text-align: center;
+            // color: var(--color-primary-white);
+
+
+            // max-width: 128px;
+            align-self: center;
+        }
+
+
+
+        // .food-card__p--counter
+        // &--counter {
+        // .food-card__p--text-small
+        &--text-small {
+            //текст мелкий серый 
+            //1.vendor - вверху с звездочкми - рейтинг
+            //2.цена внизу (без скидки) серый мелкий зачеркнутый под фото
+            color: var(--color-secondary-grey);
+            margin-bottom: 0px; //это убрало лишний отступ в flex . 
+        }
+
+        &--actual {
+            //текст - счетчиквнизу справа черный под фото
+            //price актуальный черный крупный
+            // roboto 600 18 18
+            color: var(--color-primary-black);
+
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 0px; //это убрало лишний отступ в flex косточек. установлен был в <p> выше, над косточками
+
+            @media screen and (min-width: $bp-desktop) {
+                font-size: 18px;
+            }
+        }
+    }
+
+
+}

@@ -28,3 +28,196 @@
     }
   }
 }
+
+
+// из  nutri-menu-section__sort-menu {
+.paginator {
+  // page2 внизу - список страниц
+  // одинак моб и десктоп
+  display: flex;
+  flex-direction: row;
+  justify-content: center; //центрир горизонтално (влево иначе)
+  align-items: center; //центрир вертикально  
+  margin-top: 32px; //и моб и декстоп - от страниц вверх до низа секции товров
+  // border: none;
+  gap: 0px;
+  // width: 288px;
+  height: 24px;
+  // roboto 400 14 14
+  font-size: 14px;
+  line-height: 100%;
+
+  // white-space: nowrap;  -sort
+  // align-items: left; //моб меню - вертик, влево -sort
+  // padding-top: 4px; // сверху до первого элемента -sort
+
+  @media screen and (min-width: $bp-desktop) {
+    /* для задать расстояние между элементами меню */
+    // gap: 0px;
+    // width: 352px;  ненадо
+    // height: 24px;
+
+    // бз или Page1
+    // /* Чтобы меню заняло все свободно место в родительском элементе nav 
+    // (класс  .header-nav) :   часть займет лого, а все оставшееся - меню ul */
+    // flex-grow: 1;
+    // /* выравнять элементы меню по главной горизонтальной оси (в рамках занятого им (меню) места nav) */
+    // justify-content: right;
+
+    // roboto 400 14 14 
+    // font-family: Roboto;
+    // color: var(--color-primary-black);  наслед
+    // font-weight: 400;   наслед
+    // font-size: 14px;
+    // line-height: 100%;
+    // align-items: center; //центрир вертикально
+    // white-space: nowrap;
+    // padding-top: 0px; // отменить моб 4 - сверху до первого элемента
+  }
+}
+
+
+
+// по nutri-menu-section__sort-item 
+.paginator-item {
+
+  fill: var(--color-primary-black); //иконкам
+  border: none;
+  //элементы меню (линейки страниц внизу)  - шрифт  рамка
+
+  // roboto 400 14 14 - установлен в paginator (родителе)
+  // font-family: Roboto;
+  // color: var(--color-primary-black);
+  // font-weight: 400;   наслед
+  // font-size: 14px;
+  // line-height: 100%;
+  padding: 4px 8px;
+  border-radius: 0 2px 2px 0; //нет бордюров, но есть радиус. Наверное для hover
+  width: 32px; //так более похоже визуально на расположенеи линейки по отношению к кнопкам buy сверху
+  text-align: center; //иначе цифра не поцентру  своего блочка
+
+  @media screen and (min-width: $bp-desktop) {
+    // roboto 400 14 14 - установлен в paginator (родителе). одинак моб и декстоп
+    // font-family: Roboto;
+    // color: var(--color-primary-black);
+    // font-weight: 400;   наслед
+    // font-size: 14px;
+    // line-height: 100%;
+    // display: list-item; //иначе не показывает кроме 1-го --show. отменить none моб-версии
+
+    // padding: 4px 8px;
+    // // border: 1px solid var(--color-secondary-grey);
+    // // border-left: 0px;
+    // border-radius: 0 2px 2px 0; //нет бордюров, но есть радиус. Наверное для hover
+    // // margin-left: -2px; //слева убрать пустое место от границы
+
+
+
+
+  }
+
+  // paginator-item.icon
+  &.icon {
+    // для иконок линейки (а не цифр)
+    // <li class="paginator-item icon">
+    padding: 0; //иначе иконка вправо уезжает, и Hover большеЮ чем hover цифр
+  }
+
+  //paginator-item:first-child
+  &:first-child {
+    // первый элемент меню - другая рамка, закругления только справа
+    // border: 2px solid var(--color-primary-black);   
+    //нет бордюров, но есть радиус. Наверное для hover
+    border-radius: 0 2px 2px 0;
+    // margin-left: 0px;
+
+
+    // width: 32;
+    //   height: 24;
+    //   angle: -180 deg;
+    //   border-top-right-radius: 2px;
+    //   border-bottom-right-radius: 2px;
+  }
+
+  // из nutri-menu-section__sorting--icon
+  //paginator-item--icon
+  &--icon {
+    //иконки в справйте icons.svg меньше больше , навигации по страница paginator-a
+    // display: block;
+    fill: var(--color-primary-black);
+    // padding: 4px 8px;   это вложенный в --item/ но здесь обнуляются почему- то  paddong
+    //а пооставить заново padding - иконка уменьшается
+    // без этого padding  4 8 - Норм иконка по размеру
+    // Пусть пока так
+    // позже!!! Убрала padding в paginator-item.icon &.icon {Pading 0
+
+    // //не по-центру блочка. но пусть
+    //     align-content: center;
+    //       padding: 0 0 0 -32px;
+    //       margin: 0 auto;
+    // display: flex;
+    // align-items: center;
+
+    // решено так - см. // paginator-item.icon выше  так отцентрировалпась иконка в своем блочке
+
+
+    // @media screen and (min-width: $bp-desktop) {
+    //   display: none;
+    // }
+
+    //paginator-item--icon:hover
+    &:hover {
+      // background-color: var(--color-primary-orange);
+      fill: var(--color-primary-white);
+    }
+
+    // из .carousel-button.next 
+    //paginator-item--icon.next
+    &.next {
+      /* повернуть  иконку "<"   НАПРАВО */
+      // <svg class="paginator-item--icon next" width="32" height="24">
+      transform: rotate(180deg);
+    }
+  }
+
+  // .paginator-item:hover
+  &:hover {
+    // Для линейки - цифрами, для иконок выше white
+    background-color: var(--color-primary-orange);
+    color: var(--color-primary-white);
+    // fill: var(--color-primary-white);  //не помогает покрасить линии иконок в белый при hover
+  }
+
+  &:active {
+    //когда нажали
+    background-color: red;
+    // border-radius: 2px 0 0 2px;
+    // background-color: var(--color-primary-orange);
+    // color: var(--color-primary-white);
+  }
+
+  &:nth-child(9) {
+    //для моб версии показывать 7 цифр страниц, а не все 8 , как в десктопной
+    //один элемент не показывать - цифру 8. Там вокруг знаки < ...>  их не трогать
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: list-item; //вернуть отражение всех 8 карт декстопу
+    }
+  }
+
+  // nutri-menu-section__sort-item--show
+  &--show {
+    //1й элемент меню sort показывать в моб .версии c товарами, остальные прятать
+    display: list-item;
+  }
+
+  // // nutri-menu-section__sort-item--active
+  // &--active {
+  //     //это выделить первый по-умолч выбранным
+  //     //в html: class="nutri-menu-section__sort-item nutri-menu-section__sort-item--active"
+  //     background-color: var(--color-primary-orange);
+  //     // отменять - js
+  // }
+
+}

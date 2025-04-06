@@ -101,6 +101,74 @@
     //                             background-position: center top;
 }
 
+
+// wave-bckgr-page2
+.wave-bckgr-page2 {
+    // фон 2й страницы Nutrition
+    position: absolute;
+    // // background-image: url('./../images/img_page2/background2_png.jpg'); //пустой  маленький
+    // background-image: url('./../images/background4_.jpg'); //с иконками дескотоп
+    // background2-mob0.jpg 21 566
+    // background2-mob0.png 17 931- взяла пока этот для прозрачноти 
+    // background2-mob-jpg.jpg 2 607
+    // background2-mob-png.jpg 5 141
+
+    background-image: url('./../images/img_page2/background2-mob0.png');
+
+
+    // top: 1548px; //1683px;
+    // // width: 619px;
+    // height: 257px;
+    // width: 100%;
+    // // height: 100%;
+    // background-size: cover;
+    // background-position: center top;
+
+    // width: 447.4482421875;
+    // height: 2126.83203125;
+    // top: 169.8px;
+    // left: -17px;
+    width: 447px;
+    height: 2127px;
+    top: 170px;
+    // left: -17px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    // цвет моб фона не написан в макете справа
+
+
+
+    @media screen and (min-width: $bp-desktop) {
+
+        // width: 1661.6348876953125;
+        //     height: 2721.875;
+        //     top: 43.22px;
+        //     left: -127.07px;
+        // background: #FFFAF3;
+
+        // background-image: url('./../images/img_page2/background2_png.jpg');
+        // background-image: url('./../images/img_page2/background2.jpg');
+        background-image: url('./../images/img_page2/background2_0.png');
+        width: 1662px;
+        height: 2722px;
+        width: 100%;
+        height: 100%;
+        background-position: center top;
+        background-color: burlywood; //на время разр.
+        background-color: var(--color-secondary-light);
+
+        // background-size: cover;
+        background-size: auto; //по-умолч вернуть   - так лапкии как на макете, в области контента страницы
+        // background-repeat: no-repeat;    вверху
+        top: 43px;
+        // left: -127px;
+        z-index: -1; //иначе header невидно, накрывается картинкой фона
+    }
+}
+
 .wave1 {
     // волна по-центру
     // от body background: 

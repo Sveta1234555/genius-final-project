@@ -1,25 +1,25 @@
 /* Footer */
 
 .footer {
-    /* пока на весь экран по горизонтали. позже наверное*/
-    /* png - Прозрачная картинка */
-    background-image: url("../images/footer-background.png");
-    background-color: var(--color-primary-bluedark);
-    background-repeat: no-repeat;
-    background-position: center top;
-    /* background-size: cover; */
-    padding: 20px 0px 40px; // 20 = 40/2 , 40 wцелые снизу footer  //padding: 32px 0px 66px;
+    // /* пока на весь экран по горизонтали. позже наверное*/
+    // /* png - Прозрачная картинка */
+    // background-image: url("../images/footer-background.png");  бз
+    // background-color: var(--color-primary-bluedark); бз
+    // background-repeat: no-repeat; бз
+    // background-position: center top; бз
+    /* background-size: cover; бз*/
+    padding: 20px 0px 40px; // 20 = 40/2 между мециями , 40 целые снизу footer
 
     @media screen and (min-width: $bp-desktop) {
         /* padding: 56px; убрать отступы слева справа*/
         // padding: 56px 0;
-        padding: 36px 0 50px;
+        padding: 36px 0 50px; //36=72/2 между секциями
         /* Слева- спрва в уроке убрали. Но можно 100 поставить, если Надо. Не меняет при resize визуально  ничего */
         /* padding: 56px 100px; */
 
-        /* для пары к   position: absolute;  к ::after  картинке бутылочек*/
-        position: relative;
-        //картинка только в десктоп версии
+        // /* для пары к   position: absolute;  к ::after  картинке бутылочек*/
+        // position: relative;   бз
+        // //картинка только в десктоп версии
     }
 
 

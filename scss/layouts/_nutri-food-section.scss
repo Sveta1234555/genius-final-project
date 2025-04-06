@@ -1,0 +1,297 @@
+.nutri-food-section {
+    padding-top: 16px; //32/2 до пред. секции  nutri-menu-section
+    // padding: 16px 0 0 20px; 
+    padding-bottom: 20px; //40/2 до след. секции footer
+
+    @media screen and (min-width: $bp-desktop) {
+        padding-top: 36px; //72/2 до пред. секции menu
+        padding-bottom: 36px; //72(70)/2 до след. секции footer
+        // padding: 36px 0px;
+    }
+
+
+
+    // .nutri-food-section__container {
+    &__container {
+        // Вся область расположения карт товара+счетчик страниц
+        display: flex;
+        max-width: 320px;
+        // height: 1218px; //вся секция 3 ряда и счетчик
+
+        width: 100%;
+        margin: 0 auto; //иначе моб - влево при ресайз, не нравится мннЮ пусть по центру
+
+        @media screen and (min-width: $bp-desktop) {
+
+            // /* центрировать кнопки - стрелки по вертикали в этом flex-родителе */
+            // align-items: center;
+            // /* между кнопками и div из 3-х карточек с обеих сторон*/
+            // gap: 16px; //   32px; бз
+
+            /* Центрировать элементы в flex по осн гориз оси. 
+        Иначе справа остается место до края от кнопки, а слева - нет
+        Так - поровну слева и справа остается до края. 
+        Это из-за ширина общего div 1240, а ширина div procedures сложением всех элеемнтов и отступов меньше. 1216 */
+            /* justify-content: center; */
+            /* justify-content: space-between; ничего не меняет для ширины карточек*/
+            /* по макету так. И так выдерживает 344 шириана карты без ее указания */
+            max-width: 1248px;
+            // width: 100%;
+            // height: 1120px; //вся секция 3 ряда и счетчик
+        }
+    }
+
+    //нанадо __title-nutri  - уюрать!!!
+    // __title-nutri {
+    &__title-nutri {
+        // меню 2й страницы Nutrition
+
+        //так в моб - все тексты -=и заголовки центрируются
+        text-align: center;
+
+        @media screen and (min-width: $bp-desktop) {
+            padding: 217px 0 0 0;
+            max-width: 635px; //530px;
+            width: 100%;
+            text-align: left;
+        }
+
+        /*  Hero   h1 отдельно:  
+p mini "Косметологічна клініка" + h1 big "beauty zone" */
+
+        /*1. Косметологічна клініка   mini-text  p параграфом*/
+        // .hero-title-mini {
+        // .hero-section__title--mini {
+        // &_title--mini {
+        &--mini {
+            font-size: 12px;
+            /* 18 /12=1.5 */
+            line-height: 1.5;
+            /* меняем дефолтный для <p> margin-bottom 18px на 16 px по дизайну*/
+            margin-bottom: 0px;
+            margin-top: 25px;
+            /* font все из доминанта 18px 400  1.2 */
+            color: var(--color-primary-bluedark);
+            /* тени нет */
+            /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+            @media screen and (min-width: $bp-desktop) {
+                //доминантные, но после моби 1-го 12 надо восстановить, само не берет наследование 18
+                font-size: 18px;
+                /* 21 /18=1.2 */
+                line-height: 1.2;
+                /* меняем дефолтный для <p> margin-bottom 18px на 16 px по дизайну*/
+                margin-bottom: 16px;
+                margin-top: 16px;
+            }
+        }
+
+        /*2. Hero h1   -  big beauty zone*/
+
+        // .hero-title-big {
+        // .hero-section__title--big {
+        // &__title--big {
+        &--big {
+
+            // color: домнантн наслед;
+            font-family: Rowdies;
+            font-weight: 400; //400 не наследует. Пишет 700. поэтому пишу сюда доминантный 400
+            // text-align: center;   н уровне родител центрирутеся
+            font-size: 32px;
+            /*Line height  46 / font-size 54    46/54= 0.86 */
+            line-height: 100%;
+            /* в 1 строкe beauty zone big */
+
+            max-width: 303px; //dog
+            margin: 0 auto 24px; // margin-bottom: 24px; //dog
+
+            @media screen and (min-width: $bp-desktop) {
+                /* УБрать дефолт margin-bottom этому заголовку (аж 116 был дефолт)*/
+                /* Пока оставлю 40 - снизу до кнопки, пменять потом мб на 0!!!!!!!! После div */
+                margin-bottom: 40px; //dog
+
+                // color: var(--color-primary-blue);
+                // font-family: Play, sans-serif;
+                // text-align: left;  на уровне родитеял - все  влево
+                // text-bold можно в index .   // убрала font-weight 700 здесь, но он сам в вычислено 700 пишет. от h2 из section__title  font-width 700
+                // font-weight: 700;
+
+                // text-transform: capitalize; //.text-capitalize
+                font-size: 72px;
+                /*Line height  114 / font-size 140  */
+                // line-height: 0.81;
+                /* в 2 строки h1 */
+                max-width: 635px; //dog
+                letter-spacing: 5%;
+
+                /* border-radius: 2px 2px 2px 116px; */
+                /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);   из макета . Не работает*/
+                /* text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
+                /* -moz-text-decoration-line: 4px rgba(0, 0, 0, 0.25);
+  text-stroke: 4px rgba(0, 0, 0, 0.25); */
+                /* у меня визуально был шрифт с обрамлением. в макете - таки нет. */
+                /* -webkit-text-stroke: 4px rgba(0, 0, 0, 0.25); */
+
+                /* 16px между minn and big-SPAN не получается ни margin-top: 16px; ни  padding-top: 16px; */
+                /* margin-top: 16px; */
+                /* padding-top: 16px; */
+
+                /* font-style: italic; */
+                /* text-transform: capitalize; */
+                /* text-shadow: 2px 2px 4px violet;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  white-space: nowrap; */
+            }
+        }
+
+    }
+}
+
+.food {
+    //обрамление товаров на 2й странице
+    //food-card.scss -2я страница - карточка одного товара 
+
+    // .food__list {
+    &__list {
+        // список товаров весь
+        /* ul */
+        /* расположить список горизонтально */
+        display: flex;
+        // flex-wrap: wrap;
+        /* бз - max-width: 1064px; сначала помогло тотлько это расширению карточек до кнопок в ширину */
+        /* Это помогло ширину карточек увеличить!!! без нее - снова сужается */
+
+        // max-width: 320px;
+        width: 100%;
+        /*на макете :*/
+        gap: 16px;
+        row-gap: 32px;
+
+        // margin-left: 20px; //это пока незачем
+        justify-content: center; //для моб для отражения одной 
+
+        flex-wrap: wrap;
+        // max-height: 1218px;      
+
+        /* на всю ширину распределить (отцентрировалось) */
+        /* justify-content: space-between;  тоже ненадо для ширины 3х карточек */
+        /* +flex-basis: calc((100% - 112px) / 3); чтобы переносились на след. строку по 3 в ряд*/
+        // flex-direction: column;
+
+        // позже!!!
+        // justify-content: space-between; //тоже ненадо для ширины 3х карточек */
+        // // 16 - gap в ряду гориз row между картами
+        // flex-basis: calc((100% - 16px) / 2);
+        // // чтобы переносились на след. строку по 2 в ряд*/ 
+
+
+        // // height: 400px;
+
+        // @media screen and (min-width: $bp-desktop) {
+
+        //   flex-direction: row;
+        // }
+        @media screen and (min-width: $bp-desktop) {
+            // max-width: 1248px;
+            column-gap: 32px;
+            row-gap: 40px;
+            // позже!!!
+            // // 32gap*3=96 - gap в ряд гориз row между картами
+            // flex-basis: calc((100% - 96px) / 4);
+            // // чтобы переносились на след. строку по 4 в ряд*/
+        }
+    }
+
+    // .food__item {
+    &__item {
+        // из образца с swiper - нет h-------
+        // flex-shrink: 0;
+        // width: 100%;
+        // height: 100%;
+        // position: relative;
+        // transition-property: transform;
+        // display: block;
+        // из образца с swiper - нет e-------
+
+
+        //для моб - не нужен расчет -1 картинка
+        // flex-basis: content;
+        // flex-basis: calc((100%));
+
+
+        // @media screen and (min-width: $bp-tablet) and (max-width: $bp-desktop) {
+        //   /* задать размер элементу для переноса на след. строку браузером по wrap.
+        //               16 px это 1 gap по 16 px . Гибкое расстояние между блочками*/
+        //   // flex-basis: calc((100% - 16px) / 2);
+        //   // width: calc((100% - 16px) / 2);
+        //   max-width: 320px;
+        //   width: 100%;
+        // }
+
+        box-shadow: 0px 8px 16px 0px $color-primary-black-shad14; // #18181714;
+        //  16 px это 1 gap . Гибкое расстояние между блочками*/
+        flex-basis: calc((100% - 16px) / 2);
+        border-radius: 8px;
+        // border-color: var(--color-primary-white);
+        background-color: var(--color-primary-white);
+
+        @media screen and (min-width: $bp-desktop) {
+
+            //     /* background-color: red; */
+            //     /* убрала все, кроме расчета /3
+            // помогло - -карточки расширились до кнопок!!! */
+            //     /* max-width: 344px; dog
+            // max-height: 456px; */
+            //     /* width: 100%; */
+
+            //     /* задать размер элементу для переноса на след. строку браузером по wrap.
+            //  96 px это 3 gap по 32 px . Гибкое расстояние между блочками*/
+            flex-basis: calc((100% - 96px) / 4);
+            // border-radius: 8px;
+            // box-shadow: 0px 8px 16px 0px $color-primary-black-shad14; // #18181714;
+            //     /* text-align: center; */
+        }
+
+        &:nth-child(n + 7) {
+            //для моб версии показывать 6 карточек, а не все 8 , как в лесктопной
+            display: none;
+
+            @media screen and (min-width: $bp-desktop) {
+                display: list-item; //вернуть отражение всех 8 карт декстопу
+            }
+        }
+
+        &--show {
+            //наверное ненадо show hide!!!
+            // width: calc((100% - 32px) / 3);
+            max-width: 344px;
+            // width: 320px;
+            width: 100%;
+
+            // height: 100%;
+
+            @media screen and (min-width: $bp-desktop) {
+                max-width: 344px;
+                // width: 100%;
+                // height: 100%;
+            }
+        }
+
+        // .procedure-section__item--hide
+        &--hide {
+            //наверное ненадо show hide!!!
+            //2 и 3й спрятать и 0 ширину, иначе своб место остается и не цнтрирцется 1я оставшаяся
+            // display: none;
+            z-index: -2;
+            width: 0px;
+
+            @media screen and (min-width: $bp-desktop) {
+                z-index: auto;
+
+                // display: list-item;
+            }
+
+        }
+    }
+}

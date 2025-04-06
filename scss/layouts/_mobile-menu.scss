@@ -108,6 +108,8 @@
     max-width: 128px; //моб меню /* 128x34 */ (для деcктоп - это в socials--header)
     padding-top: 16px; //до моб меню сверху от иконок
     // gap: 16px;  //итак 16 между иконками на мобменю. max-width: 128px  = 32*3+2*16 =96+32=128
+    //иконки - влево
+    justify-content: start;
 
     @media screen and (min-width: $bp-desktop) {
       display: none;
