@@ -1,0 +1,358 @@
+/* Мodal */
+.backdrop0 {
+    //.backdrop  - должен быть один. Работает из _modal.scss
+    // Здесь переименовала пока - не будет вызываться
+    // Убрать после отладки  здесь весь .backdrop0!!!
+
+
+    /* затемененный фон под активным модальным окном-  фиксированный элемент */
+    position: fixed;
+    /* растягиваться на всю ширину экрана. */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* фон - с макета  */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(24, 24, 23, 0.4);
+
+    /* для расположить модальное окно modal  по центру родителя-backdrop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* модальное окно отодвинуть от границ  - относительно родительского  Padding-Ом */
+    // padding: 20px 0;
+    // со всех сторон отодвинуть
+    padding: 20px;
+    /* анимация ПЕРЕХОД- плавнее показывать модальное окно */
+    transition: opacity 0.2s, visibility 0.2s;
+
+    // .backdrop.is-hidden {
+    &.is-hidden {
+        /* когда к backdrop добавляется класс 'is-hidden', надо его- (backdrop c окном) прятать: */
+        /* display: none; так потом не будет работать анимация - передеоать в вар2:*/
+
+        /* в2 реализации  */
+        /*  анимация ПЕРЕХОД  transition к opacity и visibility  -  в .backdrop, выше
+        transition: opacity 0.2s, visibility 0.2s;  */
+
+        /* делает окно прозрачным , но еще можно нажать на любой контент внутри формы, поля ввода*/
+        opacity: 0;
+        /* чтобы нельзя нажать на элементы скрытой формы */
+        /* Не сделать окно прозрачным , а  спрятать его, нажать нельзя уже на элементы на окне. */
+        visibility: hidden;
+
+        /* чтобы вообще нельзя было нажать на окно */
+        pointer-events: none;
+    }
+}
+
+
+.modal-sort {
+
+    // /* модальное окно 723х681*/
+
+    // хотела сделать или-или .modal -
+    //1. мобверсия показывает модальное меню сортировки
+    //2. декстоп - модальное окно-форму
+    // Но - кн Contact us есть и в моб версии - тоже надо показывать форму модальную.
+    //И ресайз нехорошо смена одного по смыслу окна на другое :
+    // если  нажать в моб меню кн сортировки  будет показывать модменю сортировки,
+    // ресайз до декстопного - поменяется на модальную форму. А ее никто не звал.
+    // Понятно , это режим разработчика. НО так не делаю (разделени модальных окон по режимам моб и декстопный)
+    //надо другое мод.окно modal-sort
+
+    // /* для больших экранов не больше 723х681px модальное окно */
+    // /* если окно меньше 723х681 то модальное окно будет занимать 100% окна по ширине*/
+    // /* width: 723px; */
+    // dog  модальная форма 880x880
+
+    // модальное меню сортировки для мобильной версии
+    width: 100%;
+    max-width: 360px;
+    /* height: 240px; */
+    // height: 100%;   это дает лишний отступ снизу под  последним эл.меню
+    max-height: 240px;
+
+    // //  на макете для моб версии нет - сами 48 взяли   дз
+    padding: 16px 20px; //dog
+
+    background-color: var(--color-primary-white);
+    border-radius: 24px 24px 0 0;
+    // border-radius: 24px;
+
+    /* для расположить относительно него кнопку крестик close */
+    position: relative; //dog - ненадо. Но пусть пока
+    // /* чтобы скроллилось модальное окно когда не помещается содержимаое (input...)*/
+    // overflow-y: auto;  
+
+    @media screen and (min-width: $bp-desktop) {
+        display: none; //если это убрать, то по кнопке COntactus оба модальных меню показываются
+        /* модальное окно 723х681*/
+
+        //         /* для больших экранов не больше 723х681px модальное окно */
+        //         /* если окно меньше 723х681 то модальное окно будет занимать 100% окна по ширине*/
+        //         /* width: 723px; */
+        //         width: 100%;
+        //         max-width: 880px;
+        //         /* height: 880px; */
+        //         height: 100%;
+        //         max-height: 880px;
+
+        //         //  на макете для моб версии нет - сами 48 взяли
+        //         padding: 48px;
+
+        //         background-color: var(--color-secondary-light);
+        //         // background: #FFFAF3;
+
+        //         border-radius: 32px;
+
+        //         /* для расположить относительно него кнопку крестик close */
+        //         position: relative;
+        //         /* чтобы скроллилось модальное окно когда не помещается содержимаое (input...)*/
+        //         overflow-y: auto;
+        //         /* на макете вокруг заголовка - формы такие отступы 144 слева-справа, 42 – сверху- снизу
+        //  (В пекарне - брали с 3-х сторон отступы128 , низ другой 187 - отдельно не задавали) */
+        //         // padding: 42px 144px;  //бз
+        //         padding: 142px 140px;
+    }
+
+
+
+    // в .modal__btn-close {, оттуда и работает
+    // .modal-sort__btn-close {  - отсюда top right Другой 20 вместо 40
+    &__btn-close {
+        /* кнопка крестик close */
+        //есть в модальной  форме, оттуда и рисуется , html класс modal__btn-close написан
+        //здесь -только размещение
+        top: 20px;
+        right: 20px;
+
+        // position: absolute;
+        // top: 40px;
+        // right: 40px;
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // padding: 0;
+        // fill: transparent;
+        // /* так крестик видно, а не песочные часы */
+        // stroke: var(--color-modal-black);
+        // background-color: transparent;
+        // border: 2px; //border: none;
+        // cursor: pointer;
+    }
+
+
+    // modal-sort__sorting
+    &__sorting {
+        // текст "Sorting"  над мод моб меню сортировки
+
+        // над меню сорт модальным в моб версии
+        // в десктопной версии -свое горизонтальнео меню,
+        //  и его мобильная версия - отражается кнопкой+первый элемент на мобверсии страинцы 2
+        // В принципе, это оно же, но моб версия используется на осн странице
+        // поэтому здесь на модальном меню сортировки - отдельно свое 
+        // (см.nutri-menu-section)
+
+        // modal-sort__sorting--text
+        &--text {
+            font-family: Roboto;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 5%;
+            color: var(--color-primary-orange);
+            /* меняем дефолтный для <p> margin-bottom 18px на 24 px по дизайну*/
+            margin: 0px auto 24px;
+            text-align: center; //гориз
+
+            // // для расположить текст по-центру вертик:
+            // display: flex;
+            // align-items: center;
+
+            // @media screen and (min-width: $bp-desktop) {}
+        }
+    }
+
+
+    // из nutri-menu-section__sort-menu {
+    //modal-sort__sort-menu {
+    &__sort-menu {
+        // Элементы меню моб. расположить вертик, 
+        // на модальном меню
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        // height: 159px;
+        // roboto 400 16 16
+        font-size: 16px;
+        line-height: 100%;
+        white-space: nowrap;
+        align-items: left; //мод моб меню - вертик, влево
+        // padding-top: 4px; // сверху до первого элемента
+        letter-spacing: 0%;
+
+        @media screen and (min-width: $bp-desktop) {
+            // от десктоп версии - тоже будет, если вдруг ресайз.
+            //а из интерфейса - не вызываестя в декстоп -версии модалное меню сортировки
+            //(там свое горизонатльное на странице 2есть)
+        }
+    }
+
+
+    // из nutri-menu-section__sort-item 
+    // .modal-sort__sort-item
+    &__sort-item {
+        //// есть меню моб версии , НЕ в модальной, не здесь,
+        //// //там Только 1й элемент меню sort показывать(--show ниже) в моб.версии остальные прятать
+        //// display: none;  //это для моб версии меню  меню на осн странице -там  нефункицональное меню, отражениеодного элемента
+
+
+        //элемент модального меню сортировки мобильной 
+        // roboto 400 16 16
+        position: relative; //к нему position absolute ::after
+
+        //элементы меню sort - шрифт  рамка
+        @media screen and (min-width: $bp-desktop) {
+            // // roboto 400 16 16
+            // // font-family: Roboto;
+            // // color: var(--color-primary-black);
+            // // font-weight: 400;   наслед
+            // // font-size: 16px;
+            // // line-height: 100%;
+            // display: list-item; //иначе не пе показывает кроме 1-го --show. отменить none моб-версии
+
+            // padding: 8px;
+            // border: 1px solid var(--color-secondary-grey);
+            // border-left: 0px;
+            // border-radius: 0 2px 2px 0;
+            // margin-left: -2px; //слева убрать пустое место от границы
+
+            // &:first-child {
+            //     // первый элемент меню - другая рамка
+            //     border-left: 1px solid var(--color-secondary-grey);
+            //     border-radius: 2px 0 0 2px;
+            //     margin-left: 0px;
+            // }
+
+
+
+            // &:focus-within {
+            //     //убрать выделение первому при активации другого
+            //     background-color: var(--color-primary-white);
+            // }
+
+
+        }
+
+        &::after {
+            // display: none;
+            position: absolute; //его position relative в родителе рядом выше .modal-sort__sort-item
+            top: 0;
+            right: 0;
+            content: '>';
+
+            // <svg class="paginator-item--icon next" width="32" height="24"><use href="images/icons.svg#icon-pgntr-left"></use></svg>
+            // @media screen and (min-width: $bp-desktop) {
+            //     display: block;
+            // }
+        }
+
+        &:hover {
+            //белый на оранж
+            // background-color: var(--color-primary-orange);
+            // color: var(--color-primary-white);
+            //оранж фонт
+            color: var(--color-primary-orange);
+            font-weight: 500;
+        }
+
+        &:active {
+            //когда нажали
+            background-color: red;
+        }
+
+
+    }
+
+    //проба картинки к image - с пом. before  -работает, недоделалось 4 разных картинки через &--
+    // .modal__form-field2 {
+    &__form-field2 {
+        //это - ласс div (label+input)
+        /* отступы между div (label+input) */
+        margin-bottom: 24px;
+
+        // картинку svg перед текстом внутри input  (применяется к div родительскому для input+label)
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto 0;
+            width: 25px;
+            height: 25px;
+            // background: url('https://cdn0.iconfinder.com/data/icons/ThemeShock-credit-cards-icons/64/mastercard.png') no-repeat;
+            background: url('../images/icon-sled-logo.svg') no-repeat;
+            background-size: cover;
+            //background-color: aqua;
+            border: 1px solid;
+
+
+        }
+
+        &--user-name {
+            background: url('./images/icons.svg#icon-sect4_1your-name') no-repeat;
+            // background: url('./images/icon-sled-logo.svg') no-repeat;
+
+        }
+
+    }
+
+
+    // // modal__form-field0 - одна команда.
+    // // Было -   Только отступ между div-ами(label+input)
+    // &__form-field0 {
+    //     /* отступы между div (label+input) */
+    //     margin-bottom: 24px;
+    // }
+
+    // // .modal-sort__button {
+    // &__button {
+    //     /* центрировать кнопку на форме */
+    //     /* кнопка по-умолч не является блоком. Она display-inlineblock (f12 видно) */
+    //     /* сделать кнопку на офрме block, чтобы центрировать ее с пом. margin 0 auto */
+    //     display: block;
+    //     /* доб 8 px снизу до параграфа отступ от кнопки */
+    //     // margin: 0 auto 8px;
+    //     // 8 снизу убрать.т.к. :
+    //     // Есть от кнопки вниз 8px  .modal__button    margin: 0 auto 8px;
+    //     // Есть от iagree вверх до кнопнки 17 px .footer__iagree {...margin-top: 17px;…}
+    //     // 8+17=25  для оставить только 17 (=16) от iagree вверх
+    //     margin: 0 auto;
+
+
+    //     // // .modal__button:hover {
+    //     // &:hover {
+    //     //     /* Hover – цвет текста поменять для модальной формы.
+    //     //    Не видно текст при наведении.
+    //     //    Он по button-ptimary для кнопок на странице – темно-синий (так на странице надо и норм)
+    //     //     А на модальной форме – одинак с фоном */
+    //     //     // color: var(--color-primary-blue);
+    //     //     // dog -белый фонт , и так, и фокус
+    //     // }
+    // }
+
+
+}
+
+.sort-item {
+    //распложить текст и знак > в меню сортировки в строке по краям
+    display: flex;
+    align-items: center; //вертикально
+    justify-content: space-between; //гориз-но по краям
+}
