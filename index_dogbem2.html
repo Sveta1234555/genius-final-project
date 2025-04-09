@@ -118,12 +118,22 @@
               </svg>
             </a>
 
+            <!-- sort
+            <button class="button modal-sort-open" type="button">
+              sort tmp
+            </button> -->
+
             <button
               class="button button__section button__mob-hide modal-btn-open"
               type="button"
             >
               Contact us
             </button>
+
+            <!-- sort
+            <button class="button modal-sort2-open" type="button">
+              sort tmp
+            </button> -->
           </div>
 
           <button class="header__burger menu-btn-open" type="button">
@@ -233,15 +243,24 @@
             <div class="nutri-menu-section__title">Nutrition</div>
             <div class="nutri-menu-section__sort">
               <!-- <p class="nutri-menu-section__sorting">Sorting:</p> -->
-
+              <!-- показывать или текст в десктоп / или кнопку сортировки в моб -->
               <p class="nutri-menu-section__sorting--text">Sorting:</p>
-              <svg
+              <!-- <svg
                 class="nutri-menu-section__sorting--icon"
                 width="24"
                 height="24"
               >
                 <use href="images/icons.svg#icon-arrow-sort"></use>
-              </svg>
+              </svg> -->
+
+              <button
+                class="nutri-menu-section__sorting--button modal-sort-open"
+                type="button"
+              >
+                <svg width="24" height="24">
+                  <use href="images/icons.svg#icon-arrow-sort"></use>
+                </svg>
+              </button>
 
               <ul class="nutri-menu-section__sort-menu">
                 <li
@@ -1048,6 +1067,7 @@
     </footer>
 
     <div class="backdrop is-hidden">
+      <!-- Внимание - оба div (modal и modal-sort) внутри одного backdrop!!! -->
       <!-- Пока убрать is-hidden на время разработки формы . Вернуть is-hidden потом!!! -->
       <!-- <div class="backdrop is-hidden"> -->
       <div class="modal">
@@ -1057,6 +1077,7 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+
         <!-- <h2 class="modal-title">Замовити дзвінок</h2> -->
         <h2 class="modal__title">Our experts will take care of your friend</h2>
 
@@ -1176,9 +1197,48 @@
                 </div> -->
         </form>
       </div>
+
+      <div class="modal-sort">
+        <button
+          class="modal__btn-close modal-sort__btn-close modal-sort-close"
+          type="button"
+        >
+          <svg width="16" height="16">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <!-- <div class="nutri-menu-section__sort"> -->
+        <div class="modal-sort__container">
+          <!-- <p class="nutri-menu-section__sorting">Sorting:</p> -->
+
+          <p class="modal-sort__sorting--text">Sorting:</p>
+          <!-- <svg
+                class="nutri-menu-section__sorting--icon"
+                width="24"
+                height="24"
+              >
+                <use href="images/icons.svg#icon-arrow-sort"></use>
+              </svg> -->
+
+          <!-- <ul class="nutri-menu-section__sort-menu"> -->
+          <ul class="modal-sort__sort-menu">
+            <li class="modal-sort__sort-item">
+              <div class="sort-item">
+                <span>Popularity</span>
+                <span>&gt;</span>
+              </div>
+            </li>
+            <li class="modal-sort__sort-item">Cheaper first</li>
+            <li class="modal-sort__sort-item">More expensive first</li>
+            <li class="modal-sort__sort-item">By name</li>
+            <li class="modal-sort__sort-item">New ones first</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
+    <!-- <script src="./js/modal-sort.js"></script> -->
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
