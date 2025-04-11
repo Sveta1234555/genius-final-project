@@ -29,10 +29,12 @@
     //  /* плавнее увеличение размера карточки при Hover */
     transition: transform 0.3s;
     overflow: hidden;
+    margin: 0 auto; //не по центру была в моб версии + gap перенести из моб в только десктпную версию в ul flex  (procedure-section__list)
 
     @media screen and (min-width: $bp-desktop) {
         //  max-width: 344px; dog  но она расчетная 
         height: 456px;
+        max-width: 344px; //Расчтеная - на уровне выше (li),а эта плавает тогда внутри
         border-radius: 24px;
     }
 

@@ -56,7 +56,9 @@
 
     // .footer__container color
     &__container-color {
-        background-color: greenyellow;
+        background-color: var(--color-secondary-light);
+        // background-color: greenyellow; //убрать!!! только на время разработки. плохо видно
+
         // margin: 122.5px auto 0; //от фона вертикально до футера 18  50, а не по 30
         //-24 вместо auto  - чтобы закрашивалось до вертик. краев футера
         margin: 122.5px -24px 40px; //40 – низ цветной области до футера отстоит на 40
@@ -78,8 +80,8 @@
         //внешний flex - footer__container + собачка
         display: flex;
         flex-direction: column-reverse; //для моб. - вертик  и наоборот, сначала собачка
-        gap: 16px;
-        border: 1px solid green; //убрать!!!
+        // gap: 16px;           //собачка по вертикали ближе к logo, так по макету
+        // border: 1px solid green; //убрать!!!
 
         @media screen and (min-width: $bp-desktop) {
             flex-direction: row; //для десктоп. - гориз
@@ -101,6 +103,7 @@
             //собачка за границы фона вверх-вниз вылазит , до гориз.границ футера
             margin-top: -18px;
             margin-bottom: -50px;
+            // max-height: 305px; //так не обрезается слева- справа, вся собачка влазит
         }
     }
 
@@ -112,7 +115,7 @@
         // между контакты и Политика 16 (из-за socials между Политика и coptight)
         gap: 16px;
         margin: 122.5px auto 0; //блок текстов footer-container – до футера 122.5 (собачка наезжает снизу на logo)
-        border: 1px solid blue; //убрать!!!
+        // border: 1px solid blue; //убрать!!!
 
         @media screen and (min-width: $bp-desktop) {
             flex-direction: row; //для десктоп. - гориз

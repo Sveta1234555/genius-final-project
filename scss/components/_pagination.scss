@@ -15,7 +15,7 @@
     width: 8px;
     height: 8px;
     padding: 0;
-    background-color: var(--color-secondary-greylight);
+    background-color: var(--color-secondary-grey);
     border-radius: 50%;
 
     @media screen and (min-width: $bp-desktop) {
@@ -24,7 +24,7 @@
     }
 
     &--active {
-      background-color: var(--color-primary-blue);
+      background-color: var(--color-primary-orange);
     }
   }
 }

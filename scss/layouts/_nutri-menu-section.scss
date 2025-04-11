@@ -164,6 +164,8 @@ p mini "Косметологічна клініка" + h1 big "beauty zone" */
         // display: none;
         flex-direction: row;
         padding-top: 16px; //моб - между Nutrition и sort
+        align-items: center; //вертик центрируются в мобверсии стрелочки + меню1й элемент
+        //на десктоп визуально не влияет
 
         @media screen and (min-width: $bp-desktop) {
             // от десктоп версии - меню есть
@@ -217,6 +219,12 @@ p mini "Косметологічна клініка" + h1 big "beauty zone" */
             //теперь нужна только --button (после того, как иконку сделала кнопкой вызова модального меню сортировки )
             display: block;
             fill: var(--color-primary-orange);
+            cursor: pointer; //курсор ручкой hover
+            // border: none; //на макете нет обрамления вокруг этих стрелочек. а от кнопки - по умолч добавляются
+            //хотела таки  дорисовать кнопку -нет. Пусть будет по-умолч стиль кнопки
+            // border-radius: 5px;
+            // border-color: var(--color-secondary-greylight);
+            // border-color: var(--color-primary-white);
 
             @media screen and (min-width: $bp-desktop) {
                 display: none;

@@ -240,8 +240,8 @@
         max-height: 16px;
         width: 100%;
         height: 100%;
-        fill: var(--color-primary-white);
-        fill: red;
+        fill: var(--color-primary-white); //вообще не видно
+        // fill: red; //Убрать!!!
         // position: relative;  к этому absolute-  в container общем
         position: absolute;
 

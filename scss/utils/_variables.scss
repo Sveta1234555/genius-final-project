@@ -14,8 +14,8 @@
     --color-primary-orange: #ff9f0e;
     --color-primary-black: #181817;
 
-    // --color-secondary-yellow: #fcb62a;
-    --color-secondary-yellow: red; //вернуть желтый!!!
+    --color-secondary-yellow: #fcb62a;
+    // --color-secondary-yellow: red; //вернуть желтый!!!
     --color-secondary-light: #fffaf3;
     --color-secondary-greymid: #f1f3ff;
     --color-secondary-grey: #839aa9;
@@ -28,7 +28,14 @@
 
     --color-modal-black: #31261A;
 
+
+    // --fd12-name: "r1c2 Dry food ...";
+    //надо без кавычек. их выводит в браузер тоже
+    --fd12-name: r1c2 Dry food for dogs of small breeds Savory 3 kg (lamb);
+
 }
+
+
 
 
 
@@ -55,3 +62,26 @@ $logo-ico-width: 43px;
 $logo-ico-header-h: 43px;
 $logo-ico-footer-h: 36px;
 $logo-ico-mob: 16px;
+
+// food  - убрать, отсюда не беру
+$fd11-vendor: 37875;
+$fd11-name: "r1c1 Dry food for dogs of average breeds Savory 3 kg (turkey and lamb)";
+// $fd11-name: "Dry food for dogs of average breeds Savory 3 kg (turkey and lamb)";
+$fd11-price-act: "136.00$";
+$fd11-price-old: "320.43$";
+$fd11-img: "food-dog-black.jpg";
+$fd11-srcset: "./images/img_page2/food-dog-black.jpg 1x, food-dog-black@2x 2x";
+$fd11-src: "./images/img_page2/food-dog-black.jpg";
+
+$fd12-vendor: 34905;
+$fd12-name: "r1c2 Dry food for dogs of small breeds Savory 3 kg (lamb)";
+// $fd12-name: "Dry food for dogs of small breeds Savory 3 kg (lamb)";
+$fd12-price-act: "140.00$";
+$fd12-price-old: "320.43$";
+$fd11-img: "food-dog-orange.jpg";
+
+$fd13-vendor: 00027;
+$fd13-name: "Dry food for dogs of all breeds Savory 3 kg (rabbit and duck)";
+$fd13-price-act: "136.00$";
+$fd13-price-old: "320.43$";
+$fd11-img: "food-dog-white.jpg";
