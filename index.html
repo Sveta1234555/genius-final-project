@@ -165,29 +165,22 @@
 
             <ul class="mobile-menu__list">
               <li>
-                <a
-                  class="mobile-menu__link"
-                  href="/index.html#section-less-talk"
-                >
+                <a class="mobile-menu__link" href="#section-less-talk">
                   Less talk
                 </a>
               </li>
               <li>
-                <a
-                  class="mobile-menu__link"
-                  href="/index.html#section-services-category"
+                <a class="mobile-menu__link" href="#section-services-category"
                   >Services category
                 </a>
               </li>
               <li>
-                <a
-                  class="mobile-menu__link"
-                  href="/index.html#section-happy-customer"
+                <a class="mobile-menu__link" href="#section-happy-customer"
                   >Happy customer</a
                 >
               </li>
               <li>
-                <a class="mobile-menu__link" href="/index.html#section-contacts"
+                <a class="mobile-menu__link" href="#section-contacts"
                   >Contact
                 </a>
               </li>
@@ -303,33 +296,11 @@
         А пока - точно надо снизу от about-us до why-us  176=128+48 (48 - .section дают везде ниже) -->
       <section class="about-us-section" id="section-less-talk">
         <div class="container">
-          <!-- ------video - плзже разобраться . пока так     -->
+          <!-- ------video    -->
           <!-- <article вынесено пока в index_video.html - мешает разметке -->
 
           <!-- <div class="about-us-container"> -->
           <div class="about-us-section__container">
-            <!-- <svg class="star2" width="15" height="16"> -->
-            <!-- <svg class="star2">
-              <use href="./images/icons.svg#icon-star2mid"></use>
-            </svg>
-            <svg class="star1">
-              <use href="./images/icons.svg#icon-star1big"></use>
-            </svg>
-            <svg class="star3">
-              <use href="./images/icons.svg#icon-star3small"></use>
-            </svg> -->
-
-            <!-- <ul class="about-us-ul-img"> -->
-            <!-- <ul class="about-us-section__imgs">
-              <li class="about-us-section__imgli">
-                <img
-                  srcset="./images/face2up.jpg 1x, ./images/face2up@2x.jpg 2x"
-                  src="./images/face2up.jpg"
-                  alt="Лицо клиента до процедур в клинике"
-                />
-              </li>
-            </ul> -->
-
             <img
               class="about-us-section__image"
               srcset="
@@ -339,6 +310,36 @@
               src="./images/sect2_shetland-sheepdog-lying.png"
               alt="Shetland sheepdog lying"
             />
+
+            <div class="video__container-pos-out">
+              <video
+                src="./images/853770-sd_640_360_25fps.mp4"
+                autoplay="none"
+                type="video/mp4"
+                width="0px"
+              ></video>
+              <div class="video__pos-in">
+                <svg
+                  class="video__container-back"
+                  viewBox="0 0 161 123"
+                  width="73"
+                  height="72"
+                >
+                  <use href="./images/icons-video.svg#icon-vector2"></use>
+                </svg>
+                <div class="video__group">
+                  <button class="video__button" type="button">
+                    <svg class="video__button--svg" width="48" height="48">
+                      <use
+                        href="./images/icons-video.svg#icon-video-button"
+                      ></use>
+                    </svg>
+                  </button>
+                  <a href="#" class="video__text link">Learn more</a>
+                </div>
+              </div>
+            </div>
+
             <svg class="food">
               <use href="./images/icons.svg#icon-food"></use>
             </svg>
