@@ -311,24 +311,82 @@
               alt="Shetland sheepdog lying"
             />
 
-            <div class="video__container-pos-out">
-              <video
+            <div class="video-container video__container-pos-out">
+              <!-- <video
                 src="./images/853770-sd_640_360_25fps.mp4"
                 autoplay="none"
                 type="video/mp4"
                 width="0px"
-              ></video>
+              ></video> -->
+
+              <!-- <video
+                src="./images/853770-sd_640_360_25fps.mp4"
+                autoplay="none"
+                style="width: 161px; height: 123px"
+                controls=""
+                poster="./images/video.jpg"
+              >
+                <source
+                  src="./images/853770-sd_640_360_25fps.mp4"
+                  type="video/mp4"
+                />
+                <p>
+                  Your browser doesn't support HTML5 video. Here is a
+                  <a href="#">Learn more</a> instead.
+                </p>
+                
+              </video> -->
+
+              <!-- <iframe
+                width="709"
+                height="399"
+                src="https://www.youtube.com/embed/-B21HaByPiI"
+                title="Умные идеи сада для крошечных пространств, выпуск на крыше и балконе"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe> -->
+
               <div class="video__pos-in">
-                <svg
+                <video
+                  class="video__size"
+                  src="./images/853770-sd_640_360_25fps.mp4"
+                  type="video/mp4"
+                  controls
+                  autoplay="none"
+                  poster="./images/video-background.svg"
+                >
+                  <source
+                    src="./images/853770-sd_640_360_25fps.mp4"
+                    type="video/mp4"
+                  />
+                  <p>
+                    Your browser doesn't support HTML5 video. Here is a
+                    <a href="#">Learn more</a> instead.
+                  </p>
+                </video>
+
+                <!-- <video
+                  src="./images/853770-sd_640_360_25fps.mp4"
+                  autoplay="none"
+                  style="width: 161px; height: 123px"
+                  controls=""
+                  poster="./images/video.jpg"
+                ></video> -->
+
+                <!-- <svg
                   class="video__container-back"
                   viewBox="0 0 161 123"
                   width="73"
                   height="72"
                 >
                   <use href="./images/icons-video.svg#icon-vector2"></use>
-                </svg>
+                </svg> -->
+
                 <div class="video__group">
-                  <button class="video__button" type="button">
+                  <button class="play-button video__button" type="button">
                     <svg class="video__button--svg" width="48" height="48">
                       <use
                         href="./images/icons-video.svg#icon-video-button"
@@ -1215,5 +1273,6 @@
 
     <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/video.js"></script>
   </body>
 </html>
