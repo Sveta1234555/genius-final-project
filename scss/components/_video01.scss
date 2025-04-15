@@ -33,7 +33,7 @@
         max-height: 72px;
         width: 100%;
         height: 100%;
-        bottom: -22px;
+        bottom: 0px;
         // // background-image: url("../images/video-background.svg");
 
         // /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
@@ -75,7 +75,6 @@
             //position absolute От секция about-us-section__container для дсктп
             top: 142px;
             left: 307px;
-            bottom: auto;
 
         }
 
@@ -104,9 +103,6 @@
         height: 100%;
         // /* иконки обесцвечены */
         fill: var(--color-secondary-grey); // background: #839AA9;
-        background-image: url("/images/video-background.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
 
         @media screen and (min-width: $bp-desktop) {
             // width: 161px;
@@ -118,22 +114,8 @@
 
     }
 
-    &__size {
-        //размеры блока самого <video>
-        width: 133px; //73px;
-        height: 100px; //72px;
-
-        @media screen and (min-width: $bp-desktop) {
-            // width: 161px;
-            // height: 123px;
-            width: 200px;
-            height: 200px;
-        }
-    }
-
     // video__container-back
     &__container-back {
-        //ненадо фон пятнышко - он  в <video   - poster
         max-width: 73px;
         max-height: 72px;
         position: absolute;
@@ -142,26 +124,11 @@
         width: 100%;
         height: 100%;
         // opacity: 0.5; //иначе кнопку невидно 
-        // opacity: 0; //
-
 
         @media screen and (min-width: $bp-desktop) {
             max-width: 161px;
             max-height: 123px;
 
-        }
-
-        // video__container-back--hide
-        &--hide {
-            //спрятать фон- пятнышко, когда скриптом запущен - показано video
-            display: none;
-            z-index: -10;
-        }
-
-        // video__container-back--show
-        &--show {
-            display: block;
-            z-index: auto;
         }
     }
 
@@ -178,16 +145,11 @@
         // padding: 15px; //поехало все - надо размеры указывать всем блокам по вложенности111
         z-index: 1; //иначе в моб режиме не окрашивается кнопка hover. !!!В декстоп - окрашивается, в моб - нет. Стал hover срабатывать в мобверсии , когда сместила кнопку ниже section. Родитель накрывает.
 
-        // //так ближе др к другу можно придвинуть по вертикали кнопку и LearnMore,  в моб версии далековато
-        // display: flex;
-        // flex-direction: column;
-
         @media screen and (min-width: $bp-desktop) {
             max-width: 81px;
             z-index: auto;
         }
     }
-
 
     // video__button
     &__button {
@@ -202,23 +164,15 @@
 
         &:hover {
             background-color: var(--color-primary-orange);
-            padding-top: 9px; //иначен некруглое
-
-            @media screen and (min-width: $bp-desktop) {
-                padding: 0px;
-            }
-
         }
 
         &--svg {
             width: 24px;
             height: 24px;
-            margin-top: -12px;
 
             @media screen and (min-width: $bp-desktop) {
                 width: 48px;
                 height: 48px;
-                margin-top: 0px;
             }
 
         }
@@ -252,16 +206,7 @@
     }
 }
 
-//для video.js   - по кнопке спрятать - показать виде
-.video-container.playing video {
-    display: block;
-}
 
-
-.video-container video {
-    display: none;
-    /* Видео изначально скрыто */
-}
 
 // // chatgpt
 // .body2 {
@@ -317,4 +262,14 @@
 //     border-left: 12px solid #000;
 //     /* Цвет треугольника */
 
+// }
+
+// .video-container.playing video {
+//     display: block;
+// }
+
+
+// .video-container video {
+//     display: none;
+//     /* Видео изначально скрыто */
 // }
