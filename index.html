@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title lang="en">DOGclub Svet</title>
-    <!--index был - из d:\IT_FullStack\ФиналПроект\genius-homework-4-mainBEMafter\ -->
     <!-- Fonts -->
     <!--Font play 700 400-->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +36,7 @@
   </head>
   <body>
     <!-- Это названия id section– для ссылок (SCSS называются по классам, а не по id) -->
-    <!-- section-about-us   - section-less-talk  -->
+    <!-- section-less-talk   - section-less-talk  -->
     <!-- section-why-us  -> section-services-category -->
     <!-- section-our-procedures-> section-happy-customer -->
     <!-- section-contacts -->
@@ -45,18 +44,10 @@
     <!-- <div class="wave1"></div> -->
     <header class="header">
       <div class="container">
-        <!-- <div class="header-container"> -->
         <div class="header__container">
-          <!-- <nav class="header-nav"> -->
           <nav class="header__nav">
             <!-- Logo and menu  -->
-            <!-- <img
-              src="./images/icon-sled-logo.svg"
-              alt="Veterinary clinic icon DOGclub"
-            /> -->
 
-            <!-- <a class="logo" href="#"> </a> -->
-            <!-- class logo - можно  для  before след на всех элементах - header, footer. Сейчас - flex// -->
             <a class="logo" href="#">
               <img
                 class="logo-sled-size logo-sled-size__header"
@@ -71,16 +62,13 @@
               />
             </a>
 
-            <!-- <ul class="header-menu"> -->
             <ul class="header__menu">
               <li>
-                <!-- <a class="header-link  -->
                 <a class="header__link link" href="#section-less-talk"
                   >Less talk</a
                 >
               </li>
               <li>
-                <!-- <a class="header__link link" href="#section-why-us">Чому ми</a> -->
                 <a class="header__link link" href="#section-services-category"
                   >Services category</a
                 >
@@ -97,23 +85,10 @@
               </li>
             </ul>
           </nav>
-          <!-- <div> -->
-          <!-- <ul class="icon-link-ul"> -->
-          <!-- <ul class="socials socials--header"> -->
-          <!-- <ul class="header__socials socials socials--header"> -->
-          <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
-          <!-- </ul> -->
 
           <!-- <div class="header__socials socials socials--header"> -->
           <div class="header__basket">
-            <!-- <a
-              rel="noopener noreferrer"
-              href="tel:+38(096)0000007"
-              title="Veterinary clinic icon basket"
-              target="_blank"
-            > -->
             <a href="#" title="Veterinary clinic icon basket">
-              <!-- <svg class="header__socials-icon" width="40" height="40"> -->
               <svg class="header__basket-icon" width="40" height="40">
                 <use href="./images/icons.svg#icon-header-basket"></use>
               </svg>
@@ -128,27 +103,16 @@
           </div>
 
           <button class="header__burger menu-btn-open" type="button">
-            <!-- меню бургер  3 черточки мобильного  -->
             <svg width="24" height="24">
               <use href="./images/icons.svg#icon-menu"></use>
             </svg>
           </button>
           <div class="mobile-menu">
-            <!-- class="mobile-menu__btn-close modal__btn-close menu-btn-close" -->
             <button class="mobile-menu__btn-close menu-btn-close" type="button">
               <svg width="24" height="24">
                 <use href="./images/icons.svg#icon-close"></use>
               </svg>
             </button>
-            <!-- dz4 <a class="mobile-menu__logo" href="/">
-              <img
-                class="logo-width"
-                src="./images/logo.svg"
-                alt="Veterinary clinic logo DOGclub"
-              />
-            </a> -->
-
-            <!-- Logo and menu  -->
 
             <a class="logo mobile-menu__logo" href="/">
               <img
@@ -186,40 +150,28 @@
               </li>
             </ul>
             <ul class="mobile-menu__socials socials">
-              <!-- класс li добавить для hover на li - ненадо. срабатывает hover на icon-link-ul. причем отдельно для своего значка, между ними - нет . ok-->
               <li>
-                <!-- <a class="icon-link" href=""> -->
-                <!-- class="icon-link" -->
                 <a
                   rel="noopener noreferrer"
                   href="https://www.instagram.com/"
                   title="Instagram"
                   target="_blank"
                 >
-                  <!-- <svg width="25" height="25" viewBox="0 0 32 32"> -->
-                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
                   <svg class="header__socials-icon" width="32" height="32">
                     <use href="./images/icons.svg#icon-instagram"></use>
                   </svg>
                 </a>
-                <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
               </li>
               <li>
-                <!-- <a class="icon-link" href=""> -->
-                <!-- class="icon-link" -->
                 <a
                   href="https://www.facebook.com/"
                   title="Facebook"
                   target="_blank"
                 >
-                  <!-- <svg width="16" height="28" viewBox="0 0 32 32"> -->
-                  <!-- <svg width="32" height="32" viewBox="0 0 32 32"> -->
-                  <!-- <svg class="header__address-icon" width="32" height="32"> -->
                   <svg class="header__socials-icon" width="32" height="32">
                     <use href="images/icons.svg#icon-facebook"></use>
                   </svg>
                 </a>
-                <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
               </li>
             </ul>
           </div>
@@ -231,32 +183,11 @@
         <div class="container">
           <div class="hero-section__container">
             <div class="hero-section__title">
-              <!-- hero-title-mini ->   hero-section__title--mini" -->
-              <!-- hero-title-big ->   hero-section__title--big" -->
-
-              <!-- <p class="hero-section__title--mini">Косметологічна клініка</p> -->
-
-              <!-- <h1 class="hero-section__title--big" lang="en">beauty zone</h1> -->
-
-              <!-- class="text-brand    убрала из span - 'это синий цвет и все' -->
               <h1 class="hero-section__title--big" lang="en">
                 Taking care for your
                 <span class="text-capitalize">smart dog!</span>
               </h1>
-              <!-- </div> -->
 
-              <!-- <h1 class="hero-title" lang="en">
-          Косметологічна клініка
-          <br />
-          <span class="hero-title-big">beauty <br />zone</span>
-        </h1> -->
-
-              <!-- <h1 class="hero-title-mini" lang="en">Косметологічна клініка</h1>
-        <h3 class="hero-title-big">beauty zone</h3> -->
-
-              <!-- <div> -->
-
-              <!-- <p class="under-button"></p> -->
               <p class="hero-section__top-button">
                 Human–canine bonding is the relationship between dogs and humans
               </p>
@@ -268,16 +199,6 @@
               </button>
             </div>
 
-            <!-- <img
-          src="./images/photoWoman.jpg"
-          alt="Жінка лікар виконує косметологічну процедуру клієнтці"
-        /> -->
-            <!-- srcset="
-                ./images/sect1_pexels-pixabay.jpg    1x,
-                ./images/sect1_pexels-pixabay@2x.jpg 2x
-              "
-              src="./images/sect1_pexels-pixabay.jpg" -->
-
             <img
               class="hero-section__image"
               srcset="./images/dog_yell.png 1x, ./images/dog_yell@2x.png 2x"
@@ -288,21 +209,11 @@
         </div>
       </section>
 
-      <!-- <section class="section about-us-section" id="section-about-us"> -->
-      <!-- Меняла местами, может приоритеты - нет -->
-      <!-- <section class="about-us-section section" id="section-about-us"> -->
-      <!-- убрать section - он делает только padding 48 0. Здесь перекрывают сверху др-друга Padding section и about-us-section -->
-      <!-- Вернуться к отступам между hero и about-us/
-        А пока - точно надо снизу от about-us до why-us  176=128+48 (48 - .section дают везде ниже) -->
-      <section class="about-us-section" id="section-less-talk">
+      <section class="less-talk-section" id="section-less-talk">
         <div class="container">
-          <!-- ------video    -->
-          <!-- <article вынесено пока в index_video.html - мешает разметке -->
-
-          <!-- <div class="about-us-container"> -->
-          <div class="about-us-section__container">
+          <div class="less-talk-section__container">
             <img
-              class="about-us-section__image"
+              class="less-talk-section__image"
               srcset="
                 ./images/sect2_shetland-sheepdog-lying.png    1x,
                 ./images/sect2_shetland-sheepdog-lying@2x.png 2x
@@ -312,43 +223,6 @@
             />
 
             <div class="video-container video__container-pos-out">
-              <!-- <video
-                src="./images/853770-sd_640_360_25fps.mp4"
-                autoplay="none"
-                type="video/mp4"
-                width="0px"
-              ></video> -->
-
-              <!-- <video
-                src="./images/853770-sd_640_360_25fps.mp4"
-                autoplay="none"
-                style="width: 161px; height: 123px"
-                controls=""
-                poster="./images/video.jpg"
-              >
-                <source
-                  src="./images/853770-sd_640_360_25fps.mp4"
-                  type="video/mp4"
-                />
-                <p>
-                  Your browser doesn't support HTML5 video. Here is a
-                  <a href="#">Learn more</a> instead.
-                </p>
-                
-              </video> -->
-
-              <!-- <iframe
-                width="709"
-                height="399"
-                src="https://www.youtube.com/embed/-B21HaByPiI"
-                title="Умные идеи сада для крошечных пространств, выпуск на крыше и балконе"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; 
-encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe> -->
-
               <div class="video__pos-in">
                 <video
                   class="video__size"
@@ -412,24 +286,18 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
               <use href="./images/icons.svg#icon-sled"></use>
             </svg>
 
-            <!-- <div class="about-us-content"> -->
-            <div class="about-us-section__content">
+            <div class="less-talk-section__content">
               <!-- <svg class="sled sled--arrow1"> -->
               <svg class="arrow">
                 <use href="./images/icons.svg#icon-arrow11"></use>
               </svg>
-              <!-- <h2 class="about-us-title section__title"> -->
-              <!-- <h2 class="about-us-section__title section__title"> -->
-              <!-- <div class="about-us-section__divforleft"> -->
-              <!-- <h2 class="about-us-section__title section__title text-left"> -->
-              <!-- <h2 class="about-us-section__title section__title section__title--left">   -->
-              <!-- //left своей секции теперь срабатывает т.к. @import section в main.scss перенесен вверх /layouts -->
-              <h2 class="about-us-section__title section__title">
+
+              <h2 class="less-talk-section__title section__title">
                 Less talk <br />
                 and more walk
               </h2>
-              <!-- </div> -->
-              <p class="about-us-section__p about-us-section__p--notlastp">
+
+              <p class="less-talk-section__p less-talk-section__p--notlastp">
                 Sometimes our career, lifestyle, or routines can make it
                 difficult to provide your pet with the recommended amount of
                 exercise that they need. Which is why, it’s okay to use an extra
@@ -447,113 +315,113 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                 <use href="./images/icons.svg#icon-star1big"></use>
               </svg>
             </div>
-
-            <!-- <svg class="star2">
-              <use href="./images/icons.svg#icon-star2mid"></use>
-            </svg>
-            <svg class="star1">
-              <use href="./images/icons.svg#icon-star1big"></use>
-            </svg>
-            <svg class="star3">
-              <use href="./images/icons.svg#icon-star3small"></use>
-            </svg> -->
           </div>
         </div>
       </section>
 
-      <!-- <section class="why-us-section section" id="section-why-us"> -->
-      <section class="why-us-section section" id="section-services-category">
-        <!-- <h2>Чому люди <span>обирають нас</span></h2> -->
+      <section
+        class="services-category-section section"
+        id="section-services-category"
+      >
         <div class="wave"></div>
-        <!-- <div class="container why-us-container"> -->
+
         <div class="container">
-          <!-- <div class="wave"></div> -->
-          <!-- <h2 class="why-us-title section__title"> -->
-          <h2 class="why-us-section__title section__title">
+          <h2 class="services-category-section__title section__title">
             Services category
           </h2>
-          <div class="why-us-section__content">
+          <div class="services-category-section__content">
             <svg class="star2">
               <use href="./images/icons.svg#icon-star2mid"></use>
             </svg>
             <svg class="arrow-services">
               <use href="./images/icons.svg#icon-arrow11"></use>
             </svg>
-            <ul class="why-us-section__list">
-              <li class="why-us-section__item why-us-section__item--hide">
-                <!-- <img src="./images/sect3_1grooming.svg" alt="Grooming sign" /> -->
-                <!-- <svg class="why-us-section__img" width="48" height="48">
-                <use href="images/icons.svg#icon-atom1"></use>
-              </svg> -->
-                <svg class="why-us-section__img" width="96" height="96">
+            <ul class="services-category-section__list">
+              <li
+                class="services-category-section__item services-category-section__item--hide"
+              >
+                <svg
+                  class="services-category-section__img"
+                  width="96"
+                  height="96"
+                >
                   <use href="./images/icons.svg#icon-sect3_1grooming"></use>
                 </svg>
-                <p class="why-us-section__p">Grooming</p>
+                <p class="services-category-section__p">Grooming</p>
               </li>
-              <li class="why-us-section__item">
-                <svg class="why-us-section__img" width="96" height="96">
+              <li class="services-category-section__item">
+                <svg
+                  class="services-category-section__img"
+                  width="96"
+                  height="96"
+                >
                   <use href="./images/icons.svg#icon-sect3_2nutrition"></use>
                 </svg>
-                <p class="why-us-section__p">Nutrition</p>
+                <p class="services-category-section__p">Nutrition</p>
               </li>
-              <li class="why-us-section__item why-us-section__item--hide">
-                <svg class="why-us-section__img" width="96" height="96">
+              <li
+                class="services-category-section__item services-category-section__item--hide"
+              >
+                <svg
+                  class="services-category-section__img"
+                  width="96"
+                  height="96"
+                >
                   <use href="./images/icons.svg#icon-sect3_3training"></use>
                 </svg>
-                <p class="why-us-section__p">Training</p>
+                <p class="services-category-section__p">Training</p>
               </li>
-              <li class="why-us-section__item why-us-section__item--hide">
-                <svg class="why-us-section__img" width="96" height="96">
+              <li
+                class="services-category-section__item services-category-section__item--hide"
+              >
+                <svg
+                  class="services-category-section__img"
+                  width="96"
+                  height="96"
+                >
                   <use href="./images/icons.svg#icon-sect3_4bathing"></use>
                 </svg>
 
-                <p class="why-us-section__p">Bathing</p>
+                <p class="services-category-section__p">Bathing</p>
               </li>
               <!-- Так получилось внизу текст. Но надо отдельный flex чтобы горизонтально рядом текст и стрелка и без gap с левыми карточками -->
-              <!-- поэтому 2 flex рядом  1. ul why-us-section__list 2. div внутри общего  -->
-              <!-- <li class="why-us-section__item--end"> -->
+              <!-- поэтому 2 flex рядом  1. ul services-category-section__list 2. div внутри общего  -->
+              <!-- <li class="services-category-section__item--end"> -->
               <!-- <a href="#">more services</a> -->
               <!-- <img src="./images/arrow1.svg" alt="right arrow" /> -->
               <!-- </li>  -->
             </ul>
 
             <!-- //так - стрелка не в ссылке -->
-            <!-- <div class="why-us-section__more why-us-section__more--end">
+            <!-- <div class="services-category-section__more services-category-section__more--end">
               <a href="#">more services</a>
               <svg class="icon-color" width="40" height="24">
                 <use href="./images/icons.svg#icon-arrow-more"></use>
               </svg>
             </div> -->
 
-            <div class="why-us-section__more why-us-section__more--end">
+            <div
+              class="services-category-section__more services-category-section__more--end"
+            >
               <a class="logo logo__gap" href="index_dogbem2.html"
                 >more services
                 <svg class="icon-color" width="40" height="24">
                   <use href="./images/icons.svg#icon-arrow-more"></use>
                 </svg>
               </a>
-              <!-- <img src="./images/arrow1.svg" alt="right arrow" /> -->
             </div>
-            <!-- <a class="footer-link" href="#">more services</a> -->
           </div>
         </div>
       </section>
 
-      <!-- <section class="procedure-section section" id="section-happy-customer"> -->
       <!-- section - отступы только -->
-      <section class="procedure-section" id="section-happy-customer">
+      <section class="customer-section" id="section-happy-customer">
         <div class="container">
-          <!-- <h2>Наші <span>процедури</span></h2> -->
-          <!-- <h2 class="procedure-section__title section__title"> -->
           <h2 class="section__title">Happy customer</h2>
 
-          <!-- <div class="procedures-container"> -->
-          <div class="procedure-section__container">
-            <!-- <h2>Наші <span>процедури</span></h2> -->
-            <!-- <div></div> -->
-
+          <div class="customer-section__container">
             <button
-              class="carousel-button procedure-section__button"
+              class="carousel-button customer-section__button"
               type="button"
             >
               <!-- <svg class="carousel-arrow" width="16" height="16"> -->
@@ -564,21 +432,12 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
 
             <!-- class="formats-section__container swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden" -->
             <!-- <div class=""> -->
-            <!-- <ul class="procedure-list"> -->
-            <ul class="procedure-section__list">
-              <!-- <li class="procedure-item"> -->
-              <li class="procedure-section__item procedure-section__item--show">
-                <!-- <article><h3>Маски для обличчя</h3></article> -->
-                <!-- <img
-                  src="./images/faceprocMask1.jpg"
-                  alt="Фото жiнки на процедурi Маски для обличчя"
-                /> -->
 
-                <article class="procedure-card">
-                  <!-- <article class="procedure-section__card"> -->
-                  <!-- class="procedure-card-image" -->
+            <ul class="customer-section__list">
+              <li class="customer-section__item customer-section__item--show">
+                <article class="customer-card">
                   <img
-                    class="procedure-card__image"
+                    class="customer-card__image"
                     srcset="
                       ./images/sect4_1christian-tom.jpg    1x,
                       ./images/sect4_1christian-tom@2x.jpg 2x
@@ -586,15 +445,15 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                     src="./images/sect4_1christian-tom.jpg"
                     alt="Photo of customer Christin & Tom"
                   />
-                  <div class="procedure-card__back-end">
+                  <div class="customer-card__back-end">
                     <div>
-                      <h3 class="procedure-card__titleh3">Christin & Tom</h3>
-                      <p class="procedure-card__p">
+                      <h3 class="customer-card__titleh3">Christin & Tom</h3>
+                      <p class="customer-card__p">
                         Love the overall workout experience!
                       </p>
-                      <div class="procedure-card__row-count">
+                      <div class="customer-card__row-count">
                         <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
-                        <div class="procedure-card__row-count--bone">
+                        <div class="customer-card__row-count--bone">
                           <svg class="icon-color" width="32" height="14">
                             <use
                               href="./images/icons.svg#icon-bone-count"
@@ -621,7 +480,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                             ></use>
                           </svg>
                         </div>
-                        <p class="procedure-card__p procedure-card__p--counter">
+                        <p class="customer-card__p customer-card__p--counter">
                           5/5
                         </p>
                       </div>
@@ -629,12 +488,10 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                   </div>
                 </article>
               </li>
-              <!-- <li class="procedure-item"> -->
-              <!-- <li class="procedure-section__item procedure-section__item--hide"> -->
-              <li class="procedure-section__item procedure-section__item--hide">
-                <article class="procedure-card">
+              <li class="customer-section__item customer-section__item--hide">
+                <article class="customer-card">
                   <img
-                    class="procedure-card__image"
+                    class="customer-card__image"
                     srcset="
                       ./images/sect4_2anna.jpg    1x,
                       ./images/sect4_2anna@2x.jpg 2x
@@ -642,14 +499,13 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                     src="./images/sect4_2anna.jpg"
                     alt="Photo of customer Anna & Tobby"
                   />
-                  <div class="procedure-card__back-end">
-                    <h3 class="procedure-card__titleh3">Anna & Tobby</h3>
-                    <p class="procedure-card__p">
+                  <div class="customer-card__back-end">
+                    <h3 class="customer-card__titleh3">Anna & Tobby</h3>
+                    <p class="customer-card__p">
                       Amazing Products & Delivery on time.
                     </p>
-                    <div class="procedure-card__row-count">
-                      <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
-                      <div class="procedure-card__row-count--bone">
+                    <div class="customer-card__row-count">
+                      <div class="customer-card__row-count--bone">
                         <svg class="icon-color" width="32" height="14">
                           <use href="./images/icons.svg#icon-bone-count"></use>
                         </svg>
@@ -667,18 +523,18 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                           <use href="./images/icons.svg#icon-bone-count"></use>
                         </svg>
                       </div>
-                      <p class="procedure-card__p procedure-card__p--counter">
+                      <p class="customer-card__p customer-card__p--counter">
                         4/5
                       </p>
                     </div>
                   </div>
                 </article>
               </li>
-              <!-- <li class="procedure-item"> -->
-              <li class="procedure-section__item procedure-section__item--hide">
-                <article class="procedure-card">
+
+              <li class="customer-section__item customer-section__item--hide">
+                <article class="customer-card">
                   <img
-                    class="procedure-card__image"
+                    class="customer-card__image"
                     srcset="
                       ./images/sect4_3sindy.jpg    1x,
                       ./images/sect4_3sindy@2x.jpg 2x
@@ -686,12 +542,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                     src="./images/sect4_3sindy.jpg"
                     alt="Photo of customer Sindy & Kitch"
                   />
-                  <div class="procedure-card__back-end">
-                    <h3 class="procedure-card__titleh3">Sindy & Kitch</h3>
-                    <p class="procedure-card__p">Great job with the trainer!</p>
-                    <div class="procedure-card__row-count">
-                      <div class="procedure-card__row-count--bone">
-                        <!-- <img src="./images/bone_count.svg" alt="Points counter" /> -->
+                  <div class="customer-card__back-end">
+                    <h3 class="customer-card__titleh3">Sindy & Kitch</h3>
+                    <p class="customer-card__p">Great job with the trainer!</p>
+                    <div class="customer-card__row-count">
+                      <div class="customer-card__row-count--bone">
                         <svg class="icon-color" width="32" height="14">
                           <use href="./images/icons.svg#icon-bone-count"></use>
                         </svg>
@@ -708,7 +563,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                           <use href="./images/icons.svg#icon-bone-count"></use>
                         </svg>
                       </div>
-                      <p class="procedure-card__p procedure-card__p--counter">
+                      <p class="customer-card__p customer-card__p--counter">
                         5/5
                       </p>
                     </div>
@@ -716,10 +571,9 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                 </article>
               </li>
             </ul>
-            <!-- </div> -->
 
             <button
-              class="carousel-button procedure-section__button next"
+              class="carousel-button customer-section__button next"
               type="button"
             >
               <!-- класс next добавлен для повернуть стрелку-кнопку вправо  -->
@@ -738,17 +592,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
           </div>
         </div>
       </section>
-      <!-- <section class="contact-section section" id="section-contacts"> -->
-      <!-- <section class="contacts-section section" id="section-contacts"> -->
       <!-- section - отступы только -->
       <section class="contacts-section" id="section-contacts">
         <div class="wave wave--contacts"></div>
 
         <div class="container">
-          <!-- <h2 class="contacts-section__title section__title">
-            Our experts will take care of your friend
-          </h2> -->
-
           <svg class="sled__contacts sled__contacts--collar">
             <use href="./images/icons.svg#icon-collar-contacts"></use>
           </svg>
@@ -759,11 +607,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
             <use href="./images/icons.svg#icon-bone-contacts"></use>
           </svg>
           <div class="contacts-section__container">
-            <!-- Form         -->
-            <!-- <form name="contact-form" autocomplete="on" novalidate> -->
-            <!-- <div class="signup-free"> -->
-            <!-- <div class="contact-form-back"> -->
-
             <img
               class="contacts-section__imag"
               srcset="
@@ -775,8 +618,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
             />
 
             <div class="contacts-section__form--back">
-              <!-- <form name="contact-form" autocomplete="off"> -->
-
               <form name="contact-form" autocomplete="off">
                 <h2 class="contacts-section__title section__title">
                   Our experts will take care of your friend
@@ -880,36 +721,9 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                   <input type="checkbox" id="agree" name="agree" />
                   <label for="agree">I agree to the privacy policy</label>
                 </div>
-
-                <!-- <p class="form-terms">
-                  Натискаючи на кнопку я погоджуюсь
-                  <a class="form-terms__link" href="#"
-                    >з політикою конфіденційності</a
-                  >
-                </p> -->
               </form>
             </div>
-            <!-- <div class="signup-free">
-              <p class="signup-free-p">
-                Запишіться
-                <span class="text-brand">безкоштовно</span> та отримайте
-                подарунок
-              </p>
-              <p class="signup-free-input">Ваше ім'я та прізвище</p>
-              <p class="signup-free-input">Ваш номер телефону</p>
-              <p class="signup-free-input">Ваша електронна пошта</p>
-              <div class="signup-button">
-                <button class="button" type="button">
-                  Записатись безкоштовно
-                </button>
-                <p class="under-button">
-                  Натискаючи на кнопку я погоджуюсь
-                  <span class="privacy-policy"
-                    >з політикою конфіденційності</span
-                  >
-                </p>
-              </div>
-            </div> -->
+
             <img
               class="contacts-section__imag-right"
               srcset="
@@ -929,17 +743,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
           <div class="footer__container-external">
             <div class="footer__container">
               <nav class="footer__nav">
-                <!-- Logo and menu  -->
-                <!-- div чтобы Logo был ссылкой с наведением только на тексте Img, поменьше -->
-                <!-- <div class="footer-logo"> -->
-                <!-- dz4  <div class="footer__logo">
-              <a href="#">
-                <img
-                  class="logo-width__footer"
-                  src="./images/logo.svg"
-                  alt="Логотип косметологічної клініки Beauty Zone"
-              /></a>
-            </div> -->
                 <div class="footer__logo-socias">
                   <div class="footer__logo">
                     <a class="logo" href="#">
@@ -977,18 +780,13 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                           <use href="images/icons.svg#icon-instagram"></use>
                         </svg>
                       </a>
-                      <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
                     </li>
                     <li>
-                      <!-- <a class="icon-link" href=""> -->
-                      <!-- class="icon-link" -->
                       <a
                         href="https://www.facebook.com/"
                         title="Facebook"
                         target="_blank"
                       >
-                        <!-- <svg width="22" height="37"> -->
-                        <!-- <svg class="footer__address-icon" width="42" height="42"> -->
                         <svg
                           class="footer__socials-icon"
                           width="40"
@@ -997,22 +795,17 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                           <use href="images/icons.svg#icon-facebook"></use>
                         </svg>
                       </a>
-                      <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
                     </li>
                   </ul>
                 </div>
 
-                <!-- <ul class="footer-menu footer--ul"> -->
-                <!-- <ul class="footer__menu footer__ul"> убрала footer__ul был только отстпу 16 для li-->
                 <ul class="footer__menu">
                   <li>
-                    <!-- <a class="footer-link link" href="#section-about-us"> -->
                     <a class="footer__link link" href="#section-less-talk">
                       Less talk</a
                     >
                   </li>
                   <li>
-                    <!-- <a class="footer-link link" href="#section-why-us">Чому ми</a> -->
                     <a
                       class="footer__link link"
                       href="#section-services-category"
@@ -1020,13 +813,11 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                     >
                   </li>
                   <li>
-                    <!-- <a class="footer-link link" href="#section-our-procedures" -->
                     <a class="footer__link link" href="#section-happy-customer"
                       >Happy customer</a
                     >
                   </li>
                   <li>
-                    <!-- <a class="footer-link link" href="#section-contacts" -->
                     <a class="footer__link link" href="#section-contacts"
                       >Contact</a
                     >
@@ -1036,42 +827,31 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
 
               <ul class="socials footer__socials-after">
                 <li>
-                  <!-- <a class="icon-link" href=""> -->
-                  <!-- class="icon-link" -->
                   <a
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/"
                     title="Instagram"
                     target="_blank"
                   >
-                    <!-- <svg width="32" height="32"> -->
-                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
                     <svg class="footer__socials-icon" width="42" height="42">
                       <use href="images/icons.svg#icon-instagram"></use>
                     </svg>
                   </a>
-                  <!-- <img src="./images/instagram.svg" alt="Иконка Instagram" /> -->
                 </li>
                 <li>
-                  <!-- <a class="icon-link" href=""> -->
-                  <!-- class="icon-link" -->
                   <a
                     href="https://www.facebook.com/"
                     title="Facebook"
                     target="_blank"
                   >
-                    <!-- <svg width="22" height="37"> -->
-                    <!-- <svg class="footer__address-icon" width="42" height="42"> -->
                     <svg class="footer__socials-icon" width="42" height="42">
                       <use href="images/icons.svg#icon-facebook"></use>
                     </svg>
                   </a>
-                  <!-- <img src="./images/facebook.svg" alt="Иконка facebook" /> -->
                 </li>
               </ul>
 
               <form name="contact-form" autocomplete="off">
-                <!-- <div class="modal__form-field input"> -->
                 <div
                   class="contacts-section__form-field contacts-section__form-field--email input"
                 >
@@ -1108,8 +888,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                   />
                 </div>
 
-                <!-- <button class="modal__button button" type="submit"> -->
-                <!-- <button class="contacts-section__button button" type="submit"></button> -->
                 <div class="contacts-section__btn-center">
                   <button
                     class="button__footer button button--center"
@@ -1123,16 +901,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
                     <label for="agree">I agree to the privacy policy</label>
                   </div>
                 </div>
-
-                <!-- <p class="form-terms">
-                  Натискаючи на кнопку я погоджуюсь
-                  <a class="form-terms__link" href="#"
-                    >з політикою конфіденційності</a
-                  >
-                </p> -->
               </form>
-
-              <!-- <address class="footer-address footer-address-ul"> -->
             </div>
             <!-- png - чтобы лапка на фон  сверху свисала -->
             <img
@@ -1143,23 +912,18 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
             />
           </div>
         </div>
-        <!-- картинку псевдоэлементом ::after в _footer.scss -->
-        <!-- <img src="./images/PhotoRoom.png" alt="Фото пляшечок з ліками" /> -->
-        <!-- </div> -->
       </div>
     </footer>
 
     <div class="backdrop is-hidden">
       <!-- Пока убрать is-hidden на время разработки формы . Вернуть is-hidden потом!!! -->
-      <!-- <div class="backdrop is-hidden"> -->
       <div class="modal">
-        <!-- <button class="modal-btn-close" type="button"> -->
         <button class="modal__btn-close modal-btn-close" type="button">
           <svg width="32" height="32">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <!-- <h2 class="modal-title">Замовити дзвінок</h2> -->
+
         <h2 class="modal__title">Our experts will take care of your friend</h2>
 
         <svg class="sled sled__modal sled__modal--right-top">
@@ -1180,9 +944,7 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
         <!-- <form name="contact-form" autocomplete="on" novalidate> -->
         <form name="modal-form" autocomplete="on">
           <p class="modal__text">Fill out the form so we can contact you!</p>
-          <!-- <div class="modal__form-field input"> -->
-          <!-- <div class="modal__form-field modal__form-field--user-name input"> -->
-          <!-- <div class="modal__form-field1 modal__form-field1--user-name input"> -->
+
           <div class="modal__form-field modal__form-field--user-name input">
             <label label class="input__label visually-hidden" for="user-name"
               >Your name</label
@@ -1201,7 +963,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
             />
           </div>
 
-          <!-- <div class="modal__form-field input"> -->
           <div class="modal__form-field modal__form-field--pet-name input">
             <label label class="input__label visually-hidden" for="pet-name"
               >Pet name</label
@@ -1255,27 +1016,6 @@ encrypted-media; gyroscope; picture-in-picture; web-share"
             <input type="checkbox" id="agree" name="agree" />
             <label for="agree">I agree to the privacy policy</label>
           </div>
-
-          <!-- <p class="form-terms">
-            Натискаючи на кнопку я погоджуюсь
-            <a class="form-terms__link" href="#"
-              >з політикою конфіденційності</a
-            >
-          </p> -->
-
-          <!-- <div class="contacts-section__btn-center">
-                  <button
-                    class="button__footer button button--center"
-                    type="submit"
-                  >
-                    Contact us
-                  </button>
-
-                  <div class="footer__iagree text-center">
-                    <input type="checkbox" id="agree" name="agree" />
-                    <label for="agree">I agree to the privacy policy</label>
-                  </div>
-                </div> -->
         </form>
       </div>
     </div>
