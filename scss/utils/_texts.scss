@@ -9,7 +9,7 @@
     // font-weight: 700;
     //700 есть в общем section__title, оттуда используется
 
-    // для span (он, правда, один такой about-us) и там есть .beauty-zone
+    // для span (он, правда, один такой less-talk) и там есть .beauty-zone
     font-weight: 600;
 
 }
@@ -108,7 +108,7 @@
 
 
 // .text-left {
-//     /* все h2 center, кроме about-us-section */
+//     /* все h2 center, кроме less-talk-section */
 //     text-align: left;
 //     // нет, так не сработало.
 //     // добавлено в _section.scss section__title--left
