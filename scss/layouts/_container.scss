@@ -11,9 +11,9 @@
     /* чтобы слева-справа не прирлипал к границе - внутренний отступ  в контейнере сделать: */
     padding: 0 24px;
 
-    // 1.для стрелки спиральной большой в sect3 why-us = services 4карты
+    // 1.для стрелки спиральной большой в sect3 services-category = services 4карты
     // <svg class="arrow-services">
-    //  в index - внутри <div class="why-us-section__content">,
+    //  в index - внутри <div class="services-category-section__content">,
     //а не выше, внутри общего "container".
     //м.б. критично (relative здесь, в общем container),если каакие-то другие элементы поедут потом из –за общего relative. Но здесь по факту=норм.
     //к другим родителям-div не оч. поцепишт - самв section - нет границы статичной верхней правой. при ресайз стрелка уезжает

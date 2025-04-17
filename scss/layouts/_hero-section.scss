@@ -13,7 +13,7 @@
     //чтобы заголовок мобильный центрировался от краянего лева
     // padding-left: 0px;
     // padding: 71px 0 0 0px;
-    //до след. секции about-us снизу 56px
+    //до след. секции less-talk снизу 56px
     // padding: 71px 0 56px 0px;
     // padding: 73px 0 56px 0px;
 
@@ -61,7 +61,7 @@
     @media screen and (min-width: $bp-tablet) {
         /* padding: 123px 729px 157px 244px; перенесено в .hero-title . нет, здесьнадо*/
         // padding: 71px 0 0 0;
-        //до след. секции about-us снизу 56px
+        //до след. секции less-talk снизу 56px
         // padding: 71px 0 56px 0px;
 
     }
@@ -70,7 +70,7 @@
         background-position: -123px 80px; //vektor вниз опустить на 80 от самого верха, под меню header и влево на -123
         /* padding: 123px 729px 157px 244px; перенесено в .hero-title . нет, здесьнадо*/
         // padding: 123px 0 0 206px;
-        //для отстсупа между hero-section и about-us 126.48
+        //для отстсупа между hero-section и less-talk 126.48
         // padding: 297px 0 126px 206px;
         // padding: 297px 0 236px 206px; //stop16 - проверить по БЗ  236 !!!
         //слева сдвига нет!!!,  от самого  верха 297
@@ -111,7 +111,7 @@
 
 
         //чтобы звезда не ездила с resize - отсчет для star1 (position: relative)  не здесь, 
-        //а от блока с текстом about-us-section__content (а не всего about-us-section__container вместе с картинками как для десктоп)
+        //а от блока с текстом less-talk-section__content (а не всего less-talk-section__container вместе с картинками как для десктоп)
         //нет, звезды в index  над ним (_content). надо вниз перенести
         //позже
         // Можно убрать justify-content: center;  и все влево , и звезда небудет ездить при ресайз
@@ -128,7 +128,7 @@
         @media screen and (min-width: $bp-desktop) {
             /*чтобы горизонтально расположить: текстоввая часть слева - 2 картинки справа */
             // display: flex; //вверху 
-            /* ДЛя адаптива .  + max-width 709 в .about-us-content  */
+            /* ДЛя адаптива .  + max-width 709 в .less-talk-content  */
             // justify-content: space-between;
             justify-content: center; //подбором ф12 вместе с фоном элементов
 
@@ -313,7 +313,7 @@ p mini "Косметологічна клініка" + h1 big "beauty zone" */
 
 
 
-    //about-us-section__image копия
+    //less-talk-section__image копия
     //hero-section__image
     &__image {
         display: none;

@@ -8,11 +8,11 @@
   1.верхняя секция padding-bottom и 2. Нижняя соседняя секция padding-top  */
     /* горизонтальные- 0 */
     // padding: 48px 0; // dog  убрать сверху снизу 48 
-    // padding: 48px 0 0 0; // dog  (96 /2 между why-us porcedure)  
+    // padding: 48px 0 0 0; // dog  (96 /2 между services-category porcedure)  
     // dog - только моб версия ., только padding одинак
     //добавлены каждой секции свои разныее padding top bottom
 
-    // эта  толкьо для why-us осталась  - снизу 48 (для 96/2 между why-us  procedure)
+    // эта  толкьо для services-category осталась  - снизу 48 (для 96/2 между services-category  customer)
     padding: 0 0 48px 0;
 
   }
@@ -43,13 +43,13 @@
       // 69.55px/56px=1.24
       // line-height: 1.24;
 
-      /* ДЛя всех h2 всех секций 48. ДЛя 2-й секции about-us - отдельный класс - только во 2й 40px */
+      /* ДЛя всех h2 всех секций 48. ДЛя 2-й секции less-talk - отдельный класс - только во 2й 40px */
       margin-bottom: 48px;
       // text-align: center;    вверху
     }
 
     &--left {
-      //     /* все h2 center, кроме about-us-section */
+      //     /* все h2 center, кроме less-talk-section */
       // так сработало left
       // Проблема была - срабатывает только из section_title text-align: center;
       // А Left Из других файлов scss не берет
