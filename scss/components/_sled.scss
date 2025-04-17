@@ -13,7 +13,7 @@
         fill: var(--color-secondary-grey); // background: #839AA9;
         // fill: red; // background: #839AA9;
         // rotate: 0deg;
-        // .about-us-section  &__container  position: relative;
+        // .less-talk-section  &__container  position: relative;
         position: absolute;
 
 
@@ -46,7 +46,7 @@
         /* Это иконки, а они обесцвечены */
         fill: var(--color-secondary-grey); // background: #839AA9;
 
-        // .about-us-section  &__container  position: relative;
+        // .less-talk-section  &__container  position: relative;
         position: absolute;
 
         /* Минус пол-звезды  64/2 =32,  Сверху 336 -32 =304,Справа 295-32=263 */
@@ -140,7 +140,7 @@
         /* Это иконки, а они обесцвечены */
         fill: var(--color-secondary-grey); // background: #839AA9;
 
-        // .about-us-section  &__container  position: relative;
+        // .less-talk-section  &__container  position: relative;
         position: absolute;
 
 
@@ -154,7 +154,7 @@
     }
 
 
-    //about-us  - 3 ico, только в десктоп,------------------ 
+    //less-talk  - 3 ico, только в десктоп,------------------ 
     //в моб svg - отключать---------------
     // sled--left
     &--left {
@@ -274,32 +274,9 @@
 }
 
 
-// //начаинала здесь  - моб иконка , до этого вспе иконки - только десктоп .sled
-// //включила в .sled мобильные
-// //это убрать, перенесено в .sled
-// .sled-mob-nenado {
-//     display: block;
-//     // .about-us-section  &__container  position: relative;
-//     position: absolute;
-
-//     // sled-mob__contacts
-//     //sled__contacts
-//     &__contacts {
-
-//         // sled-mob__contacts--right 
-//         &--right {
-
-//             rotate: 44deg; //112.25 deg;
-//             top: 23px; //107px;
-//             left: 641px; //763px;
-
-//         }
-//     }
-// }
-
 
 .arrow {
-    // спиральная стрелка в секции2 .about-us-section в __content
+    // спиральная стрелка в секции2 .less-talk-section в __content
     // в моб версии
     display: block;
     rotate: 10deg;
@@ -309,7 +286,7 @@
     max-height: 40px;
     width: 100%;
     height: 100%;
-    // .about-us-section  &__content!!!  position: relative;
+    // .less-talk-section  &__content!!!  position: relative;
     //в index arrow для моб д.б. внутри этого __content
     // position: relative;
     position: absolute;
@@ -323,7 +300,7 @@
 }
 
 .arrow-services {
-    // спиральная стрелка в секции3 справа сверху .why-us-section в __content
+    // спиральная стрелка в секции3 справа сверху .services-category-section в __content
     // в моб версии -нет
     display: none;
 
@@ -336,10 +313,10 @@
         max-height: 144px;
         width: 100%;
         height: 100%;
-        // .why-us-section  _container.scss общий!!!  position: relative;
-        //в index arrow  внутри <div class="why-us-section__content">
+        // .services-category-section  _container.scss общий!!!  position: relative;
+        //в index arrow  внутри <div class="services-category-section__content">
         // а не выше, ближе к общему .container
-        //why-us - нет внутри вложенного div. Лишний не буду пока
+        //services-category - нет внутри вложенного div. Лишний не буду пока
         // position relative - в _container.scss. 
         position: absolute;
 
@@ -353,22 +330,22 @@
     // для моб - отдельноая звезда 
     //т.к. звезда ездит при ресайз при центрировании блока текста 
     //позиционирую относительно блока текста __content
-    //index - внутрь блока about-us-section__content
-    // для десктопа - 3 звездв в Index в родителе about-us-section__container
+    //index - внутрь блока less-talk-section__content
+    // для десктопа - 3 звездв в Index в родителе less-talk-section__container
     max-height: 40px;
     max-width: 40px;
     width: 100%;
     height: 100%;
     /* Это иконки, а они обесцвечены */
-    fill: var(--color-secondary-bluedark);
+    fill: var(--color-primary-orange);
     /* background: #011F4A; */
     rotate: 30deg;
 
-    // .about-us-section  &__content  position: relative;
+    // .less-talk-section  &__content  position: relative;
     position: absolute;
     // position: fixed;
-    // h347about-us +6 снизу от about-us до star1
-    top: 353px;
+    // h347less-talk +6 снизу от less-talk до star1
+    top: 670px; // 353px;    вниз секции, рядом с ссылкой - на 2ю страницу
     left: 283px;
     // right: 23px;
     // bottom: -6px;
@@ -412,7 +389,7 @@
         fill: var(--color-secondary-bluedark);
         /* background: #011F4A; */
         rotate: 30deg;
-        // .about-us-section  &__container  position: relative;
+        // .less-talk-section  &__container  position: relative;
         position: absolute;
 
 
@@ -444,10 +421,10 @@
 //     /* background: #011F4A; */
 //     rotate: 30deg;
 
-//     // .about-us-section  &__container  position: relative;
+//     // .less-talk-section  &__container  position: relative;
 //     position: absolute;
 //     // position: fixed;
-//     // h347about-us +6 снизу от about-us до star1
+//     // h347less-talk +6 снизу от less-talk до star1
 //     top: 353px;
 //     left: 283px;
 //     // right: 23px;
@@ -488,7 +465,7 @@
         width: 100%;
         height: 100%;
         /* Это иконки, а они обесцвечены */
-        fill: var(--color-primary-blue);
+        fill: var(--color-primary-orange);
         /* background: #ffd02b; */
         rotate: -30deg;
 
@@ -496,8 +473,8 @@
         /* margin-bottom: 32px; */
         /* или 12=32-20пол-звездочки  по соотношению на макете - похоже на 32 , а не на 12 по факту 
   Но по right видно - надо вычитать пол-звезды */
-        top: 32px;
-        /* по right понятно , что до центра расчет */
+        top: 313px; //возле стрелки more services - переход на page2
+
         right: -20px;
     }
 }

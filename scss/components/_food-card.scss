@@ -5,7 +5,7 @@
     // .food-card {
     // &__card {
     /* пока так градиент на 3х картинках процедур. позже слоями наверное */
-    /* для спозиционирвать на карточке фон-изображение. вместе с .procedure-card-image      position: absolute; */
+    /* для спозиционирвать на карточке фон-изображение. вместе с .customer-card-image      position: absolute; */
 
     //это к  position -absolute   .food-card__image - чтобы надписи были поверх картинки внизу- здесь ненадо!!!
     // position: relative;
@@ -66,9 +66,9 @@
         }
     }
 
-    // .procedure-card-image {
-    // .procedure-section__image { нет,  отдельный файл
-    // .procedure-card__image {
+    // .customer-card-image {
+    // .customer-section__image { нет,  отдельный файл
+    // .customer-card__image {
     &__image {
         // position -relative к нему в .food-card - чтобы надписи были поверх картинки внизу- здесь ненадо!!!
         // position: absolute;
@@ -78,7 +78,7 @@
         //     height: 260;
         //     top: 14px;
         //     left: 75px;
-        // /* для растянуть картинку по всей ширине карточки procedure-card */
+        // /* для растянуть картинку по всей ширине карточки customer-card */
         // top: 14px;
         // left: 0;
         width: 100%;
@@ -92,8 +92,8 @@
 
     // food-card__back-end
     &__back-end {
-        // подложка внизу фото - серая  344х130 procedure
-        //вниз выставлена flex-ом в .procedure-card
+        // подложка внизу фото - серая  344х130 customer
+        //вниз выставлена flex-ом в .customer-card
         // border-radius: 0 0 24px 24px;
         // background-color: var(--color-secondary-grey);
 

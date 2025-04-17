@@ -25,7 +25,7 @@
         // rotate: 0deg;
 
         //-------------позиционировать блок видео внешний margin вместо position
-        // // в .about-us-section__container для дсктп  и общем container для моб  position: relative; (они одинак по h, различ на гориз padding 24)
+        // // в .less-talk-section__container для дсктп  и общем container для моб  position: relative; (они одинак по h, различ на гориз padding 24)
         position: absolute;
         // bottom: -20px;
         left: 50%;
@@ -48,7 +48,7 @@
         // right: 84px;
 
 
-        // //родитель - секция about-us-section__container для дсктп , она flex , добавляется в нее
+        // //родитель - секция less-talk-section__container для дсктп , она flex , добавляется в нее
         // margin-top: 142px;
         // margin-left: -25%;
 
@@ -68,11 +68,11 @@
 
 
             // fill: var(--color-primary-yellow-font); // background: #FFAA00;
-            // // //родитель - секция about-us-section__container для дсктп , она flex , добавляется в нее
+            // // //родитель - секция less-talk-section__container для дсктп , она flex , добавляется в нее
             // // margin-top: 142px;
             // // margin-left: -25%;
 
-            //position absolute От секция about-us-section__container для дсктп
+            //position absolute От секция less-talk-section__container для дсктп
             top: 142px;
             left: 307px;
             bottom: auto;
