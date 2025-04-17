@@ -15,7 +15,7 @@ body {
 
     /* Доминантный */
     // Ненадо для мобверсии отдельный шрифт – там больше текста тоже 18/21 400
-    // одинак для десктоп (меню и карточки why-us) и моб(about-us, why-us)
+    // одинак для десктоп (меню и карточки services-category) и моб(less-talk, services-category)
 
     // @media screen and (min-width: $bp-desktop) {
 
@@ -29,7 +29,7 @@ body {
     line-height: 1.2; //18.75/16  = 1,18
 
 
-    /* center в доминантные задают? нужен в 1. .under-button 2. section h2 3.  .section-why-us-p 4. h3 ...
+    /* center в доминантные задают? нужен в 1. .under-button 2. section h2 3.  .section-services-category-p 4. h3 ...
   ПОка убираю здесь . м.б. отменять его будет больше , чем назначать. ПОзже  */
     /* text-align: center; */
 
@@ -69,10 +69,10 @@ img {
     object-fit: cover;
 
     @media screen and (min-width: $bp-desktop) {
-        // Проблема – about-us-section 2я картинка – не справа. из-за display  block для img
+        // Проблема – less-talk-section 2я картинка – не справа. из-за display  block для img
         //так - решается, но как на остальны Img влияет - неявно. Визуально - норм.
-        //Но - лучше локально  и  изменю на картинке last-child в about-us-section
-        //Нет - локально не отработало в about-us-section.  imgs last-child
+        //Но - лучше локально  и  изменю на картинке last-child в less-talk-section
+        //Нет - локально не отработало в less-talk-section.  imgs last-child
         display: inline;
     }
 }

@@ -9,33 +9,39 @@
 @import './components/buttons';
 @import './components/logo';
 @import './components/carousel-button';
+@import './components/customer-card';
 // @import './components/icon-link-ul';
 @import './components/input';
 @import './components/links';
 @import './components/food-card';
-@import './components/procedure-card';
+// @import './components/procedure-card';  //_procedure-card-not.scss
 @import './components/pagination';
 @import './components/sled';
-@import './components/stars';
+// @import './components/stars';   //stars-not.scss
 @import './components/socials';
 @import './components/video';
 @import './components/wave';
 
 @import './layouts/section';
-@import './layouts/about-us-section';
+// @import './layouts/about-us-section';
 @import './layouts/contacts-section';
 @import './layouts/container';
+@import './layouts/customer-section';
 @import './layouts/footer';
 @import './layouts/form-terms';
 @import './layouts/header';
 @import './layouts/hero-section';
+@import './layouts/less-talk-section';
 @import './layouts/mobile-menu';
 @import './layouts/modal';
 @import './layouts/modal-sort';
 @import './layouts/nutri-menu-section';
 @import './layouts/nutri-food-section';
-@import './layouts/procedure-section';
-// @import './layouts/section-about-us';
-//@import './layouts/about-us-section';  вверх по алф.
+// @import './layouts/procedure-section';       //procedure-section-not.scss
+
+
+
+
 // @import './layouts/section'; //вверх по образцу - так, вверху, section Не перекрывает особые стили остальных секций
-@import './layouts/why-us-section';
+// @import './layouts/why-us-section';   //_why-us-section-not.scss
+@import './layouts/services-category-section';
